@@ -10,6 +10,8 @@ h1, h2, h3, h4, h5, h6 {
     font-family: "Lato", sans-serif;
     font-weight: 900;
     color: #DBE2EF;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 p {
@@ -108,10 +110,7 @@ a:hover {
 
 /* INTRODUCTION */
 
-#text-box {
-    background-color: #112D4E;
-    color: #F9F7F7;
-    text-align: left;
+.text-box {
     padding: 50px 150px;
 }
 
@@ -285,4 +284,68 @@ a:hover {
 
 .btn:hover p {
     color: #112D4E;
+}
+
+.blog-preview iframe {
+    height: 100%;
+    width: 100%
+}
+
+/* WEEKLY BLOG PAGES */
+
+/* RETURN BUTTON */
+
+
+.float {
+	position: fixed;
+	width:60px;
+	height:60px;
+	top:40px;
+	left:40px;
+	background-color:#3F72AF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+.float .my-float {
+	margin-top:15px;
+    color: #DBE2EF;
+}
+
+.float:hover {
+    background-color:#DBE2EF;
+}
+
+.float:hover .my-float {
+    color:#3F72AF;
+}
+
+.text-box .text-card {
+    margin: 50px 75px;
+    background-color: #F9F7F7;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #DBE2EF;
+}
+
+.text-box .text-card p {
+    padding: 20px;
+    font-size: 1rem;
+    color: #112D4E;
+    text-align: left;
+}
+
+.text-box .text-card ol {
+    padding-left: 50px;
+}
+
+.text-box .text-card li {
+    font-size: 1rem;
+    color: #112D4E;
+    text-align: left;
+    padding-bottom: 10px;
+}
+
+.text-box .text-card:hover {
+    transform: scale(1.1);
 }
