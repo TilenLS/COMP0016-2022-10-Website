@@ -28,7 +28,60 @@
             <a href="../blog.html#t1week4-link" class="float">
                 <i class="fa-solid fa-arrow-left fa-2x my-float"></i>
             </a>
-            <h1>Week 4: Title (date)</h1>
+            <h1>Week 4: Client meeting, Personas, & Scenarios (Oct 3 - Oct 9)</h1>
+            <p>
+                Starting this week we began working on the HCI (Human Computer Interaction) component of the module. This required us to create a presentation about the users and client of our project and how they will impact the design and implementation of the project. This meant we had to fully establish the requirements for the project which we decided to finalise via a semi-structured interview with our client.
+            </p>
+            <h2>Client meeting</h2>
+            <p>
+                For the interview we prepared a series of question that we believe would be most helpful to us understanding the requirements for the project. The semi-structured nature of the inerview allowed for an open-ended and honest dialogue that would let the client clearly communicate to us the vision they had for the intended product. Below is a transcript of the interview (slightly redacted):
+            </p>
+            <div class="text-card">
+                <ul>
+                    <li><strong>Is there already any similar software already out there?</strong></li>
+                        <p class="nested-text">
+                            Pearl AI exists but it only works with 2D x-ray scans of teeth. Otherwise, there is only some academic work done with 3D models being used for certain classification, grading, or labelling tasks but there is no complete clinical decision support system pipeline.
+                        </p>
+                    <li><strong>Are there any specific functionalities you have mind?</strong></li>
+                        <p class="nested-text">
+                            Software should be able to tag/segment individual teeth and suggest a level of ware based on a grading system for tooth ware. This will require a large dataset of pre-labelled 3D tooth models.
+                        </p>
+                        <p class="nested-text">
+                            Once the classification and segmentation aspect of the project is done the next step will be the actually be developing decision making support capabilities. This will be based on the level of tooth ware and some patient metadata such as age, medical history, diagnosis, financial background, … This is the ultimate longterm goal and will be largely experimental due to sparse literature.
+                        </p>
+                        <p class="nested-text">
+                            PLY file format is preferred over STL as it preserves the colour of the model which is useful for classification of tooth wear based on discolouration of teeth between the enamel, dentin, and pulp.
+                        </p>
+                    <li><strong>What should the ‘tagging’ aspect of the software behave like?</strong></li>
+                        <p class="nested-text">
+                            The software should be able to identify separate teeth and tag or highlight different areas of the teeth, wether that is volumetric loss, prosthetic, discolouration… Then the software should ultimately provide a clinician with information that is useful in developing the patient’s treatment plan.
+                        </p>
+                    <li><strong>How will this software assist clinicians?</strong></li>
+                        <p class="nested-text">
+                            From the perspective that the project has been successfully completed and the app is fully delivered; it will aid in diagnosis of tooth wear, help develop prognosis, and assist in suggesting treatment plans. This could also potentially expand to other fields in medicine where analysis of 3D models is similarly pertinent.
+                        </p>
+                </ul>
+            </div>
+            <h2>Personas</h2>
+            <p>
+                After the inerview we had recieved the information we needed to begin creating personas of the different users that would be interacting with the product. With this we would have a clearer image of what are users are like and how they would like the app to behave for them.
+            </p>
+            <div>
+                <img class="blog-img" src="../images/Personas.png" width="80%"></img>
+            </div>
+            <h2>Scenarios</h2>
+            <p>
+                The next step was to write up a scenerio to help us better understand the overarching problem that the software is solving and give insight into a potential solution.
+            </p>
+            <div class="text-card">
+                <p>
+                    Dentists in the NHS often struggle managing their time due to their heavy workloads. Both John and Anna would like to streamline the process of tooth wear diagnosis and treatment plan development while still being confident in the accuracy of their results. Therefore, dentists would like to be able to use software that lets them automatically analyze tooth wear based on patient metadata and a 3D scan of their teeth without having to learn new technical jargon. With this they can provide accurate diagnosis and treatment plans so that patients can recover appropriately without using excessive time and resources.
+                </p>
+            </div>
+            <h2>Next steps</h2>
+            <p>
+                Now that we had a solid understanding of our users, the client's vision, and the overall problem we were able to begin sketching wireframes of the software and modelling low-fidelity prototypes.
+            </p>
         </div>
     </section>
 </body>

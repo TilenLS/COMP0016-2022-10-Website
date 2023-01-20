@@ -323,29 +323,60 @@ a:hover {
 
 .text-box .text-card {
     margin: 50px 75px;
+    padding: 30px 0;
     background-color: #F9F7F7;
     border-radius: 10px;
     box-shadow: 0 0 10px #DBE2EF;
 }
 
 .text-box .text-card p {
-    padding: 20px;
+    padding: 0 50px;
     font-size: 1rem;
     color: #112D4E;
     text-align: left;
 }
 
-.text-box .text-card ol {
-    padding-left: 50px;
+.text-box .text-card ol,ul {
+    padding-left:70px;
+    padding-right: 50px;
 }
 
 .text-box .text-card li {
     font-size: 1rem;
     color: #112D4E;
     text-align: left;
-    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.text-card .nested-text {
+    margin-left: -50px;
 }
 
 .text-box .text-card:hover {
     transform: scale(1.1);
+}
+
+.blog-img {
+    display: block;
+    margin: 50px auto;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.col img {
+    width: 100%;
+    height: 100%;
+    margin: 5px;
+}
+
+.image-grid {
+    margin: 50px 75px;
+    padding: 30px 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #F9F7F7;
 }
