@@ -29,7 +29,7 @@
                 <i class="fa-solid fa-arrow-left fa-2x my-float"></i>
             </a>
             <h1>Week 1: MUST have features completed (Jan 9 - Jan 15)</h1>
-            <h2>General Structure for Deep Learning Model</h2>
+            <h2>General structure for deep learning model</h2>
             <p>
                 During the holidays, our client sent us some tooth model data that he bought online, we created a general 
                 structure for the deep learning model using PointNet. PointNet is a neural network that directly consumes point 
@@ -37,19 +37,27 @@
                 on point sets for 3D classification and segmentation. However, we are still waiting for labels of tooth wear grade 
                 from our client.
             </p>
-            <h2>Develop Frontend using PySide and Open3D</h2>
+            <h2>Develop frontend using PySide and Open3D</h2>
             <p>
                 Although we plan to use C# for the frontend app development and modify the source code of OrthoAid, we found out 
                 that OrthoAid is not able to properly display ply file encoded in binary format. As the data supplied by our client 
                 is encoded in binary format, we decided to give up on using C# and develop the frontend using Python instead. We 
                 chose Python because we found a very useful Python library, Open3D that is able to display 3D images in PLY format. 
                 Furthermore, we found some code online that integrates PySide with Open3D to create windows-based application that 
-                can display 3D images in Python. 
+                can display 3D images in Python. The code we found is as follows:
             </p>
-            <h2>Connecting App to Database</h2>
+            <div>
+                <img class="blog-img" src="../images/PysideAndOpen3DCode.png" width="80%"></img>
+            </div>
+            <h2>Connecting app to database</h2>
             <p>
                 After developing the frontend of our app, we created a database using SQLite module in Python. We connect our database 
                 to the frontend and hence our app now is able to store the patient information collected.
+            </p>
+            <h2>Next steps</h2>
+            <p>
+                There will be an elevator pitch next week, hence our main focus will be on writing the scripts and creating the 
+                PowerPoint for the elevator pitch presentation.
             </p>
         </div>
     </section>
