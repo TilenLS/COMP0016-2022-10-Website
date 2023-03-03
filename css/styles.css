@@ -1,3 +1,5 @@
+@import "../animations/styles.css";
+
 /* GENERAL STYLING*/
 
 body {
@@ -34,7 +36,7 @@ a:visited {
     color: #3f71afb1;
 }
 
-a:hover {
+p a:hover {
     color: #6d9bd3;
     border-bottom: 3px solid white;
 }
@@ -45,7 +47,7 @@ a:hover {
     margin: 0;
 }
 
-
+/* LOADING ANIMATION */
 
 /* INDEX PAGE */
 
@@ -59,17 +61,89 @@ a:hover {
 .navbar-brand {
     font-family: 'Lato', sans-serif;
     font-size: 2.5rem;
-}
-
-.nav-item {
-    padding: 0 18px;
+    padding: 0;
+    margin-left: 20px;
 }
 
 .nav-link {
     font-family: 'Lato', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 700;
     color: #3F72AF;
+}
+
+@media (min-width: 992px) {
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+
+    .nav-link {
+        color: #112D4E;
+        padding: 1em 0;
+    }
+
+    .nav-item {
+        margin: 0 1.2em;
+    }
+
+    .navbar {
+        padding: 0;
+    }
+    
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-item::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: '';
+    background-color: #112D4E;
+    width: 0%;
+    height: 6px;
+    transition: all 0.5s;
+}
+
+.nav-item:hover::after {
+    width: 100%;
+}
+
+.dropdown .dropdown-menu {
+    background-color: #112D4E;
+    border-radius: 0 0 2% 2%;
+    border: none;
+    left: 0;
+}
+
+.dropdown-menu .dropdown-item {
+    color: #DBE2EF;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #DBE2EF;
+    color: #112D4E;
+}
+
+.dropdown .dropdown-menu {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+
+    max-height: 0;
+    display: block;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.dropdown:hover .dropdown-menu {
+    max-height: 200px;
+    opacity: 1;
 }
 
 
@@ -123,7 +197,7 @@ a:hover {
 /* The actual timeline (the vertical ruler) */
 
 .container.py-5 {
-    margin-top: 70px;
+    margin-top: 60px;
 }
 
 .container.py-5 .term {
@@ -377,4 +451,11 @@ a:hover {
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 0 10px #F9F7F7;
+}
+
+
+/* Requirements */
+
+#project-background {
+    margin-top: 70px;
 }
