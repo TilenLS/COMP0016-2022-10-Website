@@ -199,10 +199,6 @@ time {
     transition: transform 0.8s;
 }
 
-/* .timeline .btn:hover {
-    background-color: #3F72AF;
-} */
-
 .timeline .btn .fa-chevron-right {
     opacity: 0;
     color: #DBE2EF;
@@ -237,15 +233,15 @@ time {
     background-color: #112D4E;
 }
 
-/* .timeline .btn:focus p {
-    margin: auto;
-    padding: 0 20px;
-} */
-
 
 /* WEEKLY BLOG PAGES */
 
 /* RETURN BUTTON */
+
+.blog-content {
+    padding-left: 10%;
+    padding-right: 10%;
+}
 
 
 .float {
@@ -257,7 +253,7 @@ time {
 	background-color:#3F72AF;
 	border-radius:50px;
 	text-align:center;
-	box-shadow: 2px 2px 3px #999;
+    box-shadow: 5px 5px 10px 10px rgba(0,0,0,0.5);
     z-index: 10;
     transition: transform 0.5s;
 }
@@ -282,7 +278,7 @@ time {
     padding: 30px 0;
     background-color: #F9F7F7;
     border-radius: 10px;
-    box-shadow: 0 0 10px #DBE2EF;
+    box-shadow: 5px 5px 10px 10px rgba(0,0,0,0.5);
 }
 
 .text-box .text-card p {
@@ -332,5 +328,5 @@ time {
     padding: 30px 30px;
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0 0 10px #F9F7F7;
+    box-shadow: 5px 5px 10px 10px rgba(0,0,0,0.5);
 }
