@@ -288,6 +288,8 @@ p a:hover {
     flex-direction: column;
     align-items: center;
     box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.5);
+    transform: scale(1);
+    transition: transform .5s ease-in-out;
 }
 
 #team .profile-card p {
@@ -298,6 +300,7 @@ p a:hover {
 
 #team .profile-card:hover {
     transform: scale(1.05);
+    transition: transform .2s ease-in-out;
 }
 
 #team .card-name {
@@ -394,13 +397,17 @@ p a:hover {
 .site-footer {
     background: linear-gradient(150deg, #3F72AF, #DBE2EF);
     padding: 45px 0 20px;
-    font-size: 15px;
     line-height: 24px;
     color: #112D4E;
 }
 
+.site-footer p {
+    color: #112D4E;
+    font-size: 1rem;
+}
+
 .site-footer hr {
-    border-top-color: #bbb;
+    border-top-color: #112D4E;
     opacity: 0.5;
 }
 
@@ -408,20 +415,16 @@ p a:hover {
     margin: 20px 0;
 }
 
-.site-footer h6 {
-    color: #fff;
-    font-size: 16px;
-    text-transform: uppercase;
-    margin-top: 5px;
-    letter-spacing: 2px;
+.site-footer h5 {
+    color: #112D4E;
 }
 
 .site-footer a {
-    color: #737373;
+    color: #3F72AF;
 }
 
 .site-footer a:hover {
-    color: #3366cc;
+    color: #112D4E;
     text-decoration: none;
 }
 
@@ -432,10 +435,17 @@ p a:hover {
 
 .site-footer .footer-links li {
     display: block;
+    margin: 15px 0;
 }
 
 .site-footer .footer-links a {
-    color: #737373;
+    color: #3F72AF;
+}
+
+.site-footer img {
+    position: relative;
+    display: block;
+    margin: 20px auto 20px 0;
 }
 
 .site-footer .footer-links a:active,
@@ -504,8 +514,8 @@ p a:hover {
 }
 
 .site-footer .social-icons a {
-    background-color: #eceeef;
-    color: #818a91;
+    background-color: #112D4E;
+    color: #F9F7F7;
     font-size: 16px;
     display: inline-block;
     line-height: 44px;

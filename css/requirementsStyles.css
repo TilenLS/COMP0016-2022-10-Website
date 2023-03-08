@@ -3,3 +3,8 @@
 #project-background {
     margin-top: 70px;
 }
+
+#project-background .container-fluid {
+    padding: 0 10%;
+    padding-bottom: 50px;
+}
