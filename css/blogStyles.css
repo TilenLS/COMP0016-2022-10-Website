@@ -62,11 +62,13 @@
 
 .card p {
     color: #3F72AF;
-    font-size: 1.3rem
+    font-size: 1.3rem;
+    margin: 0 5%;
 }
 
 .card h4 {
     color: #112D4E;
+    margin-left: 3%;
 }
 
 .timeline ul li div::before {
@@ -189,6 +191,7 @@ time {
     background-color: #112D4E;
     position: relative;
     margin-left: auto;
+    margin-top: 15px;
 }
 
 
@@ -208,7 +211,7 @@ time {
     margin: auto 0;
     right: 10px;
     top: 13px;
-    transition: transform 1;
+    transition: transform 0.8s;
   }
 
 .timeline .btn:hover p {
@@ -225,7 +228,6 @@ time {
 }
 
 .timeline .btn:active .fa-chevron-right {
-    opacity: 0;
     transform: translateX(10px);
 }
 
@@ -239,8 +241,7 @@ time {
 /* RETURN BUTTON */
 
 .blog-content {
-    padding-left: 10%;
-    padding-right: 10%;
+    padding: 5% 10%;
 }
 
 
@@ -266,6 +267,7 @@ time {
 
 .float:hover {
     transform: translateY(-7px);
+    transition: transform 1s ease-in-out;
 }
 
 .float:focus .my-float {
@@ -279,6 +281,8 @@ time {
     background-color: #F9F7F7;
     border-radius: 10px;
     box-shadow: 5px 5px 10px 10px rgba(0,0,0,0.5);
+    transform: scale(1);
+    transition: transform 1s ease-in-out;
 }
 
 .text-box .text-card p {
@@ -306,6 +310,7 @@ time {
 
 .text-box .text-card:hover {
     transform: scale(1.1);
+    transition: transform 1s ease-in-out;
 }
 
 .blog-img {
