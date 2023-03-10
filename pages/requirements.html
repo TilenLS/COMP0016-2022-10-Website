@@ -1,21 +1,32 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js" type="text/javascript"></script>
-<script src="https://kit.fontawesome.com/c09be5d4e7.js" crossorigin="anonymous"></script>
-<div id="dynamic-header">
-    <script>
-        $("#dynamic-header").load("header.html #header");
-    </script>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js" type="text/javascript"></script>
+    <script src="https://kit.fontawesome.com/c09be5d4e7.js" crossorigin="anonymous"></script>
+    <div id="dynamic-header">
+        <script>
+            $(function () {
+                $("#dynamic-header").load("html-common/header.html #import-header")
+                $("#loading-animation").load("html-common/loading-animation.html #import-loading-animation")
+                $("#navigation").load("html-common/navbar.html #import-navbar")
+            });
+        </script>
+    </div>
+</head>
 
 <body>
-    <section id="project-background" style="background-color: #112D4E;">
+    <div id="loading-animation"></div>
+    <div id="navigation"></div>
+    <section id="project-background">
         <div class="container-fluid text-box">
             <h1>Project Background</h1>
-            <p> 
+            <p>
                 This is a project with Junaid Saleem Malik of the UCL Eastman Dental Institute.
                 We were presented with the utility of clinical decision support systems to provide
                 systematic and unified decision-making for treating dental disease. This has been explored
                 and implemented quite widely within the field of prosthodontics. However, this technology
-                has yet to break into the prosthodontic management of tooth wear due to the number of varying 
+                has yet to break into the prosthodontic management of tooth wear due to the number of varying
                 treatment approaches present. There are even several indeces to grade tooth wear.
             </p>
             <div>
@@ -26,6 +37,8 @@
     <script type="text/javascript">
         setTimeout(() => {
             $(".loader-wrapper").fadeOut();
-        }, 1000);
+        }, 500);
     </script>
 </body>
+
+</html>
