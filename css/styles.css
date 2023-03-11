@@ -279,11 +279,11 @@ p a:hover {
     border-bottom: 2px solid #112D4E;
 }
 
-.container-fluid {
+.section-intro {
     padding: 0 20%;
 }
 
-.text-box {
+.section-intro .text-box {
     padding-top: 50px;
 }
 
