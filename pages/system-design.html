@@ -49,8 +49,15 @@
             <h1 class="section-heading">System Architecture</h1>
             <div clas="text-box">
                 <p>
-
+                    Pyside and Open3d is used for the frontend, to build the user interface and to view tooth models in PLY file 
+                    format. For the backend, SQLite is used to store user's credentials and patient's information. Deep learning models 
+                    on classification for tooth wear grading and segmentation for meta tagging is implemented with Pytorch. Besides, we 
+                    are using PointNet, which is a robust algorithm on 3D cloud point classification and segmentation for 
+                    the neural network.
                 </p>
+                <div>
+                    <img class="img-card" src="/images/SystemDesign/ToothWearSystemDesign.png" width="80%" height="60%"></img>
+                </div>
             </div>
         </div>
     </section>
@@ -60,8 +67,20 @@
             <h1 class="section-heading">Database Structure</h1>
             <div clas="text-box">
                 <p>
-
+                    The database consists of two tables. The first table is called "Dentists", it stores user's credentials such as id, 
+                    username and password. Authorised users to login and view patient tooth models are dentists, hence the table is named
+                    "Dentists". ID is automatically created and incremented every time a new user registers.
                 </p>
+                <p>
+                    The second table is called "Patients", it stores patient's information that are relevant to decide tooth wear 
+                    degree and generate treatment plans. Patient's tooth model is stored using file path.
+                </p>
+                <div>
+                    <img class="img-card" src="/images/SystemDesign/dentistsTable.png" width="80%" height="60%"></img>
+                </div>
+                <div>
+                    <img class="img-card" src="/images/SystemDesign/patientsTable.png" width="80%" height="60%"></img>
+                </div>
             </div>
         </div>
     </section>
