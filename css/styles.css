@@ -2,7 +2,6 @@
 @import url(animations/learnMoreButton.css);
 @import url(animatedBackground.css);
 @import url(blogStyles.css);
-@import url(requirementsStyles.css);
 
 /* 
 COLOR PALLETTE
@@ -278,6 +277,29 @@ p a:hover {
     content: " ";
     display: block;
     border-bottom: 2px solid #112D4E;
+}
+
+.container-fluid {
+    padding: 0 20%;
+}
+
+.text-box {
+    padding-top: 50px;
+}
+
+.img-card {
+    display: block;
+    margin: 50px auto;
+    background-color: #F9F7F7;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px 10px rgba(0,0,0,0.5);
+    transition: transform 1s ease-in-out;
+}
+
+.img-card:hover {
+    transform: scale(1.1);
+    transition: transform 1s ease-in-out;
 }
 
 #abstract .text-box {
