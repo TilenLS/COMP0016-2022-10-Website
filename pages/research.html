@@ -37,43 +37,131 @@
         </div>
     </div>
     <div id="navigation"></div>
+
     <section id="title-banner">
         <div class="container-fluid">
             <h1>Research</h1>
         </div>
     </section>
 
-    <section id="project-review">
+    <section id="project-research">
         <div class="container-fluid section-intro">
-        <h1 class="section-heading">Project Review</h1>
-        <div clas="text-box">
-            <p>
+            <h1 class="section-heading">Project Research</h1>
+            <div class="text-box">
+                <p>
+                    Doing research for this project was extremley crucial as we were
+                    not building on top of previous work. This had to be done from scratch
+                    and related work is sparse. Especially when in the context of industry,
+                    most work that has been is purely academic.
+                </p>
+                <p>
+                    Due to this academic nature of the project we had to first familiarse
+                    ourselves with concrete work that has been done in the field. Including
+                    Clinical Decision Support Systems (CDSS), 3D tooth models, tooth wear
+                    indices, and tooth grading algorithms.
+                </p>
+                <h3 class="section-subheading">Clinical Decision Support System</h3>
+                <p>
+                    Clinical Decision Support Systems (CDSS) are systems intended to
+                    improve healthcare delivery by enhacning medical decision-making
+                    capabilities with targeted clinical knowledge, patient-information,
+                    and other health information. It is key here to note that the ultimate
+                    goal is to assist clinicians in their work and not replace it.
+                    <sup>1 2</sup>
+                </p>
+                <div>
+                    <img class="img-card" src="/images/CDSS-structure.png" width="80%"></img>
+                </div>
+                <div>
+                    <img class="img-card" src="/images/CDSS.png" width="80%"></img>
+                </div>
+                <h3 class="section-subheading">3D Tooth Models</h3>
+                <p>
+                    One of the core goals of this project is to ensure that it works
+                    with 3D tooth models. The reason for this is due to the greater
+                    detail in 3D models as opposed to 2D scan has greater potential
+                    for more accurate analysis of tooth wear. This is primarly through
+                    analysis of the volumetric loss of the teeth.
+                </p>
+                <p>
+                    The most common file format for such 3D models is STL which is most
+                    commonly used for 3D printing. A less common format is PLY that is
+                    very similar to STL, but also perserves the color of the model.
+                    This is useful as discoloration is often a key indicator of the
+                    severity of tooth wear.
+                </p>
+                <h3 class="section-subheading">Tooth Wear Indices</h3>
+                <p>
+                    In order to convert tooth wear analysis into tangible and useable
+                    information we had to use Tooth Wear Indices as a basis for any
+                    algorithms that will provide clinicians with suggestions. Fortunately,
+                    there has been plenty of work done within this field. Below are the
+                    three most prominant indeces.
+                </p>
+                <div class="image-grid">
+                    <div class="row">
+                        <div class="col">
+                            <h3>BEWE</h3><img src="/images/BEWE.png" width="400" height="300">
+                        </div>
+                        <div class="col">
+                            <h3>TWES 2.0</h3><img src="/images/twes2.png" width="400" height="300">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3"></div>
+                        <div class="col align-self-center">
+                            <h3>TWI</h3><img src="/images/TWI.png" height="500px">
+                        </div>
+                        <div class="col-3"></div>
+                    </div>
+                </div>
+                <p>
+                    After considering all the literature we had read we were uncertain
+                    and decided to ask our client whose medicla knowledge and experience
+                    would be helpful. After discussing with our client we concluded that
+                    TWES 2.0 would be the best option. This is because it provides 5 simple
+                    answers but the classification by which a degree of tooth wear is placed
+                    into a specific level is very robust. 
+                </p>
+                <div>
+                    <img class="img-card" src="/images/TWES2-detailed.png" width="80%"></img>
+                </div>
+                <h3 class="section-subheading">Tooth Grading Algorithm</h3>
+                <p>
 
-            </p>
-        </div>
+                </p>
+            </div>
         </div>
     </section>
 
     <section id="technology-review">
         <div class="container-fluid section-intro">
-        <h1 class="section-heading">Technology Review</h1>
-        <div clas="text-box">
-            <p>
-                
-            </p>
-        </div>
+            <h1 class="section-heading">Technology Review</h1>
+            <div clas="text-box">
+                <p>
+
+                </p>
+            </div>
         </div>
     </section>
 
     <section id="technical-decision">
         <div class="container-fluid section-intro">
-        <h1 class="section-heading">Technical Decision</h1>
-        <div clas="text-box">
-            <p>
-                
-            </p>
+            <h1 class="section-heading">Technical Decision</h1>
+            <div clas="text-box">
+                <p>
+
+                </p>
+            </div>
         </div>
-        </div>
+    </section>
+
+    <section id="bibliography">
+        <!-- 
+            1. Machoy ME, Szyszka-Sommerfeld L, Vegh A, Gedrange T, Woźniak K. The ways of using machine learning in dentistry. Adv Clin Exp Med. 2020;29(3):375–384. doi:10.17219/acem/115083
+            2. Khanna S. Artificial intelligence: contemporary applications and future compass. Int Dent J. 2010;60(4):269-272. 
+            3. 
+         -->
     </section>
 
     <div id="dynamic-footer"></div>
