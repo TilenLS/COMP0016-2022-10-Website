@@ -1,10 +1,33 @@
 /* Requirements */
-
-#project-background {
-    margin-top: 70px;
+#project-background .container-fluid,
+#client-requirements .container-fluid,
+#project-goals .container-fluid,
+#user-interviews .container-fluid,
+#personas .container-fluid,
+#moscow .container-fluid {
+    padding: 0 20%;
 }
 
-#project-background .container-fluid {
-    padding: 0 10%;
-    padding-bottom: 50px;
+#project-background .text-box,
+#client-requirements .text-box,
+#project-goals .text-box
+#user-interviews .text-box,
+#personas .text-box,
+#moscow .text-box {
+    padding-top: 50px;
+}
+
+.img-card {
+    display: block;
+    margin: 50px auto;
+    background-color: #F9F7F7;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px 10px rgba(0,0,0,0.5);
+    transition: transform 1s ease-in-out;
+}
+
+.img-card:hover {
+    transform: scale(1.1);
+    transition: transform 1s ease-in-out;
 }
