@@ -818,3 +818,12 @@ p a:hover {
     margin: 0;
     -webkit-animation: fadeIn 2s ease;
 }
+
+#technical-decision .text-box .text-card ul {
+    padding-right: 20px;
+}
+
+#technical-decision .text-box .text-card h3 {
+    display: block;
+    margin-left: 50px;
+}

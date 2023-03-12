@@ -101,16 +101,16 @@
                 <div class="image-grid">
                     <div class="row">
                         <div class="col">
-                            <h3>BEWE</h3><img src="/images/BEWE.png" width="400" height="300">
+                            <h3>BEWE</h3><img src="/images/BEWE.png">
                         </div>
                         <div class="col">
-                            <h3>TWES 2.0</h3><img src="/images/twes2.png" width="400" height="300">
+                            <h3>TWES 2.0</h3><img src="/images/twes2.png">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-3"></div>
                         <div class="col align-self-center">
-                            <h3>TWI</h3><img src="/images/TWI.png" height="500px">
+                            <h3>TWI</h3><img src="/images/TWI.png">
                         </div>
                         <div class="col-3"></div>
                     </div>
@@ -128,7 +128,29 @@
                 </div>
                 <h3 class="section-subheading">Tooth Grading Algorithm</h3>
                 <p>
-
+                    The main algorithms that have been used in academic work for tooth wear
+                    grading are classification and segementation. Then followed by the actual
+                    grading algorithm. There are various approaches and different models
+                    to achieve this but most first classify the various kind of teeth
+                    and then segment them. Once the individual tooth has been isolated it can
+                    be graded through any ML or AI based method that considers volumetric loss
+                    and discoloration.
+                </p>
+                <div class="image-grid">
+                    <div class="row">
+                        <div class="col"><img src="/images/3D-segmentation.png"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col"><img src="/images/SegmentedTeeth.png"></div>
+                        <div class="col"></div>
+                    </div>
+                </div>
+                <p>
+                    However, the issue with such algorithms is that they are very specialised
+                    particularly for 3D tooth models. They are not open source and optimised
+                    for industrial use yet. Therefore, we had to settle for a more general
+                    purpose architecture and trade off some accuracy for effiency. One such
+                    model that is well known is the PointNet network.
                 </p>
             </div>
         </div>
@@ -139,7 +161,74 @@
             <h1 class="section-heading">Technology Review</h1>
             <div clas="text-box">
                 <p>
-
+                    After understanding the academic background of the project the next step 
+                    was to explore previous work that was done. From this we would be able
+                    to better understand what tools to use to realise the project. 
+                </p>
+                <h3 class="section-subheading">Previous Work</h3>
+                <p>
+                    Throughout our search we found only three somewhat similar implementations.
+                    The first and most thurough is Pearl AI. It works with 2D x-ray scans and is
+                    capable of segmenting individual teeth for the detection of pathalogic features.
+                    Unfortunately, this wasn't of much use as the goal of our project is to remain
+                    in the 3D realm to take advantage of the increased detail.
+                </p>
+                <p>
+                    The second application is WearCompare. It intakes 3D scans of the same teeth
+                    over a different time points and has the clinican manually select the 
+                    surfaces to compare. Then it quantifies tooth wear progression. Although, this
+                    uses 3D tooth models it requires too much manual interaction and multiple scans.
+                    Our project has to be as automatic as possible using Artificial Intelligence 
+                    to assist clinicans.
+                </p>
+                <p>
+                    Lastly is OrthoAid. It provides dentists with enhanced tools for analysing 3D
+                    tooth models before and after operative dental study models. Similarly to the
+                    previous example, it uses 3D models but does not include any or very little
+                    automation on an AI basis. Furthermore, this was app very technical and
+                    difficult to use.
+                </p>
+                <h3 class="section-subheading">Languages & Libraries</h3>
+                <p>
+                    The first key factor to consider here was that the app needed to be built
+                    for windows. After considering the 3D aspect of the project we thought a
+                    language such as C# or C++ would be best suited. However, due to the
+                    uncommon use of the PLY file format after attempting to recreating the
+                    model rendering code of the above examples we could make it work for STL.
+                </p>
+                <p>
+                    Therefore, we decided to switch to Python and find a library that can render
+                    both STL and PLY file formats. This is because the algorithm would be written
+                    in Python so having everything being done in one language was convenient.
+                    Although there are many libraries for rendering such 3D models, few provide
+                    GUI integration. After much testing we found the best option was the Open3D
+                    library that could be easily used in our app.
+                </p>
+                <p>
+                    As for the GUI at first we went towards PyQt6. This is the most common and
+                    versatile Python GUI available. However, there are licensing issues with
+                    this library as it is undera GPL commercial license. Instead we chose
+                    PySide2 which is essentially identical to PyQt6 but is under a LGPL license
+                    so we would have no issues using the library.
+                </p>
+                <p>
+                    For data storage we decided to use SQLite to deploy a local database at first.
+                    This is because a remote database was not high priority in our MoSCoW agreement.
+                    If development went smoothly we would deploy a remote database using Azure later
+                    on.
+                </p>
+                <h3 class="section-subheading">Algorithms</h3>
+                <p>
+                    As mentioned in the Project Review section on this page we decided on using the
+                    TWES 2.0 grading system for the general overal algorithm strucutre. This includes
+                    two sections. First the tooth wear screening phase where patient data such as age,
+                    alcohol consumption, etc is gathered along with their tooth scans. Then the tooth
+                    wear status phase. This is where the teeth are graded using the previously mentioned
+                    PointNet network using PyTorch to grade the teeth. This is done by grading each sextant (1/6
+                    <sup>th</sup> of the teeth) first by grading their respective individual teeth. Then
+                    based on the sextant graded an overall score is giving to the wear present within the 
+                    teeth. After these results are calculated they are used along with the patient data
+                    gathered during first stage to suggest a treatment plan.
                 </p>
             </div>
         </div>
@@ -148,10 +237,38 @@
     <section id="technical-decision">
         <div class="container-fluid section-intro">
             <h1 class="section-heading">Technical Decision</h1>
-            <div clas="text-box">
+            <div class="text-box">
                 <p>
-
+                    After the expansive research and testing we had done on varying technologies and algorithms
+                    we selected the methods we thought would be most suitable giving the client and user 
+                    requirements we had previouslty established.
                 </p>
+                <div class="text-card">
+                    <div class="row">
+                        <div class="col">
+                            <h3>Aspect</h3>
+                            <ul>
+                                <li><strong>Language</strong></li>
+                                <li><strong>GUI</strong></li>
+                                <li><strong>Image Processing</strong></li>
+                                <li><strong>Data Storage</strong></li>
+                                <li><strong>Classification & Segemntation</strong></li>
+                                <li><strong>Tooth Grading</strong></li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <h3>Decision</h3>
+                            <ul>
+                                <li><strong>Python</strong></li>
+                                <li><strong>PySide2</strong></li>
+                                <li><strong>Open3D</strong></li>
+                                <li><strong>SQLite & Azure</strong></li>
+                                <li><strong>PointNet & PyTorch</strong></li>
+                                <li><strong>TWES 2.0</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
