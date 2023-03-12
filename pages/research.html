@@ -49,13 +49,13 @@
             <h1 class="section-heading">Project Research</h1>
             <div class="text-box">
                 <p>
-                    Doing research for this project was extremley crucial as we were
+                    Doing research for this project was extremely crucial as we were
                     not building on top of previous work. This had to be done from scratch
                     and related work is sparse. Especially when in the context of industry,
                     most work that has been is purely academic.
                 </p>
                 <p>
-                    Due to this academic nature of the project we had to first familiarse
+                    Due to this academic nature of the project, we had to first familiarise
                     ourselves with concrete work that has been done in the field. Including
                     Clinical Decision Support Systems (CDSS), 3D tooth models, tooth wear
                     indices, and tooth grading algorithms.
@@ -63,8 +63,8 @@
                 <h3 class="section-subheading">Clinical Decision Support System</h3>
                 <p>
                     Clinical Decision Support Systems (CDSS) are systems intended to
-                    improve healthcare delivery by enhacning medical decision-making
-                    capabilities with targeted clinical knowledge, patient-information,
+                    improve healthcare delivery by enhancing medical decision-making
+                    capabilities with targeted clinical knowledge, patient information,
                     and other health information. It is key here to note that the ultimate
                     goal is to assist clinicians in their work and not replace it.
                     <sup>1 2</sup>
@@ -80,7 +80,7 @@
                     One of the core goals of this project is to ensure that it works
                     with 3D tooth models. The reason for this is due to the greater
                     detail in 3D models as opposed to 2D scan has greater potential
-                    for more accurate analysis of tooth wear. This is primarly through
+                    for more accurate analysis of tooth wear. This is primarily through
                     analysis of the volumetric loss of the teeth.
                 </p>
                 <p>
@@ -96,7 +96,7 @@
                     information we had to use Tooth Wear Indices as a basis for any
                     algorithms that will provide clinicians with suggestions. Fortunately,
                     there has been plenty of work done within this field. Below are the
-                    three most prominant indeces.
+                    three most prominant indices.
                 </p>
                 <div class="image-grid">
                     <div class="row">
@@ -116,9 +116,9 @@
                     </div>
                 </div>
                 <p>
-                    After considering all the literature we had read we were uncertain
-                    and decided to ask our client whose medicla knowledge and experience
-                    would be helpful. After discussing with our client we concluded that
+                    After considering all the literature we had read, we were uncertain
+                    and decided to ask our client whose medical knowledge and experience
+                    would be helpful. After discussing with our client, we concluded that
                     TWES 2.0 would be the best option. This is because it provides 5 simple
                     answers but the classification by which a degree of tooth wear is placed
                     into a specific level is very robust. 
@@ -129,10 +129,10 @@
                 <h3 class="section-subheading">Tooth Grading Algorithm</h3>
                 <p>
                     The main algorithms that have been used in academic work for tooth wear
-                    grading are classification and segementation. Then followed by the actual
+                    grading are classification and segmentation. Then followed by the actual
                     grading algorithm. There are various approaches and different models
                     to achieve this but most first classify the various kind of teeth
-                    and then segment them. Once the individual tooth has been isolated it can
+                    and then segment them. Once the individual tooth has been isolated, it can
                     be graded through any ML or AI based method that considers volumetric loss
                     and discoloration.
                 </p>
@@ -168,24 +168,24 @@
                 <h3 class="section-subheading">Previous Work</h3>
                 <p>
                     Throughout our search we found only three somewhat similar implementations.
-                    The first and most thurough is Pearl AI. It works with 2D x-ray scans and is
-                    capable of segmenting individual teeth for the detection of pathalogic features.
+                    The first and most thorough is Pearl AI. It works with 2D x-ray scans and is
+                    capable of segmenting individual tooth for the detection of pathological features.
                     Unfortunately, this wasn't of much use as the goal of our project is to remain
                     in the 3D realm to take advantage of the increased detail.
                 </p>
                 <p>
                     The second application is WearCompare. It intakes 3D scans of the same teeth
-                    over a different time points and has the clinican manually select the 
-                    surfaces to compare. Then it quantifies tooth wear progression. Although, this
-                    uses 3D tooth models it requires too much manual interaction and multiple scans.
+                    over different time points and has the clinician manually select the 
+                    surfaces to compare. Then it quantifies tooth wear progression. Although this
+                    uses 3D tooth models, it requires too much manual interaction and multiple scans.
                     Our project has to be as automatic as possible using Artificial Intelligence 
-                    to assist clinicans.
+                    to assist clinicians.
                 </p>
                 <p>
                     Lastly is OrthoAid. It provides dentists with enhanced tools for analysing 3D
                     tooth models before and after operative dental study models. Similarly to the
                     previous example, it uses 3D models but does not include any or very little
-                    automation on an AI basis. Furthermore, this was app very technical and
+                    automation on an AI basis. Furthermore, this app was very technical and
                     difficult to use.
                 </p>
                 <h3 class="section-subheading">Languages & Libraries</h3>
@@ -193,7 +193,7 @@
                     The first key factor to consider here was that the app needed to be built
                     for windows. After considering the 3D aspect of the project we thought a
                     language such as C# or C++ would be best suited. However, due to the
-                    uncommon use of the PLY file format after attempting to recreating the
+                    uncommon use of the PLY file format after attempting to recreate the
                     model rendering code of the above examples we could make it work for STL.
                 </p>
                 <p>
@@ -205,15 +205,15 @@
                     library that could be easily used in our app.
                 </p>
                 <p>
-                    As for the GUI at first we went towards PyQt6. This is the most common and
+                    As for the GUI, at first we went towards PyQt6. This is the most common and
                     versatile Python GUI available. However, there are licensing issues with
-                    this library as it is undera GPL commercial license. Instead we chose
+                    this library as it is under a GPL commercial license. Instead we chose
                     PySide2 which is essentially identical to PyQt6 but is under a LGPL license
                     so we would have no issues using the library.
                 </p>
                 <p>
                     For data storage we decided to use SQLite to deploy a local database at first.
-                    This is because a remote database was not high priority in our MoSCoW agreement.
+                    This is because a remote database was not a high priority in our MoSCoW agreement.
                     If development went smoothly we would deploy a remote database using Azure later
                     on.
                 </p>
@@ -226,9 +226,9 @@
                     wear status phase. This is where the teeth are graded using the previously mentioned
                     PointNet network using PyTorch to grade the teeth. This is done by grading each sextant (1/6
                     <sup>th</sup> of the teeth) first by grading their respective individual teeth. Then
-                    based on the sextant graded an overall score is giving to the wear present within the 
-                    teeth. After these results are calculated they are used along with the patient data
-                    gathered during first stage to suggest a treatment plan.
+                    based on the sextant graded an overall score is given to the wear present within the 
+                    teeth. After these results are calculated, they are used along with the patient data
+                    gathered during the first stage to suggest a treatment plan.
                 </p>
             </div>
         </div>
@@ -239,9 +239,9 @@
             <h1 class="section-heading">Technical Decision</h1>
             <div class="text-box">
                 <p>
-                    After the expansive research and testing we had done on varying technologies and algorithms
-                    we selected the methods we thought would be most suitable giving the client and user 
-                    requirements we had previouslty established.
+                    After the expansive research and testing we had done on varying technologies and algorithms,
+                    we selected the methods we thought would be most suitable given the client and user 
+                    requirements we had previously established.
                 </p>
                 <div class="text-card">
                     <div class="row">
@@ -252,8 +252,8 @@
                                 <li><strong>GUI</strong></li>
                                 <li><strong>Image Processing</strong></li>
                                 <li><strong>Data Storage</strong></li>
-                                <li><strong>Classification & Segemntation</strong></li>
-                                <li><strong>Tooth Grading</strong></li>
+                                <li><strong>Classification & Segmentation</strong></li>
+                                <li><strong>Tooth Wear Grading</strong></li>
                             </ul>
                         </div>
                         <div class="col">
