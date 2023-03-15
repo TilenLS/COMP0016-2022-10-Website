@@ -2,6 +2,7 @@
 @import url(animations/learnMoreButton.css);
 @import url(animatedBackground.css);
 @import url(blogStyles.css);
+@import url(prism.css);
 
 /* 
 COLOR PALLETTE
@@ -259,9 +260,9 @@ p a:hover {
 
 .section-heading {
     text-align: center;
-    padding-top: 100px;
+    margin-top: 100px;
     color: #3F72AF;
-    width: 40vw;
+    width: 100%;
 
     text-transform: uppercase;
 
@@ -286,7 +287,7 @@ p a:hover {
 }
 
 .section-intro .text-box {
-    padding-top: 50px;
+    margin-top: 50px;
 }
 
 .img-card {
@@ -306,7 +307,7 @@ p a:hover {
 
 .section-subheading {
     text-align: left;
-    padding-top: 30px;
+    margin-top: 30px;
 }
 
 
@@ -374,6 +375,7 @@ p a:hover {
 
 #abstract .text-box {
     padding-top: 20px 0;
+    margin: 0 20%;
 }
 
 #abstract .text-box {
@@ -381,7 +383,6 @@ p a:hover {
 }
 
 #abstract .container-fluid {
-    padding: 0 20%;
     padding-bottom: 50px;
 
 }
@@ -394,7 +395,7 @@ p a:hover {
     margin: 0 auto;
 }
 
-#features .features-grid {
+.features-grid {
     display: grid;
     margin: 2% 10%;
     justify-items: center;
@@ -402,7 +403,7 @@ p a:hover {
     /* grid-auto-rows: auto; */
 }
 
-#features .feature-card {
+.feature-card {
     margin: 3rem 0;
     width: 300px;
     height: 300px;
@@ -422,7 +423,7 @@ p a:hover {
     margin: 20px 0;
 }
 
-#features .feature-card:hover {
+.feature-card:hover {
     transform: scale(1.2);
     transition: transform 0.5s ease-in-out;
 }
@@ -430,23 +431,6 @@ p a:hover {
 #features .feature-card:hover .fa,
 #features .feature-card:hover .fa-brands {
     animation: hithere 3s ease infinite;
-}
-
-#features h3 {
-    color: #112D4E;
-    text-align: center;
-}
-
-#features .features-grid p {
-    font-size: 1rem;
-    color: #112D4E;
-    margin: 0 10%;
-}
-
-#features .learn-more {
-    position: relative;
-    margin: 0 auto;
-    margin-top: 20px;
 }
 
 @keyframes hithere {
@@ -470,6 +454,23 @@ p a:hover {
     100% {
         transform: scale(1);
     }
+}
+
+.feature-card h3 {
+    color: #112D4E;
+    text-align: center;
+}
+
+.features-grid p {
+    font-size: 1rem;
+    color: #112D4E;
+    margin: 0 10%;
+}
+
+.learn-more {
+    position: relative;
+    margin: 0 auto;
+    margin-top: 20px;
 }
 
 @media (min-width: 900px) {
@@ -510,6 +511,11 @@ p a:hover {
 }
 
 /* TEAM */
+
+#team h1 {
+    margin: 0;
+    padding-top: 100px;
+}
 
 #team .profile-container {
     display: grid;
@@ -612,7 +618,7 @@ p a:hover {
 /* TIMELINE */
 
 .text-box {
-    padding-top: 50px;
+    margin-top: 50px;
 }
 
 #project-timeline img {
@@ -826,4 +832,147 @@ p a:hover {
 #technical-decision .text-box .text-card h3 {
     display: block;
     margin-left: 50px;
+}
+
+.small-grid.features-grid {
+    margin: 0 10%;
+    row-gap: 20px;
+    column-gap: 20px;
+    width: fit-content;
+    margin-top: 30px;
+    margin-left: 20%;
+}
+
+.small-grid .feature-card {
+    margin: 20px;
+    width: 250px;
+    height: 200px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+.small-grid .feature-card p {
+    text-align: left;
+}
+
+.tool-logo {
+    margin: 0 auto;
+}
+
+#user-interface .small-grid.features-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#image-processing .small-grid.features-grid,
+#tooth-wear-eval .small-grid.features-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#data-storage .small-grid.features-grid,
+#tooth-wear-eval .small-grid.features-grid {
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+
+@media (min-width: 900px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.code-box {
+    margin: 30px 5%;
+}
+
+.text-box.section-intro {
+    margin-top: 0;
+}
+
+.text-box.section-intro .section-subheading {
+    padding-top: 0;
+}
+
+.scroll-wrapper {
+    padding: 10px;
+    overflow-y: hidden;
+    width: 60vw;
+    height: 270px;  
+    margin: 50px auto;
+}
+
+.horizontal-scroll {
+    overflow-x: hidden;
+    padding-bottom: 17px;
+    display: flex;
+    flex-wrap: nowrap;
+    /* animation: carouselmove 10s linear infinite; */
+}
+
+/* .scroll-banner {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    width: 1160px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: fit-content;
+} */
+
+
+.carousel-card {
+    flex: 1 0 250px;
+    margin: 20px;
+    width: 250px;
+    height: 200px;
+    background-color: #F9F7F7;
+    border-radius: 7%;
+    box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    animation: carouselmove 20s linear infinite;
+    transform: scale(1);
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-card h3 {
+    color: #112D4E;
+    text-align: center;
+}
+
+.carousel-card p {
+    font-size: 1rem;
+    color: #112D4E;
+    margin: 0 10%;
+    text-align: left;
+}
+
+.carousel-card:hover  {
+    transform: scale(1.1);
+    transition: transform 0.5s ease-in-out;
+}
+
+.horizontal-scroll:hover .carousel-card {
+    animation-play-state:paused;
+}
+
+.carousel-card:focus {
+    transform: scale(1.1);
+}
+
+.tool-logo {
+    margin: 0 auto;
+}
+
+@keyframes carouselmove {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-1160px, 0);
+    }
 }

@@ -66,14 +66,14 @@ button.learn-more .button-text {
   text-transform: uppercase;
 }
 
-#features .feature-card:hover .learn-more .circle {
+.feature-card:hover .learn-more .circle {
   width: 100%;
 }
-#features .feature-card:hover .learn-more .circle .icon.arrow {
+.feature-card:hover .learn-more .circle .icon.arrow {
   background: #DBE2EF;
   transform: translate(1rem, 0);
 }
-#features .feature-card:hover .learn-more .button-text {
+.feature-card:hover .learn-more .button-text {
   color: #DBE2EF;
 }
 
