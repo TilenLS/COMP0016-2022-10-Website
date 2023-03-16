@@ -1,8 +1,8 @@
-@import url(animations/loadingAnimation.css);
-@import url(animations/learnMoreButton.css);
-@import url(animatedBackground.css);
-@import url(blogStyles.css);
-@import url(prism.css);
+@import url(/css/animations/loadingAnimation.css);
+@import url(/css/animations/learnMoreButton.css);
+@import url(/css/animatedBackground.css);
+@import url(/css/blogStyles.css);
+@import url(/css/prism.css);
 
 /* 
 COLOR PALLETTE

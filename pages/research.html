@@ -286,8 +286,8 @@
     <!-- Loading animation, import navigation bar, and set current page to active -->
     <script type="text/javascript">
         $(function () {
-            $("#dynamic-footer").load("html-common/footer.html #import-footer");
-            $("#navigation").load("html-common/navbar.html #import-navbar", function () {
+            $("#dynamic-footer").load("/pages/html-common/footer.html #import-footer");
+            $("#navigation").load("/pages/html-common/navbar.html #import-navbar", function () {
                 active = document.getElementById("research")
                 active.className = "nav-link dropdown-toggle active"
             });

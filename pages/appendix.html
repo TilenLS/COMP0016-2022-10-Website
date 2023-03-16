@@ -54,22 +54,22 @@
                             <h1>Blog</h1>
                         </div>
                     </a>
-                    <a onclick="$(function () {$('#dynamic-content').load('html-common/monthly-videos.html #monvids-content');});">
+                    <a onclick="$(function () {$('#dynamic-content').load('/pages/html-common/monthly-videos.html #monvids-content');});">
                         <div class="appnav-button col">
                             <h1>Monthly Videos</h1>
                         </div>
                     </a>
-                    <a onclick="$(function () {$('#dynamic-content').load('html-common/user-manual.html #usrman-content');});">
+                    <a onclick="$(function () {$('#dynamic-content').load('/pages/html-common/user-manual.html #usrman-content');});">
                         <div class="appnav-button col">
                             <h1>User Manual</h1>
                         </div>
                     </a>
-                    <a onclick="$(function () {$('#dynamic-content').load('html-common/deployment-manual.html #depman-content');});">
+                    <a onclick="$(function () {$('#dynamic-content').load('/pages/html-common/deployment-manual.html #depman-content');});">
                         <div class="appnav-button col">
                             <h1>Deployment Manual</h1>
                         </div>
                     </a>
-                    <a onclick="$(function () {$('#dynamic-content').load('html-common/legal.html #legal-content');});">
+                    <a onclick="$(function () {$('#dynamic-content').load('/pages/html-common/legal.html #legal-content');});">
                         <div class="appnav-button col right">
                             <h1>Legal</h1>
                         </div>
@@ -91,8 +91,8 @@
     <!-- Loading animation, import navigation bar, and set current page to active -->
     <script type="text/javascript">
         $(function () {
-            $("#dynamic-footer").load("html-common/footer.html #import-footer");
-            $("#navigation").load("html-common/navbar.html #import-navbar", function () {
+            $("#dynamic-footer").load("/pages/html-common/footer.html #import-footer");
+            $("#navigation").load("/pages/html-common/navbar.html #import-navbar", function () {
 
             });
             $('.appnav-button').click(function (event) {
@@ -110,7 +110,7 @@
                 }
             });
             $('#blog-btn').click(function (event) {
-                $('#dynamic-content').load('html-common/blog.html #blog-nav', function () {
+                $('#dynamic-content').load('/pages/html-common/blog.html #blog-nav', function () {
                     $('.blog-btn').click(function (event) {
                         var element = event.target;
 
@@ -124,7 +124,7 @@
                             element.parentElement.classList.add("active")
                         }
                     });
-                    $('#dynamic-blog-content').load('blogs/term1-week3.html .blog-content')
+                    $('#dynamic-blog-content').load('/pages/blogs/term1-week3.html .blog-content')
                 });
             });
         });

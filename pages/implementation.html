@@ -385,7 +385,7 @@
                 <p>
                     The a pre-trained model that has been trained on 90 tooth models for 50 epochs
                     (with a learning rate of 0.001), using the Adam optimizer. The achieved accuracy
-                    is only ~20%. Read more about this on the <a href="evaluation.html">evaluation page</a>.
+                    is only ~20%. Read more about this on the <a href="/pages/evaluation.html">evaluation page</a>.
                     (Below for now)
                 </p>
                 <p>
@@ -449,8 +449,8 @@
     <script src="/javascript/prism.js" charset="utf-8"></script>
     <script type="text/javascript">
         $(function () {
-            $("#dynamic-footer").load("html-common/footer.html #import-footer");
-            $("#navigation").load("html-common/navbar.html #import-navbar", function () {
+            $("#dynamic-footer").load("/pages/html-common/footer.html #import-footer");
+            $("#navigation").load("/pages/html-common/navbar.html #import-navbar", function () {
                 active = document.getElementById("implementation")
                 active.className = "nav-link dropdown-toggle active"
             });
