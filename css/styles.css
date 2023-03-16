@@ -75,6 +75,12 @@ p a:hover {
     box-shadow: 0 5px 2px -2px rgba(0, 0, 0, .2);
 }
 
+.navbar-nav {
+    padding: 0;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 .navbar-brand {
     padding: 0;
     margin-bottom: 0;
@@ -162,13 +168,13 @@ p a:hover {
     width: 100%;
 }
 
+
 .dropdown .dropdown-menu {
     background-color: #112D4E;
     border-radius: 0 0 4% 4%;
     border: none;
     left: 0;
 }
-
 .dropdown-menu .dropdown-item {
     color: #F9F7F7;
 }
@@ -809,10 +815,12 @@ p a:hover {
     align-content: center;
     flex-direction: column;
     margin-top: 50px;
-    background: linear-gradient(150deg, #3F72AF, #112D4E);
-    112D4E width: 100%;
+    width: 100%;
     height: 50vh;
     min-height: 350px;
+    background: linear-gradient(-45deg, #DBE2EF,#3F72AF,#112D4E);
+    background-size: 150% 150%;
+    animation: gradient 20s ease infinite;
 }
 
 #title-banner h1 {
@@ -824,6 +832,19 @@ p a:hover {
     margin: 0;
     -webkit-animation: fadeIn 2s ease;
 }
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 0%;
+	}
+	25% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 0%;
+	}
+}
+
 
 #technical-decision .text-box .text-card ul {
     padding-right: 20px;
@@ -895,84 +916,147 @@ p a:hover {
     padding-top: 0;
 }
 
-.scroll-wrapper {
-    padding: 10px;
+.horizontal-wrapper {
     overflow-y: hidden;
-    width: 60vw;
-    height: 270px;  
-    margin: 50px auto;
+    width: 100%;
+    height: fit-content;  
+    margin-bottom: 100px;
 }
 
 .horizontal-scroll {
-    overflow-x: hidden;
-    padding-bottom: 17px;
-    display: flex;
-    flex-wrap: nowrap;
-    /* animation: carouselmove 10s linear infinite; */
-}
-
-/* .scroll-banner {
-    display: flex;
-    text-align: center;
-    align-items: center;
-    width: 1160px;
     overflow-x: auto;
-    overflow-y: hidden;
-    width: fit-content;
-} */
-
-
-.carousel-card {
-    flex: 1 0 250px;
-    margin: 20px;
-    width: 250px;
-    height: 200px;
-    background-color: #F9F7F7;
-    border-radius: 7%;
-    box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.5);
     display: flex;
-    flex-wrap: wrap;
-    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.blog-btn {
+    flex: 1 0 200px;
+    width: 200px;
+    height: 70px;
+    background-color: #112D4E;
+    display: flex;
     align-items: center;
-    animation: carouselmove 20s linear infinite;
-    transform: scale(1);
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel-card h3 {
-    color: #112D4E;
+    justify-content: center;
+    vertical-align: middle;
     text-align: center;
+    border-width: 0;
+    border-radius: 0;
+    border-left: solid 1px black;
+    border-right: solid 1px black;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.25s ease-in;
 }
 
-.carousel-card p {
-    font-size: 1rem;
+
+.blog-btn p {
+    margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
+    color: #F9F7F7;
+}
+
+
+.blog-btn:hover {
+    cursor: pointer;
+    background-color: #F9F7F7;
+    transition: background-color 0.5s ease-in;
+}
+
+
+.blog-btn:hover p {
     color: #112D4E;
-    margin: 0 10%;
-    text-align: left;
+    transition: color 0.5s ease-in;
 }
 
-.carousel-card:hover  {
-    transform: scale(1.1);
-    transition: transform 0.5s ease-in-out;
+.blog-btn.active {
+    background-color: #F9F7F7;
 }
 
-.horizontal-scroll:hover .carousel-card {
-    animation-play-state:paused;
+.blog-btn.active p {
+    color: #112D4E;
 }
 
-.carousel-card:focus {
-    transform: scale(1.1);
+/* APPENDIX NAVIGATION GRID BUTTONS */
+
+.appnav-grid {
+    width: fit-content;
+    display: block;
+    margin: 100px auto 0 auto;
 }
 
-.tool-logo {
-    margin: 0 auto;
+.appnav-grid a {
+    width: fit-content;
+    display: block;
+    margin: 0;
+    padding: 0;
 }
 
-@keyframes carouselmove {
-    0% {
-        transform: translate(0, 0);
-    }
-    100% {
-        transform: translate(-1160px, 0);
-    }
+.appnav-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    text-align: center;
+    width: 250px;
+    height: 100px;
+    background-color: #F9F7F7;
+    transition: background-color 0.25s ease-in;
+    padding: 0;
+    border-left: solid 2px #112D4E;
+    border-right: solid 2px #112D4E;
+    border-top: solid 4px #112D4E;
 }
+
+.appnav-button.left {
+    border-radius: 10px 0 0 0;
+    border-left: solid 4px #112D4E;
+}
+
+.appnav-button.right {
+    border-radius: 0 10px 0 0;
+    border-right: solid 4px #112D4E;
+}
+
+.appnav-button h1 {
+    color: #112D4E;
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+#appendix-intro hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 4px solid #112D4E;
+    opacity: 1;
+    margin: 0;
+    padding: 0;
+}
+
+.appnav-button:hover {
+    cursor: pointer;
+    background-color: #3F72AF;
+    transition: background-color 0.5s ease-in;
+}
+
+.appnav-button:hover h1 {
+    color: #F9F7F7;
+    transition: color 0.5s ease-in;
+}
+
+.appnav-button.active {
+    background-color: #112D4E;
+}
+
+.appnav-button.active h1 {
+    color: #F9F7F7;
+}
+
+/* #appendix-intro {
+    margin-bottom: 50px;
+} */

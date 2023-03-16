@@ -27,78 +27,47 @@
 </head>
 
 <body>
-    <!-- loading-animation -->
-    <div class="loader-wrapper">
-        <div class='tetrominos'>
-            <div class='tetromino box1'></div>
-            <div class='tetromino box2'></div>
-            <div class='tetromino box3'></div>
-            <div class='tetromino box4'></div>
-        </div>
-    </div>
     <div id="navigation"></div>
-    
+
     <section id="title-banner">
         <div class="container-fluid">
-            <h1>Evaluation</h1>
+            <h1>Appendix</h1>
         </div>
     </section>
 
-    <section id="moscow-evaluation">
-        <div class="container-fluid section-intro">
-            <h1 class="section-heading">MoSCoW Evaluation</h1>
-            <div clas="text-box">
-                <p>
-
-                </p>
+    <section id="appendix-intro">
+        <div class="container-fluid">
+            <h1 class="section-heading section-intro">Navigation</h1>
+            <div class="appnav-grid">
+                <div class="row">
+                    <a href="blog.html#appendix-intro">
+                        <div class="appnav-button col left">
+                            <h1>Blog</h1>
+                        </div>
+                    </a>
+                    <a href="user-manual.html#appendix-intro">
+                        <div class="appnav-button col">
+                            <h1>User Manual</h1>
+                        </div>
+                    </a>
+                    <a href="deployment-manual.html#appendix-intro">
+                        <div class="appnav-button col">
+                            <h1>Devployment Manual</h1>
+                        </div>
+                    </a>
+                    <a href="legal.html#appendix-intro">
+                        <div class="appnav-button col right active">
+                            <h1>Legal</h1>
+                        </div>
+                    </a>
+                </div>
             </div>
+            <hr>
         </div>
     </section>
- 
-    <section id="individual-contribution">
-        <div class="container-fluid section-intro">
-            <h1 class="section-heading">Individual Contribution</h1>
-            <div clas="text-box">
-                <p>
 
-                </p>
-            </div>
-        </div>
-    </section>
- 
-    <section id="critical-contribution">
-        <div class="container-fluid section-intro">
-            <h1 class="section-heading">Critical Contribution</h1>
-            <div clas="text-box">
-                <p>
 
-                </p>
-            </div>
-        </div>
-    </section>
- 
-    <section id="bug-list">
-        <div class="container-fluid section-intro">
-            <h1 class="section-heading">Bug List</h1>
-            <div clas="text-box">
-                <p>
 
-                </p>
-            </div>
-        </div>
-    </section>
- 
-    <section id="future-work">
-        <div class="container-fluid section-intro">
-            <h1 class="section-heading">Future Work</h1>
-            <div clas="text-box">
-                <p>
-
-                </p>
-            </div>
-        </div>
-    </section>
- 
     <div id="dynamic-footer"></div>
 
     <!-- Loading animation, import navigation bar, and set current page to active -->
@@ -106,13 +75,10 @@
         $(function () {
             $("#dynamic-footer").load("html-common/footer.html #import-footer");
             $("#navigation").load("html-common/navbar.html #import-navbar", function () {
-                active = document.getElementById("evaluation")
+                active = document.getElementById("appendix")
                 active.className = "nav-link dropdown-toggle active"
             });
         });
-        setTimeout(() => {
-            $(".loader-wrapper").fadeOut();
-        }, 500);
     </script>
 </body>
 
