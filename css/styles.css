@@ -1,8 +1,8 @@
-@import url(/css/animations/loadingAnimation.css);
-@import url(/css/animations/learnMoreButton.css);
-@import url(/css/animatedBackground.css);
-@import url(/css/blogStyles.css);
-@import url(/css/prism.css);
+@import url(loadingAnimation.css);
+@import url(learnMoreButton.css);
+@import url(animatedBackground.css);
+@import url(blogStyles.css);
+@import url(prism.css);
 
 /* 
 COLOR PALLETTE
@@ -820,7 +820,7 @@ p a:hover {
     min-height: 350px;
     background: linear-gradient(-45deg, #DBE2EF,#3F72AF,#112D4E);
     background-size: 150% 150%;
-    animation: gradient 20s ease infinite;
+    animation: gradient 10s ease infinite;
 }
 
 #title-banner h1 {

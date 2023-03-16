@@ -1,0 +1,147 @@
+.loader-wrapper {
+  position: fixed;
+  background-color: #DBE2EF;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.tetrominos {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-112px, -96px);
+  z-index: 10000;
+}
+
+.tetromino {
+  width: 96px;
+  height: 112px;
+  position: absolute;
+  transition: all ease 0.3s;
+  background: url('../images/termino.svg') no-repeat top center;
+}
+
+.box1 {
+  animation: tetromino1 1.5s ease-out infinite;
+  -moz-animation: tetromino1 1.5s ease-out infinite;
+}
+
+.box2 {
+  animation: tetromino2 1.5s ease-out infinite;
+  -moz-animation: tetromino2 1.5s ease-out infinite;
+}
+
+.box3 {
+  animation: tetromino3 1.5s ease-out infinite;
+  -moz-animation: tetromino3 1.5s ease-out infinite;
+  z-index: 2;
+}
+
+.box4 {
+  animation: tetromino4 1.5s ease-out infinite;
+  -moz-animation: tetromino4 1.5s ease-out infinite;
+}
+
+@keyframes tetromino1 {
+  0%, 40% {
+    /* compose logo */ /* 1 on 3 */ /* L-shape */
+    transform: translate(0, 0);
+  }
+  50% {
+    /* pre-box */
+    transform: translate(48px, -27px);
+  }
+  60%, 100% {
+    /* box */ /* compose logo */
+    transform: translate(96px, 0);
+  }
+}
+@keyframes tetromino2 {
+  0%, 20% {
+    /* compose logo */ /* 1 on 3 */
+    transform: translate(96px, 0px);
+  }
+  40%, 100% {
+    /* L-shape */ /* box */ /* compose logo */
+    transform: translate(144px, 27px);
+  }
+}
+@keyframes tetromino3 {
+  0% {
+    /* compose logo */
+    transform: translate(144px, 27px);
+  }
+  20%, 60% {
+    /* 1 on 3 */ /* L-shape */ /* box */
+    transform: translate(96px, 54px);
+  }
+  90%, 100% {
+    /* compose logo */
+    transform: translate(48px, 27px);
+  }
+}
+@keyframes tetromino4 {
+  0%, 60% {
+    /* compose logo */ /* 1 on 3 */ /* L-shape */ /* box */
+    transform: translate(48px, 27px);
+  }
+  90%, 100% {
+    /* compose logo */
+    transform: translate(0, 0);
+  }
+}
+@-moz-keyframes tetromino1 {
+  0%, 40% {
+    /* compose logo */ /* 1 on 3 */ /* L-shape */
+    transform: translate(0, 0);
+  }
+  50% {
+    /* pre-box */
+    transform: translate(48px, -27px);
+  }
+  60%, 100% {
+    /* box */ /* compose logo */
+    transform: translate(96px, 0);
+  }
+}
+@-moz-keyframes tetromino2 {
+  0%, 20% {
+    /* compose logo */ /* 1 on 3 */
+    transform: translate(96px, 0px);
+  }
+  40%, 100% {
+    /* L-shape */ /* box */ /* compose logo */
+    transform: translate(144px, 27px);
+  }
+}
+@-moz-keyframes tetromino3 {
+  0% {
+    /* compose logo */
+    transform: translate(144px, 27px);
+  }
+  20%, 60% {
+    /* 1 on 3 */ /* L-shape */ /* box */
+    transform: translate(96px, 54px);
+  }
+  90%, 100% {
+    /* compose logo */
+    transform: translate(48px, 27px);
+  }
+}
+@-moz-keyframes tetromino4 {
+  0%, 60% {
+    /* compose logo */ /* 1 on 3 */ /* L-shape */ /* box */
+    transform: translate(48px, 27px);
+  }
+  90%, 100% {
+    /* compose logo */
+    transform: translate(0, 0);
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

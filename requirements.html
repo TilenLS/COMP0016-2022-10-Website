@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>COMP0016 2022 Team 10 Website</title>
+    <link rel="icon" href="images/tooth-solid.svg" type="image/x-icon">
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js" type="text/javascript"></script>
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/c09be5d4e7.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- loading-animation -->
+    <div class="loader-wrapper">
+        <div class='tetrominos'>
+            <div class='tetromino box1'></div>
+            <div class='tetromino box2'></div>
+            <div class='tetromino box3'></div>
+            <div class='tetromino box4'></div>
+        </div>
+    </div>
+    <div id="navigation"></div>
+
+    <section id="title-banner">
+        <div class="container-fluid">
+            <h1>Requirements</h1>
+        </div>
+    </section>
+    <section id="project-background">
+        <div class="container-fluid section-intro">
+            <h1 class="section-heading">Project Background</h1>
+            <div class="text-box">
+                <p>
+                    This is a project with Junaid Saleem Malik of the UCL Eastman Dental Institute.
+                    We were presented with the utility of clinical decision support systems to provide
+                    systematic and unified decision-making for treating dental disease.
+                </p>
+                <p>
+                    This has been explored and implemented quite widely within the field of prosthodontics.
+                    However, this technology has yet to break into the prosthodontic management of tooth wear
+                    due to the number of varying treatment approaches present. There are even several indices
+                    to grade tooth wear.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section id="client-requirements">
+        <div class="container-fluid section-intro">
+            <h1 class="section-heading">Client Requirements</h1>
+            <div class="text-box">
+                <p>
+                    After recieving our client brief and familiarising ourselves with the project background, we
+                    set up an initial meeting with our client to better understand what they expect from the project
+                    and the overall main goals of the project. We also agreed upon a weekly meeting to ensure
+                    everyone is up to date with the progress of the project and recieve regular feedback.
+                </p>
+                <p>
+                    After the initial meeting, we had some clear ideas of what our client expects of the project.
+                    Below are the main requirements they pointed out:
+                </p>
+                <div class="text-card">
+                    <ul>
+                        <li><strong>Take in 3D tooth models in STL/PLY file format</strong></li>
+                        <li><strong>Store patient data as input</strong></li>
+                        <li><strong>Run analysis on 3D tooth models</strong></li>
+                        <li><strong>Provide diagnosis and prognosis suggestions to dentists</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="project-goals">
+        <div class="container-fluid section-intro">
+            <h1 class="section-heading">Project Goals</h1>
+            <div class="text-box">
+                <p>
+                    The overarching goal of this project is to develop a windows based app that can work as a
+                    Clinical Decision Support System (CDSS) by providing dentists with treatment plan suggestions
+                    based on an input of a 3D tooth scan and patient metadata.
+                </p>
+                <p>
+                    This should include capabilities such as: rendering of STL/PLY files, storage of tooth models
+                    and patient data in a database, an Artificial Intelligence based engine for grading tooth wear
+                    and suggesting treatment plans. The app itself should also have a straightforward UI that will
+                    reduce the amount of friction in work for dentists who would be using the app regularly.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section id="user-interviews">
+        <div class="container-fluid section-intro">
+            <h1 class="section-heading">User Interviews</h1>
+            <div class="text-box">
+                <p>
+                    To get a better understanding of more specific features and behaviours the app should contain,
+                    we had to conduct user interviews. After considering various methods, we decided the most suitable
+                    approach would be a semi-structured interview with straight-forward and open-ended questions.
+                </p>
+                <p>
+                    This was done with all three team members and an interviewee over teams in an informal setting.
+                    This seemed optimal as such a dialogue would be less restrictive to the user's point of view
+                    which is crucial as it is precisely their perspective we are aiming to understand better.
+                </p>
+                <div class="text-card">
+                    <ul>
+                        <li><strong>Is there already any similar software out there?</strong></li>
+                        <p class="nested-text">
+                            There is some work done but only with 2D scans and its very technical. Otherwise,
+                            only some academic work.
+                        </p>
+                        <li><strong>Are there any specific functionalities you have in mind?</strong></li>
+                        <p class="nested-text">
+                            Software should be able to tag/segment teeth and suggest a level of tooth wear.
+                        </p>
+                        <p class="nested-text">
+                            Decision making support capabilities should be based on the level of tooth wear and some
+                            patient metadata.
+                        </p>
+                        <p class="nested-text">
+                            PLY file format is preferred over STL as it preserves the colour of the model which is
+                            useful when classifying tooth wear as discolouration is an important indicator.
+                        </p>
+                        <li><strong>What should the ‘tagging’ aspect of the software behave like?</strong></li>
+                        <p class="nested-text">
+                            Software should identify teeth and tag/highlight areas of the teeth, whether that is
+                            volumetric
+                            loss, prosthetic, discolouration… Then the software should provide a clinician with
+                            information
+                            useful for treatment plan development.
+                        </p>
+                        <li><strong>How will this software assist clinicians?</strong></li>
+                        <p class="nested-text">
+                            From the perspective that the app is fully delivered, it will aid in diagnosis of tooth
+                            wear,
+                            help develop prognosis, and assist in suggesting treatment plans. This could also
+                            potentially
+                            expand to other fields in medicine where analysis of 3D models is similarly pertinent.
+                        </p>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="personas">
+        <div class="container-fluid section-intro">
+            <h1 class="section-heading">Personas</h1>
+            <div class="text-box">
+                <p>
+                    After gathering client and user requirements, we had created personas for
+                    the potential users to have a more concrete and unified understanding of
+                    their goals and pain points that determine the overall requirements.
+                </p>
+            </div>
+            <div>
+                <img class="img-card" src="images/Personas.png" width="80%"></img>
+            </div>
+        </div>
+    </section>
+
+    <section id="moscow">
+        <div class="container-fluid section-intro">
+            <h1 class="section-heading">MoSCoW</h1>
+            <div class="text-box">
+                <p>
+                    Having completed the requirements gathering stage we had a meeting with
+                    our client where we discussed the importance of the various key goals
+                    to finalise a MoSCoW list:
+                </p>
+            </div>
+            <div>
+                <img class="img-card" src="images/MoSCoW.png" width="80%" height="60%"></img>
+            </div>
+        </div>
+    </section>
+
+    <div id="dynamic-footer"></div>
+
+    <!-- Loading animation, import navigation bar, and set current page to active -->
+    <script type="text/javascript">
+        $(function () {
+            $("#dynamic-footer").load("footer.html #import-footer");
+            $("#navigation").load("navbar.html #import-navbar", function () {
+                active = document.getElementById("requirements")
+                active.className = "nav-link dropdown-toggle active"
+            });
+        });
+        setTimeout(() => {
+            $(".loader-wrapper").fadeOut();
+        }, 500);
+    </script>
+</body>
+
+</html>
