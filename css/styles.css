@@ -1060,3 +1060,60 @@ p a:hover {
 /* #appendix-intro {
     margin-bottom: 50px;
 } */
+
+table {
+    margin: 50px auto;
+    font-size: 1.5rem;
+    color: #F9F7F7;
+    text-align: center;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+thead {
+    background-color: #081728;
+    font-weight: 600;
+}
+
+tbody {
+    background-color: #112D4E;
+}
+
+td, th {
+    padding: 1rem 1rem;
+    width: fit-content;
+}
+
+td {
+    border: solid 1px #081728;
+}
+
+.table-link {
+    color: #92a7ce;
+}
+
+.table-link:link {
+    color: #92a7ce;
+}
+
+.table-link:visited {
+    color: #92a7ce;
+}
+
+.table-link .fa {
+    font-size: 1.2rem;
+    margin-left: 10px;
+}
+
+.tr-bot {
+    border-bottom: none;
+}
+
+.tr-start {
+    border-left: none;
+}
+
+.tr-end {
+    border-right: none;
+}
