@@ -1140,3 +1140,11 @@ table .fa {
     font-size: 1.5rem;
     color: #112D4E;
 }
+
+#bibliography ol {
+    margin: 100px 0;
+}
+
+#bibliography li {
+    font-size: 1.2rem;
+}

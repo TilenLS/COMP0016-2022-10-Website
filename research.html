@@ -121,7 +121,7 @@
                     would be helpful. After discussing with our client, we concluded that
                     TWES 2.0 would be the best option. This is because it provides 5 simple
                     answers but the classification by which a degree of tooth wear is placed
-                    into a specific level is very robust. 
+                    into a specific level is very robust.
                 </p>
                 <div>
                     <img class="img-card" src="images/TWES2-detailed.png" width="80%"></img>
@@ -161,32 +161,33 @@
             <h1 class="section-heading">Technology Review</h1>
             <div clas="text-box">
                 <p>
-                    After understanding the academic background of the project the next step 
+                    After understanding the academic background of the project the next step
                     was to explore previous work that was done. From this we would be able
-                    to better understand what tools to use to realise the project. 
+                    to better understand what tools to use to realise the project.
                 </p>
                 <h3 class="section-subheading">Previous Work</h3>
                 <p>
                     Throughout our search we found only three somewhat similar implementations.
-                    The first and most thorough is Pearl AI. It works with 2D x-ray scans and is
-                    capable of segmenting individual tooth for the detection of pathological features.
-                    Unfortunately, this wasn't of much use as the goal of our project is to remain
-                    in the 3D realm to take advantage of the increased detail.
+                    The first and most thorough is <a href="https://www.hellopearl.com/">Pearl AI</a>.
+                    It works with 2D x-ray scans and is capable of segmenting individual tooth for
+                    the detection of pathological features. Unfortunately, this wasn't of much use
+                    as the goal of our project is to remain in the 3D realm to take advantage of
+                    the increased detail.
                 </p>
                 <p>
-                    The second application is WearCompare. It intakes 3D scans of the same teeth
-                    over different time points and has the clinician manually select the 
-                    surfaces to compare. Then it quantifies tooth wear progression. Although this
-                    uses 3D tooth models, it requires too much manual interaction and multiple scans.
-                    Our project has to be as automatic as possible using Artificial Intelligence 
-                    to assist clinicians.
+                    The second application is <a href="https://leedsdigitaldentistry.com/wearcompare/">
+                        WearCompare</a>. It intakes 3D scans of the same teeth over different time points
+                    and has the clinician manually select the surfaces to compare. Then it quantifies
+                    tooth wear progression. Although this uses 3D tooth models, it requires too much
+                    manual interaction and multiple scans. Our project has to be as automatic as possible
+                    using Artificial Intelligence to assist clinicians.
                 </p>
                 <p>
-                    Lastly is OrthoAid. It provides dentists with enhanced tools for analysing 3D
-                    tooth models before and after operative dental study models. Similarly to the
-                    previous example, it uses 3D models but does not include any or very little
-                    automation on an AI basis. Furthermore, this app was very technical and
-                    difficult to use.
+                    Lastly is <a href="https://github.com/amir-abdi/OrthoAid">OrthoAid</a>. It provides
+                    dentists with enhanced tools for analysing 3D tooth models before and after operative
+                    dental study models. Similarly to the previous example, it uses 3D models but does
+                    not include any or very little automation on an AI basis. Furthermore, this app was
+                    very technical and difficult to use.
                 </p>
                 <h3 class="section-subheading">Languages & Libraries</h3>
                 <p>
@@ -226,7 +227,7 @@
                     wear status phase. This is where the teeth are graded using the previously mentioned
                     PointNet network using PyTorch to grade the teeth. This is done by grading each sextant (1/6
                     <sup>th</sup> of the teeth) first by grading their respective individual teeth. Then
-                    based on the sextant graded an overall score is given to the wear present within the 
+                    based on the sextant graded an overall score is given to the wear present within the
                     teeth. After these results are calculated, they are used along with the patient data
                     gathered during the first stage to suggest a treatment plan.
                 </p>
@@ -240,45 +241,84 @@
             <div class="text-box">
                 <p>
                     After the expansive research and testing we had done on varying technologies and algorithms,
-                    we selected the methods we thought would be most suitable given the client and user 
+                    we selected the methods we thought would be most suitable given the client and user
                     requirements we had previously established.
                 </p>
-                <div class="text-card">
-                    <div class="row">
-                        <div class="col">
-                            <h3>Aspect</h3>
-                            <ul>
-                                <li><strong>Language</strong></li>
-                                <li><strong>GUI</strong></li>
-                                <li><strong>Image Processing</strong></li>
-                                <li><strong>Data Storage</strong></li>
-                                <li><strong>Classification & Segmentation</strong></li>
-                                <li><strong>Tooth Wear Grading</strong></li>
-                            </ul>
-                        </div>
-                        <div class="col">
-                            <h3>Decision</h3>
-                            <ul>
-                                <li><strong>Python</strong></li>
-                                <li><strong>PySide2</strong></li>
-                                <li><strong>Open3D</strong></li>
-                                <li><strong>SQLite & Azure</strong></li>
-                                <li><strong>PointNet & PyTorch</strong></li>
-                                <li><strong>TWES 2.0</strong></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Aspect</th>
+                            <th scope="col">Decision</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="tr-start td-text">Language</td>
+                            <td class="tr-end td-text">Python</td>
+                        </tr>
+                        <tr>
+                            <td class="tr-start td-text">GUI</td>
+                            <td class="tr-end td-text">PySide2</td>
+                        </tr>
+                        <tr>
+                            <td class="tr-start td-text">Image Processing</td>
+                            <td class="tr-end td-text">Open3D</td>
+                        </tr>
+                        <tr>
+                            <td class="tr-start td-text">Data Storage</td>
+                            <td class="tr-end td-text">SQLite & Azure</td>
+                        </tr>
+                        <tr class="tr-bot">
+                            <td class="tr-start td-text">Tooth Wear Grading</td>
+                            <td class="tr-end td-text">PointNet & PyTorch</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
 
     <section id="bibliography">
-        <!-- 
-            1. Machoy ME, Szyszka-Sommerfeld L, Vegh A, Gedrange T, Woźniak K. The ways of using machine learning in dentistry. Adv Clin Exp Med. 2020;29(3):375–384. doi:10.17219/acem/115083
-            2. Khanna S. Artificial intelligence: contemporary applications and future compass. Int Dent J. 2010;60(4):269-272. 
-            3. 
-         -->
+        <div class="container-fluid section-intro">
+            <h1 class="section-heading">References</h1>
+            <ol class="num-list">
+                <li>
+                    Machoy ME, Szyszka-Sommerfeld L, Vegh A, Gedrange T, Woźniak K. The ways of using machine learning
+                    in dentistry. Adv Clin Exp Med. 2020;29(3):375–384. doi:10.17219/acem/115083
+                </li>
+                <li>
+                    Khanna S. Artificial intelligence: contemporary applications and future compass. Int Dent J.
+                    2010;60(4):269-272.
+                </li>
+                <li>
+                    Bartlett D, Ganss C, Lussi A. Basic Erosive Wear Examination (BEWE): a new scoring system for
+                    scientific and clinical needs. Clin Oral Investig. 2008 Mar;12 Suppl 1(Suppl 1):S65-8. doi:
+                    10.1007/s00784-007-0181-5. Epub 2008 Jan 29. PMID: 18228057; PMCID: PMC2238785.
+                </li>
+                <li>
+                    Roehl JC, Jakstat HA, Becker K, Wetselaar P, Ahlers MO. Tooth Wear Evaluation System (TWES)
+                    2.0-Reliability of diagnosis with and without computer-assisted evaluation. J Oral Rehabil.
+                    2022;49(1):81-91. doi:10.1111/joor.13277
+                </li>
+                <li>
+                    Smith BG, Knight JK. An index for measuring the wear of teeth. Br Dent J. 1984;156(12):435-438.
+                    doi:10.1038/sj.bdj.4805394
+                </li>
+                <li>
+                    Wetselaar P, Wetselaar-Glas MJM, Katzer LD, Ahlers MO. Diagnosing tooth wear, a new taxonomy based
+                    on the revised version of the Tooth Wear Evaluation System (TWES 2.0). J Oral Rehabil. 2020
+                    Jun;47(6):703-712. doi: 10.1111/joor.12972. Epub 2020 May 14. PMID: 32274827; PMCID: PMC7384115.
+                </li>
+                <li>
+                    S. Tian, N. Dai, B. Zhang, F. Yuan, Q. Yu and X. Cheng, "Automatic Classification and Segmentation
+                    of Teeth on 3D Dental Model Using Hierarchical Deep Learning Networks," in IEEE Access, vol. 7, pp.
+                    84817-84828, 2019, doi: 10.1109/ACCESS.2019.2924262.
+                </li>
+                <li>
+                    https://arxiv.org/abs/1612.00593
+                </li>
+            </ol>
+        </div>
     </section>
 
     <div id="dynamic-footer"></div>
