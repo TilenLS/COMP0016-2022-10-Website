@@ -93,7 +93,8 @@
         $(function () {
             $("#dynamic-footer").load("footer.html #import-footer");
             $("#navigation").load("navbar.html #import-navbar", function () {
-
+                active = document.getElementById("appendix")
+                active.className = "nav-link active"
             });
             $('.appnav-button').click(function (event) {
                 var element = event.target;

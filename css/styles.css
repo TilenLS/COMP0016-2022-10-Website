@@ -1069,20 +1069,24 @@ table {
     border-collapse: collapse;
     overflow: hidden;
     border-radius: 10px;
+    box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.5);
 }
 
 thead {
     background-color: #081728;
-    font-weight: 600;
 }
 
 tbody {
-    background-color: #112D4E;
+    background-color: #14365e;
 }
 
 td, th {
     padding: 1rem 1rem;
     width: fit-content;
+}
+
+th {
+    font-weight: 900;
 }
 
 td {
@@ -1101,12 +1105,18 @@ td {
     color: #92a7ce;
 }
 
+table .fa {
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin-left: 10px;
+}
+
 .table-link .fa {
     font-size: 1.2rem;
     margin-left: 10px;
 }
 
-.tr-bot {
+.tr-bot td {
     border-bottom: none;
 }
 
@@ -1116,4 +1126,17 @@ td {
 
 .tr-end {
     border-right: none;
+}
+
+.td-text {
+    font-size: 1.2rem;
+}
+
+#future-work {
+    margin-bottom: 100px;
+}
+
+.num-list li {
+    font-size: 1.5rem;
+    color: #112D4E;
 }
