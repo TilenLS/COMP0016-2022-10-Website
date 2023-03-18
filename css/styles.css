@@ -267,6 +267,7 @@ p a:hover {
 .section-heading {
     text-align: center;
     margin-top: 100px;
+    margin-bottom: 50px;
     color: #3F72AF;
     width: 100%;
 
@@ -312,8 +313,10 @@ p a:hover {
 }
 
 .section-subheading {
+    padding: 0;
     text-align: left;
     margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 
@@ -375,22 +378,6 @@ p a:hover {
     #big-heading div {
         border-bottom: 4px solid #F9F7F7;
     }
-}
-
-/* INTRODUCTION */
-
-#abstract .text-box {
-    padding-top: 20px 0;
-    margin: 0 20%;
-}
-
-#abstract .text-box {
-    padding: 20px 0;
-}
-
-#abstract .container-fluid {
-    padding-bottom: 50px;
-
 }
 
 /* FEATURES */
