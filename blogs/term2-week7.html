@@ -26,7 +26,33 @@
 <body>
     <section class="blog-content">
         <div class="container-fluid text-box">
-            <h1>Week 7: Title (date)</h1>
+            <h1>Week 7: Started working on website and training models (Feb 27 - Mar 5)</h1>
+            <h2>Started working on project website</h2>
+            <p>
+                Since there is only about three weeks left, we started to add contents to our project website. After discussion, 
+                we agreed on the contents that we will include on our website and divided the work among team members. Our TA 
+                suggested past project websites that are done well so we followed some of the styles of these websites. After 
+                one week of work, the Home Page, Requirements Page, HCI Page and System Design Page is mostly completed. The home 
+                page of our website looks like this for now:
+            </p>
+            <div>
+                <img class="blog-img" src="images/CurrentWebsiteProgress.png" width="80%"></img>
+            </div>
+            <h2>Training models for tooth wear evaluation</h2>
+            <p>
+                Our client gave us around 90 scans of sextants together with the labels. Hence, we can start to train our deep 
+                learning model. We already have a network architecture for our model which is using PointNet for 3D classification 
+                and segmentation. The model has been trained on 90 tooth models for 50 epochs with a learning rate of 0.001, using 
+                the Adam optimizer. Due to low amount of data, the accuracy obtained is quite low at about 20%-30%. We will 
+                continue to modify our deep learning model and our client also promise to provide us more data in the next 
+                two weeks. Hopefully by then the accuracy of our model will be improved. We choose to maintain the pre-trained 
+                model on the Azure virtual machine.
+            </p>
+            <h2>Next steps</h2>
+            <p>
+                We will continue to train our deep learning model upon receiving more data from the client. Besides, we will focus 
+                on editing and decorating our website.
+            </p>
         </div>
     </section>
 </body>
