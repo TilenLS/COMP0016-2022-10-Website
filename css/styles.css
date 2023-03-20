@@ -1067,6 +1067,11 @@ tbody {
     background-color: #14365e;
 }
 
+tbody tr {
+    background-color: #14365e;
+    transition: background-color 0.2s ease-out;
+}
+
 td, th {
     padding: 1rem 1rem;
     width: fit-content;
@@ -1134,4 +1139,9 @@ table .fa {
 
 #bibliography li {
     font-size: 1.2rem;
+}
+
+tr:hover {
+    background-color: #1e5391;
+    transition: background-color 0.3s ease-in;
 }
