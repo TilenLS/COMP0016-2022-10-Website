@@ -75,7 +75,7 @@
                     The main class that loads the UI is the MainWindow class seen below.
                     It sets up all the seperate pages. The actual code for these is in
                     their own individual files. The MainWindow class is instanced which loads
-                    in the app starting wiht the sign in page.
+                    in the app starting with the sign in page.
                 </p>
                 <div class="code-box">
                     <pre>
@@ -109,7 +109,7 @@
                 <p>
                     The actual UI code for each page has its own class that takes in
                     the MainWindow class from above. This works as the base window for
-                    each page. The UI consits of PySide widgets and layouts. For example,
+                    each page. The UI consists of PySide widgets and layouts. For example,
                     here is how we created a register button with PySide2.
                 </p>
                 <div class="code-box">
@@ -269,15 +269,15 @@
             <div class="text-box section-intro">
                 <h3 class="section-subheading">Explanation</h3>
                 <p>
-                    We host a SQLite database stored on an Azure virtual machine. In the database
+                    We host a SQLite database stored on an Azure virtual machine. In the database,
                     we store the recorded patient data along with their 3D tooth scans and the login
                     credentials of the clinician. All authorised clinicians have access to all the
                     stored patient data.
                 </p>
                 <p>
                     Both the upstream and downstream system from the client to the server use the
-                    Python Requests library to send and recieve data When storing the login
-                    credentials we encrypt the password using the Base64 module from the standard
+                    Python Requests library to send and recieve data. When storing the login
+                    credentials, we encrypt the password using the Base64 module from the standard
                     python library. Below is an example of storing the login credentials of a newly
                     registered user and recieving a response to relay to the user on the front-end.
 
@@ -315,7 +315,7 @@
                 <p>
                     When dealing with the 3D models there is an extra step of pre-processing
                     the data before sending it. We first convert the model into a binary file
-                    before sending it to the server. Similary, when making a request for a
+                    before sending it to the server. Similarly, when making a request for a
                     tooth scan we have to convert from binary back to a point cloud model that
                     can be displayed. This is done with both NumPy to convert to binary and
                     Open3D to convert back into a point cloud model.
@@ -391,7 +391,7 @@
                 </p>
                 <img class="img-card" src="images/PointNet.jpg" width="80%"></img>
                 <p>
-                    The a pre-trained model that has been trained on 90 tooth models for 50 epochs
+                    The pre-trained model has been trained on 90 tooth models for 50 epochs
                     (with a learning rate of 0.001), using the Adam optimizer. The achieved accuracy
                     is only ~20%. Read more about this on the <a href="evaluation.html">evaluation page</a>.
                     (Below for now)
@@ -410,7 +410,7 @@
                 </p>
                 <p>
                     The pre-trained model is mantained on the Azure virtual machine from where
-                    any specific model can be accessed. When a user wishes to perform analysis
+                    any specific model can be accessed. When a user wishes to perform analysis,
                     a request is made using Flask to access this file. Then the file is read
                     with the Plyfile library and passed through the pre-trained PointNet model
                     which produces a result. Then this result is retrieved and returned to
