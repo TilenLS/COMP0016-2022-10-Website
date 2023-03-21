@@ -54,24 +54,23 @@
                     and related work is sparse. Especially when in the context of industry,
                     most work that has been is purely academic.
                 </p>
-                <p>
-                    Due to this academic nature of the project, we had to first familiarise
-                    ourselves with concrete work that has been done in the field. Including
-                    Clinical Decision Support Systems (CDSS), 3D tooth models, tooth wear
-                    indices, and tooth grading algorithms.
-                </p>
                 <h3 class="section-subheading">Clinical Decision Support System</h3>
                 <p>
                     Clinical Decision Support Systems (CDSS) are systems intended to
                     improve healthcare delivery by enhancing medical decision-making
                     capabilities with targeted clinical knowledge, patient information,
-                    and other health information. It is key here to note that the ultimate
-                    goal is to assist clinicians in their work and not replace it.
-                    <sup>1 2</sup>
+                    and other health information. Below is the general structure of such 
+                    a system. It is key here to note that the ultimate goal is to assist 
+                    clinicians in their work and not replace it.
+                    <sup>1</sup>
                 </p>
                 <div>
                     <img class="img-card" src="images/CDSS-structure.png" width="80%"></img>
                 </div>
+                <p>
+                    There are also different kinds of CDSS that use different methods to
+                    provide support to clinicians. A few can be seen below.
+                </p>
                 <div>
                     <img class="img-card" src="images/CDSS.png" width="80%"></img>
                 </div>
@@ -79,10 +78,13 @@
                 <p>
                     One of the core goals of this project is to ensure that it works
                     with 3D tooth models. The reason for this is due to the greater
-                    detail in 3D models as opposed to 2D scan has greater potential
-                    for more accurate analysis of tooth wear. This is primarily through
-                    analysis of the volumetric loss of the teeth.
+                    detail in 3D models as opposed to 2D scans which has greater potential
+                    for more accurate analysis of tooth wear through volumetric loss and
+                    structural irregularity.
                 </p>
+                <div>
+                    <img class="img-card" src="images/ToothModel.jpg" width="80%"></img>
+                </div>
                 <p>
                     The most common file format for such 3D models is STL which is most
                     commonly used for 3D printing. A less common format is PLY that is
@@ -141,8 +143,9 @@
                         <div class="col"><img src="images/3D-segmentation.png"></div>
                     </div>
                     <div class="row">
-                        <div class="col"><img src="images/SegmentedTeeth.png"></div>
-                        <div class="col"></div>
+                        <div class="col-3"></div>
+                        <div class="col  align-self-center"><img src="images/SegmentedTeeth.png"></div>
+                        <div class="col-3"></div>
                     </div>
                 </div>
                 <p>
@@ -150,8 +153,12 @@
                     particularly for 3D tooth models. They are not open source and optimised
                     for industrial use yet. Therefore, we had to settle for a more general
                     purpose architecture and trade off some accuracy for effiency. One such
-                    model that is well known is the PointNet network.
+                    model that is well known is the PointNet network. Its general structure
+                    is depicted below.
                 </p>
+                <div>
+                    <img class="img-card" src="images/PointNet.jpg" width="80%">
+                </div>  
             </div>
         </div>
     </section>
@@ -174,14 +181,20 @@
                     as the goal of our project is to remain in the 3D realm to take advantage of
                     the increased detail.
                 </p>
+                <div>
+                    <img class="img-card" src="images/PearlAIdemo.jpg" width="80%">
+                </div>  
                 <p>
                     The second application is <a href="https://leedsdigitaldentistry.com/wearcompare/">
-                        WearCompare</a>. It intakes 3D scans of the same teeth over different time points
+                    WearCompare</a>. It intakes 3D scans of the same teeth over different time points
                     and has the clinician manually select the surfaces to compare. Then it quantifies
                     tooth wear progression. Although this uses 3D tooth models, it requires too much
                     manual interaction and multiple scans. Our project has to be as automatic as possible
                     using Artificial Intelligence to assist clinicians.
                 </p>
+                <div>
+                    <img class="img-card" src="images/WearCompare.png" width="80%">
+                </div>  
                 <p>
                     Lastly is <a href="https://github.com/amir-abdi/OrthoAid">OrthoAid</a>. It provides
                     dentists with enhanced tools for analysing 3D tooth models before and after operative
@@ -189,28 +202,29 @@
                     not include any or very little automation on an AI basis. Furthermore, this app was
                     very technical and difficult to use.
                 </p>
+                <div>
+                    <img class="img-card" src="images/OrthoAidUserInterface.jpeg" width="80%">
+                </div>  
                 <h3 class="section-subheading">Languages & Libraries</h3>
                 <p>
-                    The first key factor to consider here was that the app needed to be built
-                    for windows. After considering the 3D aspect of the project we thought a
+                    The first key factor to consider was the app needed to be built
+                    for windows. Considering the 3D aspect of the project we thought a
                     language such as C# or C++ would be best suited. However, due to the
                     uncommon use of the PLY file format after attempting to recreate the
-                    model rendering code of the above examples we could make it work for STL.
+                    model rendering code of the above examples it did not work for PLY.
                 </p>
                 <p>
                     Therefore, we decided to switch to Python and find a library that can render
-                    both STL and PLY file formats. This is because the algorithm would be written
-                    in Python so having everything being done in one language was convenient.
-                    Although there are many libraries for rendering such 3D models, few provide
-                    GUI integration. After much testing we found the best option was the Open3D
-                    library that could be easily used in our app.
+                    both STL and PLY file formats. This was convenient as the algorithmic part
+                    of the app would also be written in Python. We decided on using Open3D for
+                    rendering PLY files as we found a few previous examples on its integration with
+                    GUIs
                 </p>
                 <p>
-                    As for the GUI, at first we went towards PyQt6. This is the most common and
-                    versatile Python GUI available. However, there are licensing issues with
-                    this library as it is under a GPL commercial license. Instead we chose
-                    PySide2 which is essentially identical to PyQt6 but is under a LGPL license
-                    so we would have no issues using the library.
+                    As for the GUI, at first we thought of PyQt6. However, there are licensing issues 
+                    with this library as it is under a GPL commercial license. Hence we chose
+                    PySide2 which is identical to PyQt6 but is under a LGPL license so we could use
+                    it without facing issues in the future.
                 </p>
                 <p>
                     For data storage we decided to use SQLite to deploy a local database at first.

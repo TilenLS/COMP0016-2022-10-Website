@@ -269,7 +269,7 @@ p a:hover {
     margin-top: 100px;
     margin-bottom: 50px;
     color: #3F72AF;
-    width: 100%;
+    width: 80%;
 
     text-transform: uppercase;
 
@@ -1141,7 +1141,7 @@ table .fa {
     font-size: 1.2rem;
 }
 
-tr:hover {
+tbody tr:hover {
     background-color: #1e5391;
     transition: background-color 0.3s ease-in;
 }
