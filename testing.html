@@ -90,9 +90,41 @@
                 </p>
                 <h3 class="section-subheading">Manual Testing</h3>
                 <p>
-
+                    With manual testing we mainly focused on simply ensuring the UI and
+                    to some extents the front-end was functional. There was no reason
+                    to automate this as it would just be simply simulating a user progrimatically
+                    which would just be unnescarry work.
+                </p>
+                <p>
+                    Through our own testing of the general UI and also recreating edge-cases we concluded
+                    that the front-end is primarily functional. The errors that we did find here have been
+                    listed on the <a href="evaluation.html#bug-list">Evaluation</a> page of the website in 
+                    the bug list.
                 </p>
                 <h3 class="section-subheading">Performance Testing</h3>
+                <p>
+                    For the actual performance of our app we had two main functionalities to test.
+                    First the accuracy of our AI model, how long it takes to upload or retrieve a
+                    tooth model to or from the server, and the time it takes to request a prediction
+                    and recieve it.
+                </p>
+                <p>
+                    We trained our model on around 200 sextants of 3D tooth models. The model was
+                    trained for 50 epochs with a learning rate of 0.01 and using the Adam optimiser.
+                    The loss function used is Mean Squared Error. Below we have graphed the results.
+                </p>
+                <div>
+                    <img class="img-card" src="images/model-results.png" width="70%">
+                </div>
+                <p>
+                    Unfortunately, gaining access to more tooth models is difficult due to the emphasis
+                    on PLY files which are rare let alone available in public datasets of tooth models. 
+                    However, the goal of this work is a proof-of-concept pipeline to show that with the 
+                    given input we can return a result for tooth grading. In the future, optimisation 
+                    will be very possible as more data will be gathered and the pipeline can be extended 
+                    beyond simply tooth grading and broader treatment plan suggestions which is the 
+                    overarching long-term goal of this project.
+                </p>
             </div>
         </div>
     </section>
@@ -102,7 +134,84 @@
             <h1 class="section-heading">User Acceptance Testing</h1>
             <div class="text-box">
                 <p>
-
+                    In user accpetance testing we asked various people to interact with 
+                    our app. They got to use the app in a mostly isolated environment, except
+                    if they were stuck they could ask one of us for help. We asked our client,
+                    project supervisor, and fellow students to test our app. Here are what they
+                    had to say. (Some of the testers have been anonymised for privacy)
+                </p>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="tester">Tester</th>
+                        <th>Comments</th>
+                        <th>Overall Rating</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="tr-start">Client</td>
+                        <td class="td-text">
+                            Good for an initial version of the app. UI will
+                            definetly need to be improved to be cleaner and
+                            more professional.
+                        </td>
+                        <td class="tr-end">4/5</td>
+                    </tr>
+                    <tr>
+                        <td class="tr-start">TA</td>
+                        <td class="td-text">
+                            The overall UI is ok, but is lacking in some parts.
+                            Some of the buttons are too small, bugs with adding patients
+                            when there are no tooth models, and some functionalities
+                            aren't clear.
+                        </td>
+                        <td class="tr-end">3/5</td>
+                    </tr>
+                    <tr>
+                        <td class="tr-start">Student 1</td>
+                        <td class="td-text">
+                            Add patient details button is not obvious. There could
+                            be more functionality on the table, like hiding columns.
+                        </td>
+                        <td class="tr-end">3.5/5</td>
+                    </tr>
+                    <tr>
+                        <td class="tr-start">Student 2</td>
+                        <td class="td-text">
+                            App isn't smooth, can seem quite glitchy when resizing.
+                            Requires some time to understand how to use the app,
+                            a lot isn't immedietly obvious.
+                        </td>
+                        <td class="tr-end">3/5</td>
+                    </tr>
+                    <tr>
+                        <td class="tr-start">Student 3</td>
+                        <td class="td-text">
+                            UI could be nicer, especially in the home page. 
+                            Loading animation when waiting for files to load
+                            or predictions.
+                        </td>
+                        <td class="tr-end">3.5/5</td>
+                    </tr>
+                    <tr class="tr-end">
+                        <td class="tr-start">Student 4</td>
+                        <td class="td-text">
+                            The app works fine. Quite straightforward navigation and
+                            it isn't too cluttered. Colors could be more neutral.
+                        </td>
+                        <td class="tr-end">4/5</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="text-box">
+                <p>
+                    Overall it is obvious that the app could definetly be improved in terms
+                    of the UI aspect. The theme should be slightly adjusted to be more neutral
+                    and minimalist. Some functionalities need to be made more obvious by contrasting
+                    more with the background and other elements. The loading speed when opening
+                    3D models should be improved aswell but might not be possible.
                 </p>
             </div>
         </div>

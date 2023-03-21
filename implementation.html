@@ -389,24 +389,12 @@
                     purpose algorithm for 3D recognition. Below is the general structure
                     of the network consisting of the classification and segmentation parts.
                 </p>
-                <img class="img-card" src="images/PointNet.jpg" width="80%"></img>
+                <img class="img-card" src="images/PointNet.jpg" width="70%"></img>
                 <p>
                     The pre-trained model has been trained on 90 tooth models for 50 epochs
                     (with a learning rate of 0.001), using the Adam optimizer. The achieved accuracy
-                    is only ~20%. Read more about this on the <a href="evaluation.html">evaluation page</a>.
+                    is only ~20%. Read more about this on the <a href="test.html#unit-integration-testing">testing page</a>.
                     (Below for now)
-                </p>
-                <p>
-                    Unfortunately, gaining access to more tooth models is difficult due to the emphasis
-                    on PLY files which are rare let alone available in public datasets. Therefore,
-                    the accuracy is quite low at ~20%. However, the goal of this work is a proof-of-concept
-                    pipeline to show that with the given input we can return a result for tooth
-                    grading. In the future, optimisation will be very possible as more data will
-                    be gathered and the pipeline can be extended beyond simply tooth grading and
-                    broader treatment plan suggestions which is the overarching long-term goal of
-                    this project. Furthermore, another improvement that should be seriously considered
-                    is to implement the automatic re-training of the PointNet model as more data
-                    is added to the database. (This will be moved to evaluation page later)
                 </p>
                 <p>
                     The pre-trained model is mantained on the Azure virtual machine from where

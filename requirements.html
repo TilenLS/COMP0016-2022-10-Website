@@ -75,14 +75,35 @@
                     After the initial meeting, we had some clear ideas of what our client expects of the project.
                     Below are the main requirements they pointed out:
                 </p>
-                <div class="text-card">
-                    <ul>
-                        <li><strong>Take in 3D tooth models in STL/PLY file format</strong></li>
-                        <li><strong>Store patient data as input</strong></li>
-                        <li><strong>Run analysis on 3D tooth models</strong></li>
-                        <li><strong>Provide diagnosis and prognosis suggestions to dentists</strong></li>
-                    </ul>
-                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Requirements</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="tr-start td-text tr-end">
+                                Take in 3D tooth models in STL/PLY file format
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tr-start td-text tr-end">
+                                Store patient data as input
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tr-start td-text tr-end">
+                                Numeric evaluation of tooth wear
+                            </td>
+                        </tr>
+                        <tr class="tr-bot">
+                            <td class="tr-start td-text tr-end">
+                                Provide diagnosis and prognosis suggestions to dentists
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
@@ -170,7 +191,7 @@
                 </p>
             </div>
             <div>
-                <img class="img-card" src="images/Personas.png" width="80%"></img>
+                <img class="img-card" src="images/Personas.png" width="70%"></img>
             </div>
         </div>
     </section>
@@ -289,20 +310,25 @@
                         <td class="td-text">View specific patient tooth model from home page</td>
                         <td class="tr-end td-text">Could<i class="fa fa-question"></i></td>
                     </tr>
-                    <tr class="tr-bot">
+                    <tr>
                         <td class="tr-start">20</td>
                         <td class="td-text">Sort patient details</td>
                         <td class="tr-end td-text">Could<i class="fa fa-question"></i></td>
                     </tr>
-                    <tr class="tr-bot">
+                    <tr>
                         <td class="tr-start">21</td>
-                        <td class="td-text">Treatment plan suggestion based on tooth evaluation and patient data</td>
+                        <td class="td-text">Tooth model segmentation into sextants</td>
                         <td class="tr-end td-text">Could<i class="fa fa-question"></i></td>
                     </tr>
-                    <tr class="tr-bot">
+                    <tr>
                         <td class="tr-start">22</td>
+                        <td class="td-text">Treatment plan suggestion based on tooth evaluation and patient data</td>
+                        <td class="tr-end td-text">Wont<i class="fa fa-xmark"></i></td>
+                    </tr>
+                    <tr class="tr-bot">
+                        <td class="tr-start">23</td>
                         <td class="td-text">Automatically re-train AI model with the addition of new data</td>
-                        <td class="tr-end td-text">Could<i class="fa fa-question"></i></td>
+                        <td class="tr-end td-text">Wont<i class="fa fa-xmark"></i></td>
                     </tr>
                 </tbody>
             </table>
