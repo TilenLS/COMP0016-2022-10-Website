@@ -207,18 +207,16 @@
                 </div>  
                 <h3 class="section-subheading">Languages & Libraries</h3>
                 <p>
-                    The first key factor to consider was the app needed to be built
-                    for windows. Considering the 3D aspect of the project we thought a
-                    language such as C# or C++ would be best suited. However, due to the
-                    uncommon use of the PLY file format after attempting to recreate the
-                    model rendering code of the above examples it did not work for PLY.
+                    At first we decided to attempt creating the app with C# or C++
+                    as our app had to be built for Windows and dealt with 3D models.
+                    We tried implementing some of the code for the OrthoAid app to render
                 </p>
                 <p>
                     Therefore, we decided to switch to Python and find a library that can render
                     both STL and PLY file formats. This was convenient as the algorithmic part
                     of the app would also be written in Python. We decided on using Open3D for
-                    rendering PLY files as we found a few previous examples on its integration with
-                    GUIs
+                    rendering PLY files as we found some previous examples on its integration with
+                    GUIs.
                 </p>
                 <p>
                     As for the GUI, at first we thought of PyQt6. However, there are licensing issues 
@@ -239,11 +237,17 @@
                     two sections. First the tooth wear screening phase where patient data such as age,
                     alcohol consumption, etc is gathered along with their tooth scans. Then the tooth
                     wear status phase. This is where the teeth are graded using the previously mentioned
-                    PointNet network using PyTorch to grade the teeth. This is done by grading each sextant (1/6
-                    <sup>th</sup> of the teeth) first by grading their respective individual teeth. Then
-                    based on the sextant graded an overall score is given to the wear present within the
-                    teeth. After these results are calculated, they are used along with the patient data
-                    gathered during the first stage to suggest a treatment plan.
+                    PointNet network implementedusing PyTorch to grade the teeth. 
+                </p>
+                <div>
+                    <img class="img-card" src="images/ProjectOverview.jpg" width="80%">
+                </div>
+                <p>
+                    This is done by grading each sextant (1/6<sup>th</sup> of the teeth) first by grading 
+                    their respective individual teeth. Then based on the sextant graded an overall score 
+                    is given to the wear present within the teeth. After these results are calculated, 
+                    they are used along with the patient data gathered during the first stage to suggest 
+                    a treatment plan.
                 </p>
             </div>
         </div>
