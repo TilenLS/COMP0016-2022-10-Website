@@ -63,13 +63,13 @@
                         <hr>
                     </div>
                     <div class="side-button"
-                        onclick="$(function () {$('#visible-content').load('hidden-content/3D-models.html #content-wrapper');});">
-                        3D Models
+                        onclick="$(function () {$('#visible-content').load('hidden-content/tooth-wear-indices.html #content-wrapper');});">
+                        Indices
                         <hr>
                     </div>
                     <div class="side-button"
-                        onclick="$(function () {$('#visible-content').load('hidden-content/tooth-wear-indices.html #content-wrapper');});">
-                        Indices
+                        onclick="$(function () {$('#visible-content').load('hidden-content/3D-models.html #content-wrapper');});">
+                        3D Models
                         <hr>
                     </div>
                     <div class="side-button"
@@ -170,10 +170,8 @@
                     it without facing issues in the future.
                 </p>
                 <p>
-                    For data storage we decided to use SQLite to deploy a local database at first.
-                    This is because a remote database was not a high priority in our MoSCoW agreement.
-                    If development went smoothly we would deploy a remote database using Azure later
-                    on.
+                    For data storage we decided to use SQLite to deploy a local database initially.
+                    This is because a remote database was not a high priority in our MoSCoW agreement. 
                 </p>
                 <h3 class="section-subheading">Algorithms</h3>
                 <p>
@@ -228,12 +226,16 @@
                             <td class="tr-end td-text">Open3D</td>
                         </tr>
                         <tr>
+                            <td class="tr-start td-text">Communication (Backend)</td>
+                            <td class="tr-end td-text">Flask</td>
+                        </tr>
+                        <tr>
                             <td class="tr-start td-text">Data Storage</td>
                             <td class="tr-end td-text">SQLite & Azure</td>
                         </tr>
                         <tr class="tr-bot">
-                            <td class="tr-start td-text">Tooth Wear Grading</td>
-                            <td class="tr-end td-text">PointNet & PyTorch</td>
+                            <td class="tr-start td-text">Tooth Wear Grading DL</td>
+                            <td class="tr-end td-text">PyTorch</td>
                         </tr>
                     </tbody>
                 </table>
@@ -287,6 +289,7 @@
     <div id="dynamic-footer"></div>
 
     <!-- Loading animation, import navigation bar, and set current page to active -->
+    <script src="javascript/prism.js" charset="utf-8"></script>
     <script type="text/javascript">
         $(function () {
             $("#dynamic-footer").load("footer.html #import-footer");

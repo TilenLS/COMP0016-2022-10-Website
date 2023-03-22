@@ -1,37 +1,54 @@
 <div id="content-wrapper">
     <div class="container-fluid">
         <div class="text-box">
-            <h3 class="section-subheading">Tooth Grading Algorithm</h3>
-            <p>
-                The main algorithms that have been used in academic work for tooth wear
-                grading are classification and segmentation. Then followed by the actual
-                grading algorithm. There are various approaches and different models
-                to achieve this but most first classify the various kind of teeth
-                and then segment them. Once the individual tooth has been isolated, it can
-                be graded through any ML or AI based method that considers volumetric loss
-                and discoloration.
-            </p>
-            <div class="image-grid">
-                <div class="row">
-                    <div class="col"><img src="images/3D-segmentation.png"></div>
+            <h3 class="section-subheading">Tooth Grading Algorithm (ML & DL)</h3>
+            <h4>Research in deep learning with tooth evaluation</h5>
+                <p>
+                    The main algorithms that have been used in academia for tooth evaluation are classification and segmentation. Then followed by the actual grading algorithm. The classification and segmantation algorithms are usually used to identify individual tooth and then classify whether the tooth is a incisors, canines, premolars, or molars. The figure<sup>7</sup> blow shows an example of the proces:
+                </p>
+                <div class="image-grid">
+                    <div class="row">
+                        <div class="col"><img src="images/3D-segmentation.png" width="70%"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3"></div>
+                        <div class="col  align-self-center"><img src="images/SegmentedTeeth.png" width="70%"></div>
+                        <div class="col-3"></div>
+                    </div>
                 </div>
-                <div class="row">
-                    <div class="col-3"></div>
-                    <div class="col  align-self-center"><img src="images/SegmentedTeeth.png"></div>
-                    <div class="col-3"></div>
+                <p>
+                </p>
+                <p>
+                    However, the issue with such algorithms is that they are very specialised particularly for 3D tooth models. Neither of the patient dataset and algorithms are not open source and optimised
+                    for industrial use yet. Therefore, we had to settle for a more general purpose architecture with proven excellent performence on public dataet.     
+                </p>
+                <h4>Research in Point Cloud</h5>
+                <p>
+                    As mentioned in the client requirements, the input of the DL model is in PLY format and to be more specific, it is a point cloud which consists of thousands of points with x, y, and z coordinate. This figure<sup>9</sup> shows an overview of the related research in point cloud, and we mainly focused on the classification (shown in red box) which is the most relevant to our project as we can transfer the classification model to regression model for tooth grading.
+                </p>
+                <div>
+                    <img class="img-card" src="images/point_cloud_overview.png" width="70%">
                 </div>
-            </div>
-            <p>
-                However, the issue with such algorithms is that they are very specialised
-                particularly for 3D tooth models. They are not open source and optimised
-                for industrial use yet. Therefore, we had to settle for a more general
-                purpose architecture and trade off some accuracy for effiency. One such
-                model that is well known is the PointNet network. Its general structure
-                is depicted below.
-            </p>
-            <div>
-                <img class="img-card" src="images/PointNet.jpg" width="70%">
-            </div>
+                <p>
+                    One such model which belongs to PointWise MLP Methods is the PointNet<sup>8</sup> neural network. 
+                    This pioeering work better solved problems related to the two main property of point cloud data:
+                </p>
+                <ul>
+                    <li>Permutation Invariance (Unordered): the oder of points should not affect results</li>
+                    <li>Transformation Invariance: rotating and translating points should not affect results</li>
+                </ul>
+                <p>
+                    The PointNet theoretical architecture is shown in the figure below:
+                </p>
+                <div>
+                    <img class="img-card" src="images/PointNet.jpg" width="70%">
+                </div>
+                <p>
+                    PointNet achieves a state-of-the-art performance on some publict dataset (eg. ModelNet40) among other popular deep learning networks. It also proves its robustness on deleting points, inserting outliers, and adding Gaussian noise.
+                </p>
+                <div>
+                    <img class="img-card" src="images/Pointnet_result.png" width="70%">
+                </div>
         </div>
     </div>
 </div>

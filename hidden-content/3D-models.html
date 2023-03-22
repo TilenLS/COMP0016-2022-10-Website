@@ -19,6 +19,37 @@
                 This is useful as discoloration is often a key indicator of the
                 severity of tooth wear.
             </p>
+            <p>
+                In this project we will be using PLY files as the 3D scans from our client clinics is in PLY format and they contain more information. More specifically, we are dealing with poin cloud data which is a collection of points in 3D space. 
+            </p>
+            <div class="code-box">
+                <pre>
+                    <code class="language-python">
+# This is an example of a PLY file                            
+ply
+format binary 1.0          { ascii/binary, format version number }
+element vertex 8           { define "vertex" element, 8 of them in file }
+property float x           { vertex contains float "x" coordinate }
+property float y           { y coordinate is also a vertex property }
+property float z           { z coordinate, too }
+element face 6             { there are 6 "face" elements in the file }
+property list uchar int vertex_index { "vertex_indices" is a list of ints }
+end_header                 { delimits the end of the header }
+0 0 0                      { start of vertex list }
+0 0 1
+0 1 1
+0 1 0
+1 0 0
+1 0 1
+1 1 1
+1 1 0
+4 0 1 2 3                  { start of face list }
+4 7 6 5 4
+4 0 4 5 1               
+                    </code>
+                </pre>
+            </div>
         </div>
     </div>
+    <script src="javascript/prism.js" charset="utf-8"></script>
 </div>
