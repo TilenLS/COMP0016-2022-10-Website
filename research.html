@@ -54,111 +54,56 @@
                     and related work is sparse. Especially when in the context of industry,
                     most work that has been is purely academic.
                 </p>
-                <h3 class="section-subheading">Clinical Decision Support System</h3>
-                <p>
-                    Clinical Decision Support Systems (CDSS) are systems intended to
-                    improve healthcare delivery by enhancing medical decision-making
-                    capabilities with targeted clinical knowledge, patient information,
-                    and other health information. Below is the general structure of such 
-                    a system. It is key here to note that the ultimate goal is to assist 
-                    clinicians in their work and not replace it.
-                    <sup>1</sup>
-                </p>
-                <div>
-                    <img class="img-card" src="images/CDSS-structure.png" width="70%"></img>
+            </div>
+            <div class="dynamic-container">
+                <div class="side-bar">
+                    <div class="side-button active"
+                        onclick="$(function () {$('#visible-content').load('hidden-content/cdss.html #content-wrapper');});">
+                        CDSS
+                        <hr>
+                    </div>
+                    <div class="side-button"
+                        onclick="$(function () {$('#visible-content').load('hidden-content/3D-models.html #content-wrapper');});">
+                        3D Models
+                        <hr>
+                    </div>
+                    <div class="side-button"
+                        onclick="$(function () {$('#visible-content').load('hidden-content/tooth-wear-indices.html #content-wrapper');});">
+                        Indices
+                        <hr>
+                    </div>
+                    <div class="side-button"
+                        onclick="$(function () {$('#visible-content').load('hidden-content/tooth-grading.html #content-wrapper');});">
+                        Algorithm
+                        <hr>
+                    </div>
                 </div>
-                <p>
-                    There are also different kinds of CDSS that use different methods to
-                    provide support to clinicians. A few can be seen below.
-                </p>
-                <div>
-                    <img class="img-card" src="images/CDSS.png" width="70%"></img>
-                </div>
-                <h3 class="section-subheading">3D Tooth Models</h3>
-                <p>
-                    One of the core goals of this project is to ensure that it works
-                    with 3D tooth models. The reason for this is due to the greater
-                    detail in 3D models as opposed to 2D scans which has greater potential
-                    for more accurate analysis of tooth wear through volumetric loss and
-                    structural irregularity.
-                </p>
-                <div>
-                    <img class="img-card" src="images/ToothModel.jpg" width="70%"></img>
-                </div>
-                <p>
-                    The most common file format for such 3D models is STL which is most
-                    commonly used for 3D printing. A less common format is PLY that is
-                    very similar to STL, but also perserves the color of the model.
-                    This is useful as discoloration is often a key indicator of the
-                    severity of tooth wear.
-                </p>
-                <h3 class="section-subheading">Tooth Wear Indices</h3>
-                <p>
-                    In order to convert tooth wear analysis into tangible and useable
-                    information we had to use Tooth Wear Indices as a basis for any
-                    algorithms that will provide clinicians with suggestions. Fortunately,
-                    there has been plenty of work done within this field. Below are the
-                    three most prominant indices.
-                </p>
-                <div class="image-grid">
-                    <div class="row">
-                        <div class="col">
-                            <h3>BEWE</h3><img src="images/BEWE.png">
-                        </div>
-                        <div class="col">
-                            <h3>TWES 2.0</h3><img src="images/twes2.png">
+                <div id="visible-content">
+                    <div class="container-fluid">
+                        <div class="text-box">
+                            <h3 class="section-subheading">Clinical Decision Support System</h3>
+                            <p>
+                                Clinical Decision Support Systems (CDSS) are systems intended to
+                                improve healthcare delivery by enhancing medical decision-making
+                                capabilities with targeted clinical knowledge, patient information,
+                                and other health information. Below is the general structure of such
+                                a system. It is key here to note that the ultimate goal is to assist
+                                clinicians in their work and not replace it.
+                                <sup>1</sup>
+                                <div>
+                                    <img class="img-card" src="images/CDSS-structure.png" width="70%"></img>
+                                </div>
+                                <p>
+                                    There are also different kinds of CDSS that use different methods to
+                                    provide support to clinicians. A few can be seen below.
+                                </p>
+                                <div>
+                                    <img class="img-card" src="images/CDSS.png" width="70%"></img>
+                                </div>
+                            </p>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-3"></div>
-                        <div class="col align-self-center">
-                            <h3>TWI</h3><img src="images/TWI.png">
-                        </div>
-                        <div class="col-3"></div>
-                    </div>
                 </div>
-                <p>
-                    After considering all the literature we had read, we were uncertain
-                    and decided to ask our client whose medical knowledge and experience
-                    would be helpful. After discussing with our client, we concluded that
-                    TWES 2.0 would be the best option. This is because it provides 5 simple
-                    answers but the classification by which a degree of tooth wear is placed
-                    into a specific level is very robust.
-                </p>
-                <div>
-                    <img class="img-card" src="images/TWES2-detailed.png" width="70%"></img>
-                </div>
-                <h3 class="section-subheading">Tooth Grading Algorithm</h3>
-                <p>
-                    The main algorithms that have been used in academic work for tooth wear
-                    grading are classification and segmentation. Then followed by the actual
-                    grading algorithm. There are various approaches and different models
-                    to achieve this but most first classify the various kind of teeth
-                    and then segment them. Once the individual tooth has been isolated, it can
-                    be graded through any ML or AI based method that considers volumetric loss
-                    and discoloration.
-                </p>
-                <div class="image-grid">
-                    <div class="row">
-                        <div class="col"><img src="images/3D-segmentation.png"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-3"></div>
-                        <div class="col  align-self-center"><img src="images/SegmentedTeeth.png"></div>
-                        <div class="col-3"></div>
-                    </div>
-                </div>
-                <p>
-                    However, the issue with such algorithms is that they are very specialised
-                    particularly for 3D tooth models. They are not open source and optimised
-                    for industrial use yet. Therefore, we had to settle for a more general
-                    purpose architecture and trade off some accuracy for effiency. One such
-                    model that is well known is the PointNet network. Its general structure
-                    is depicted below.
-                </p>
-                <div>
-                    <img class="img-card" src="images/PointNet.jpg" width="70%">
-                </div>  
             </div>
         </div>
     </section>
@@ -183,10 +128,10 @@
                 </p>
                 <div>
                     <img class="img-card" src="images/PearlAIdemo.jpg" width="70%">
-                </div>  
+                </div>
                 <p>
                     The second application is <a href="https://leedsdigitaldentistry.com/wearcompare/">
-                    WearCompare</a>. It intakes 3D scans of the same teeth over different time points
+                        WearCompare</a>. It intakes 3D scans of the same teeth over different time points
                     and has the clinician manually select the surfaces to compare. Then it quantifies
                     tooth wear progression. Although this uses 3D tooth models, it requires too much
                     manual interaction and multiple scans. Our project has to be as automatic as possible
@@ -194,7 +139,7 @@
                 </p>
                 <div>
                     <img class="img-card" src="images/WearCompare.png" width="70%">
-                </div>  
+                </div>
                 <p>
                     Lastly is <a href="https://github.com/amir-abdi/OrthoAid">OrthoAid</a>. It provides
                     dentists with enhanced tools for analysing 3D tooth models before and after operative
@@ -204,7 +149,7 @@
                 </p>
                 <div>
                     <img class="img-card" src="images/OrthoAidUserInterface.jpeg" width="70%">
-                </div>  
+                </div>
                 <h3 class="section-subheading">Languages & Libraries</h3>
                 <p>
                     At first we decided to attempt creating the app with C# or C++
@@ -219,7 +164,7 @@
                     GUIs.
                 </p>
                 <p>
-                    As for the GUI, at first we thought of PyQt6. However, there are licensing issues 
+                    As for the GUI, at first we thought of PyQt6. However, there are licensing issues
                     with this library as it is under a GPL commercial license. Hence we chose
                     PySide2 which is identical to PyQt6 but is under a LGPL license so we could use
                     it without facing issues in the future.
@@ -237,16 +182,16 @@
                     two sections. First the tooth wear screening phase where patient data such as age,
                     alcohol consumption, etc is gathered along with their tooth scans. Then the tooth
                     wear status phase. This is where the teeth are graded using the previously mentioned
-                    PointNet network implementedusing PyTorch to grade the teeth. 
+                    PointNet network implementedusing PyTorch to grade the teeth.
                 </p>
                 <div>
                     <img class="img-card" src="images/ProjectOverview.jpg" width="70%">
                 </div>
                 <p>
-                    This is done by grading each sextant (1/6<sup>th</sup> of the teeth) first by grading 
-                    their respective individual teeth. Then based on the sextant graded an overall score 
-                    is given to the wear present within the teeth. After these results are calculated, 
-                    they are used along with the patient data gathered during the first stage to suggest 
+                    This is done by grading each sextant (1/6<sup>th</sup> of the teeth) first by grading
+                    their respective individual teeth. Then based on the sextant graded an overall score
+                    is given to the wear present within the teeth. After these results are calculated,
+                    they are used along with the patient data gathered during the first stage to suggest
                     a treatment plan.
                 </p>
             </div>
@@ -348,6 +293,20 @@
             $("#navigation").load("navbar.html #import-navbar", function () {
                 active = document.getElementById("research")
                 active.className = "nav-link dropdown-toggle active"
+            });
+            $('.side-button').click(function (event) {
+                var element = event.target;
+
+                if (document.getElementsByClassName("side-button active").length > 0) {
+                    document.getElementsByClassName("side-button active")[0].classList.remove(
+                        "active");
+                }
+
+                if (element.nodeName == "DIV") {
+                    element.classList.add("active");
+                } else {
+                    element.parentElement.classList.add("active")
+                }
             });
         });
         setTimeout(() => {

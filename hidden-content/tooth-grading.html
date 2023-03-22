@@ -1,0 +1,37 @@
+<div id="content-wrapper">
+    <div class="container-fluid">
+        <div class="text-box">
+            <h3 class="section-subheading">Tooth Grading Algorithm</h3>
+            <p>
+                The main algorithms that have been used in academic work for tooth wear
+                grading are classification and segmentation. Then followed by the actual
+                grading algorithm. There are various approaches and different models
+                to achieve this but most first classify the various kind of teeth
+                and then segment them. Once the individual tooth has been isolated, it can
+                be graded through any ML or AI based method that considers volumetric loss
+                and discoloration.
+            </p>
+            <div class="image-grid">
+                <div class="row">
+                    <div class="col"><img src="images/3D-segmentation.png"></div>
+                </div>
+                <div class="row">
+                    <div class="col-3"></div>
+                    <div class="col  align-self-center"><img src="images/SegmentedTeeth.png"></div>
+                    <div class="col-3"></div>
+                </div>
+            </div>
+            <p>
+                However, the issue with such algorithms is that they are very specialised
+                particularly for 3D tooth models. They are not open source and optimised
+                for industrial use yet. Therefore, we had to settle for a more general
+                purpose architecture and trade off some accuracy for effiency. One such
+                model that is well known is the PointNet network. Its general structure
+                is depicted below.
+            </p>
+            <div>
+                <img class="img-card" src="images/PointNet.jpg" width="70%">
+            </div>
+        </div>
+    </div>
+</div>
