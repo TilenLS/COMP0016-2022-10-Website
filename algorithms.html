@@ -49,6 +49,8 @@
             <h1 class="section-heading">Overview</h1>
             <div class="text-box">
                 <p>
+                    We went through a large number of literatures on evaluating tooth weear grade using machine learning (ML) and Deep learning (DL) on 3D point cloud. Due to the special nature of point cloud data, using traditional ML algorithms is not suitable in this project as we need do extract features from the point cloud dataset. But due to the ethical issues, we are not able to have a large amount of real patient teeth data with well labeled features. Therefore, we had to design a new algorithm to solve this problem. <br> <br>
+                    The computer vision algorithm in the point cloud field that we used is PointNet network, we will explain the details of the algorithm in the following sections. 
 
                 </p>
             </div>
@@ -58,11 +60,36 @@
     <section id="Dataset">
         <div class="container-fluid section-intro">
             <h1 class="section-heading">Dataset</h1>
-            <div class="text-box">
-                <p>
-
-                </p>
+            <h3>Data Source</h3>
+            <p>
+                The data we used is from our client UCL Eastman Dental Institute. They provided us with 127 3D teeth models (sextant). They also provides us with 14 real patient teeth models to be displayed in the windows software. 
+                <br> <br>
+                Previously, we are supposed to train a deep learning model on real patient data. However, due to the ethical issues, we have not recieved the dataset until March 2022. Our client and us, therefore, agreed on to build a proof-of-concept model using the sextant teeth models, where teeth sextant means a subpart of the whole teeth (contains 4 teeth).
+                We recieved a dataset of 127 3D teeth models on 13rd March, 67 more on 23rd March and we started to train and improve our model since then.
+            </p>
+            <h3>Data Description</h3>
+            <p>
+                The data we received is in PLY format, which is a common format for storing 3D point cloud data. Each teeth model is labeled with a tooth wear grade from 0 to 4 on each tooth manually by experienced dentists. Hence, the label for a teeth model is consists of 4 grades. According to the TWES2.0 standard, mentioned in the Research Section, the overall tooth wear grade depends on the highest grade among the 4 teeth.
+            </p>
+            <p>
+                The distribution of the teeth model dataset is shown in the following pie chart.
+            </p>
+            <div>
+                <img class="img-card" src="images/Dataset_percent.png" width="50%">
             </div>
+            <h3>Data augmentation</h3>
+            <p>
+                As we only received 194 teeth models, we decided to use data augmentation to increase the size of the dataset as 194 is not an sufficient amount of data for training a deep learning model. 
+                <br> <br>
+
+            </p>
+            <h3>Training and Testing dataset</h3>
+            <p>
+                Ratio of training and testing dataset: 80% training, 20% testing
+            </p>
+            <p>
+                Although we would love to make use of all the data for training to get the best result, we decided to split the dataset into 80% for training and 20% for testing. In order to have a more accurate score, we used K-fold cross validation to train the model. We chose to use K = 5, which means we split the dataset into 5 parts randomly, and each time we use 4 parts for training and 1 part for testing. We repeat this process 5 times and get the average score.
+            </p>
         </div>
     </section>
 
@@ -71,7 +98,7 @@
             <h1 class="section-heading">Algorithm</h1>
             <div class="text-box">
                 <p>
-
+                    We used PointNet network to process the input data. This structure is able to dealing with permutation invariance (Unordered) and transformation invariance, which are two important properties of point cloud data. It is easy to imagin that the result should no  
                 </p>
             </div>
         </div>
