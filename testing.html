@@ -86,8 +86,96 @@
             <div class="text-box">
                 <h3 class="section-subheading">Automated Testing</h3>
                 <p>
-
+                    In this section of our testing we wrote our own code to test the validity
+                    of our project code. We focused on testing the main functional modules in
+                    our code. This includes specific functions (unit test) and larger classes
+                    (integration test). Below is a list of the main modules we tested.
                 </p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Module</th>
+                            <th>Description</th>
+                            <th>Pass/Fail</th>
+                        </tr>
+                    </thead>
+                        <tr>
+                            <td class="tr-start">1</td>
+                            <td class="td-text">dentist_signup</td>
+                            <td class="td-text">
+                                Accepts user input of username, password, and confirm_password.
+                            </td>
+                            <td class="tr-end"><i class="fa fa-check"></i></td>   
+                        </tr>
+                        <tr>
+                            <td class="tr-start">2</td>
+                            <td class="td-text">dentist_signup_invalid_password</td>
+                            <td class="td-text">
+                                Checks if signup details were invalid and provides a response.
+                            </td>
+                            <td class="tr-end"><i class="fa fa-check"></i></td>   
+                        </tr>
+                        <tr>
+                            <td class="tr-start">3</td>
+                            <td class="td-text">dentist_signin</td>
+                            <td class="td-text">
+                                Accepts user input of username and password.
+                            </td>
+                            <td class="tr-end"><i class="fa fa-check"></i></td>   
+                        </tr>
+                        <tr>
+                            <td class="tr-start">4</td>
+                            <td class="td-text">dentist_signin_invalid_username</td>
+                            <td class="td-text">
+                                Checks if the signin username exists within the database.
+                            </td>
+                            <td class="tr-end"><i class="fa fa-check"></i></td>   
+                        </tr>
+                        <tr>
+                            <td class="tr-start">5</td>
+                            <td class="td-text">dentist_signin_invalid_password</td>
+                            <td class="td-text">
+                                Checks if signin password is valid.
+                            </td>
+                            <td class="tr-end"><i class="fa fa-check"></i></td>   
+                        </tr>
+                        <tr>
+                            <td class="tr-start">6</td>
+                            <td class="td-text">patient_add</td>
+                            <td class="td-text">
+                                Create a new patient with their medical background and tooth scans.
+                            </td>
+                            <td class="tr-end"><i class="fa fa-check"></i></td>   
+                        </tr>
+                        <tr>
+                            <td class="tr-start">7</td>
+                            <td class="td-text">delete_patient</td>
+                            <td class="td-text">
+                                Remove a patient from the database.
+                            </td>
+                            <td class="tr-end"><i class="fa fa-check"></i></td>   
+                        </tr>
+                        <tr>
+                            <td class="tr-start">8</td>
+                            <td class="td-text">prediction_success</td>
+                            <td class="td-text">
+                                Request a prediction and retrieve it.
+                            </td>
+                            <td class="tr-end"><i class="fa fa-check"></i></td>   
+                        </tr>
+                        <tr class="tr-bot">
+                            <td class="tr-start">9</td>
+                            <td class="td-text">predict_fail</td>
+                            <td class="td-text">
+
+                            </td>
+                            <td class="tr-end"><i class="fa fa-check"></i></td>   
+                        </tr>
+                    <tbody>
+
+                    </tbody>
+                </table>
                 <h3 class="section-subheading">Manual Testing</h3>
                 <p>
                     With manual testing we mainly focused on simply ensuring the UI and

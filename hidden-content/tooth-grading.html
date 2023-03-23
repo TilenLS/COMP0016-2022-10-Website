@@ -4,7 +4,11 @@
             <h3 class="section-subheading">Tooth Grading Algorithm (ML & DL)</h3>
             <h4>Research in deep learning with tooth evaluation</h5>
                 <p>
-                    The main algorithms that have been used in academia for tooth evaluation are classification and segmentation. Then followed by the actual grading algorithm. The classification and segmantation algorithms are usually used to identify individual tooth and then classify whether the tooth is a incisors, canines, premolars, or molars. The figure<sup>7</sup> blow shows an example of the proces:
+                    The main algorithms that have been used in academia for tooth evaluation are classification,
+                    segmentation, and grading algorithms. The classification and segmantation
+                    algorithms are usually used to identify individual teeth and classify whether they are
+                    incisors, canines, premolars, or molars. The figure<sup>7</sup> below shows an example of the
+                    proces:
                 </p>
                 <div class="image-grid">
                     <div class="row">
@@ -19,36 +23,45 @@
                 <p>
                 </p>
                 <p>
-                    However, the issue with such algorithms is that they are very specialised particularly for 3D tooth models. Neither of the patient dataset and algorithms are not open source and optimised
-                    for industrial use yet. Therefore, we had to settle for a more general purpose architecture with proven excellent performence on public dataet.     
+                    However, the issue with such algorithms is that they are very specialised for 3D tooth
+                    models. Neither the patient dataset or algorithms are open source let alone optimised
+                    for industrial use. Therefore, we had to settle for a more general purpose architecture with
+                    proven performence on a public dataset.
                 </p>
                 <h4>Research in Point Cloud</h5>
-                <p>
-                    As mentioned in the client requirements, the input of the DL model is in PLY format and to be more specific, it is a point cloud which consists of thousands of points with x, y, and z coordinate. This figure<sup>9</sup> shows an overview of the related research in point cloud, and we mainly focused on the classification (shown in red box) which is the most relevant to our project as we can transfer the classification model to regression model for tooth grading.
-                </p>
-                <div>
-                    <img class="img-card" src="images/point_cloud_overview.png" width="70%">
-                </div>
-                <p>
-                    One such model which belongs to PointWise MLP Methods is the PointNet<sup>8</sup> neural network. 
-                    This pioeering work better solved problems related to the two main property of point cloud data:
-                </p>
-                <ul>
-                    <li>Permutation Invariance (Unordered): the oder of points should not affect results</li>
-                    <li>Transformation Invariance: rotating and translating points should not affect results</li>
-                </ul>
-                <p>
-                    The PointNet theoretical architecture is shown in the figure below:
-                </p>
-                <div>
-                    <img class="img-card" src="images/PointNet.jpg" width="70%">
-                </div>
-                <p>
-                    PointNet achieves a state-of-the-art performance on some publict dataset (eg. ModelNet40) among other popular deep learning networks. It also proves its robustness on deleting points, inserting outliers, and adding Gaussian noise.
-                </p>
-                <div>
-                    <img class="img-card" src="images/Pointnet_result.png" width="70%">
-                </div>
+                    <p>
+                        As mentioned in the client requirements, the input of the Deep Learning (DL) model is in the PLY
+                        format. To be
+                        more specific, it is a point cloud which consists of thousands of points with x, y, and z
+                        coordinates. This figure<sup>9</sup> shows an overview of the related research in point cloud DL
+                        models,
+                        and we mainly focused on the classification (highlighted in red). This is most relevant to our
+                        project as we can transfer the classification model to a regression model for tooth grading.
+                    </p>
+                    <div>
+                        <img class="img-card" src="images/point_cloud_overview.png" width="70%">
+                    </div>
+                    <p>
+                        One such model which belongs to PointWise MLP Methods is the PointNet<sup>8</sup> neural
+                        network. The PointNet model solved two key issues caused by the properties of point cloud data:
+                    </p>
+                    <ul class="num-list">
+                        <li>Permutation Invariance (Unordered): the oder of points should not affect results</li>
+                        <li>Transformation Invariance: rotating and translating points should not affect results</li>
+                    </ul>
+                    <p>
+                        The theoretical PointNet architecture is shown in the figure below:
+                    </p>
+                    <div>
+                        <img class="img-card" src="images/PointNet.jpg" width="70%">
+                    </div>
+                    <p>
+                        PointNet achieves a state-of-the-art performance on some public datasets (eg. ModelNet40).
+                        It also proves its robustness on deleting points, inserting outliers, and adding Gaussian noise.
+                    </p>
+                    <div>
+                        <img class="img-card" src="images/Pointnet_result.png" width="70%">
+                    </div>
         </div>
     </div>
 </div>

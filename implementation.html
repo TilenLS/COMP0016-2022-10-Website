@@ -107,7 +107,7 @@
                     </pre>
                 </div>
                 <p>
-                    The actual UI code for each page has its own class that takes in
+                    The actual UI code for each page has its own class that inherits
                     the MainWindow class from above. This works as the base window for
                     each page. The UI consists of PySide widgets and layouts. For example,
                     here is how we created a register button with PySide2.
@@ -175,7 +175,10 @@
                     Our app renders 3D STL and PLY files using the Open3D library.
                     We implement these capabilities in a single ImageViewer class.
                     This is mainly done through the Visualizer class which lets us
-                    render 3D point cloud models. In the viewing page, we provides the dentists with the ability to hide part of the teeth model (ie. hide upper jaw or lower jaw) for better observing teeth model in details. 
+                    render 3D point cloud models. In the viewing page, we provide
+                    dentists with the ability to hide part of the teeth model
+                    (ie. hide upper jaw or lower jaw) for clearer observation of
+                    the teeth model.
                 </p>
                 <div class="code-box">
                     <pre>
@@ -216,13 +219,13 @@
                     We create a window in the background within which we load in
                     the point cloud models if specified. Then we get the window
                     ID using Win32GUI library to merge it into a PySide2 widget
-                    and make the window visible again. This then begins the timer
+                    and make the window visible again. This begins the timer
                     that runs the update_vis function that renders the models.
                 </p>
             </div>
     </section>
 
-    <section id="data-storage">
+    <section id="communication">
         <div class="container-fluid">
             <h1 class="section-heading section-intro">Communication</h1>
             <div class="text-box section-intro">
@@ -249,7 +252,8 @@
                     <div class="feature-content">
                         <img class="tool-logo" src="images/tools-and-dependencies/FlaskLogo.png" width="150">
                         <p>
-                            Handles HTTP requests from front-end. Provides flexible routing system. Helps create RESTful APIs
+                            Handles HTTP requests from front-end. Provides flexible routing system. Helps create RESTful
+                            APIs.
                         </p>
                     </div>
                 </div>
@@ -266,19 +270,23 @@
             <div class="text-box section-intro">
                 <h3 class="section-subheading">Overview</h3>
                 <p>
-                    Our front-end is implemented in PySide2 to provide a user interface in Windows system and Open3D to visualise the 3D teeth models in PLY format. Once the user opens our application and interact with the UI, the front-end will record the input information and send HTTP requests to the back-end server to store or retrieve the data from the database (eg. dentist adds a patient and views patient's teeth model). The back-end server will then process the data and send the result back to the front-end to display. 
+                    Once the user opens our application and interacts with
+                    the UI, the front-end will record the input information and send HTTP requests to the back-end
+                    server to store or retrieve the data from the database (eg. dentist adds a patient and views
+                    patient's teeth model). The back-end server will then process the data and send the result back to
+                    the front-end to display.
                 </p>
                 <p>
-                    In order to provides maintainess and scalability, we deployed our database and inference module (which includs deep learning model) onto the Azure cloud platform. We used Flask framework to build the back-end server. The Flask framework is a lightweight WSGI web application framework. It provides flexible routing system and helps create RESTful APIs.
+                    In order to provide maintainability and scalability, we deployed our database and inference module
+                    (which includs the deep learning model) onto an Azure cloud platform. We used the Flask framework to
+                    build the back-end server. The Flask framework is a lightweight WSGI web application framework. It
+                    provides a flexible routing system and helps create RESTful APIs.
                 </p>
                 <h3 class="section-subheading">Back-end Structure</h3>
-                <div class="code-wrapper" data-controller="code">
-                    <div class="code-header">
-                        <span class="code-lang">default</span>
-                    </div>
-                    <div class="highlight">
-                        <pre>
-                            <code>back-end/app
+                <div class="code-box">
+                    <pre>
+                            <code class="language-textfile">
+back-end/app
 ├── dentist_module/
 |  ├── __init__.py
 |  ├── dentist.py
@@ -304,21 +312,27 @@
 |
 ├── __init__.py
 └── app.py
-</code>
+                            </code>
                         </pre>
-                    </div>
                 </div>
                 <p>
-                    The back-end is organised into three modules: dentist_module, inference_module and patient_module. The dentist_module and patient_module are responsible for manipulating users and patients infromation in the database. The inference_module contains a deep learning model and handles the prediction request from dentists when they want to analyse a patient tooth wear degree. The app.py file is the entry point of the back-end server. It is used to create the Flask app object and register the blueprints.
-                <h3 class="section-subheading">Explanation</h3>
-                <p>
-                    We used Flask Blueprints to organise our back-end code. It is a way to organise the app into modular and reusable components and allows us to define a set of related routes in separate modules.
+                    The back-end is organised into three modules: dentist_module, inference_module and patient_module.
+                    The dentist_module and patient_module are responsible for manipulating user and patient
+                    infromation in the database. The inference_module contains a deep learning model and handles the
+                    prediction requests from dentists when they want to see patient tooth wear degree. The app.py
+                    file is the entry point of the back-end server. It is used to create the Flask app object and
+                    register the blueprints.
+                    <h3 class="section-subheading">Explanation</h3>
+                    <p>
+                        We used Flask Blueprints to organise our back-end code. It is a way to organise the app into
+                        modular and reusable components which allows us to define a set of related routes in separate
+                        modules.
 
-                </p>
-                <div class="code-grid">
-                    <div class="col">
-                        <div class="code-box">
-                            <pre>
+                    </p>
+                    <div class="code-grid">
+                        <div class="col">
+                            <div class="code-box">
+                                <pre>
                                 <code class="language-python">
     # Create an app object using the Flask class
     app = Flask(__name__)
@@ -328,11 +342,11 @@
     app.register_blueprint(patient_bp, url_prefix='/patient')
                                 </code>
                             </pre>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col">
-                        <div class="code-box">
-                            <pre>
+                        <div class="col">
+                            <div class="code-box">
+                                <pre>
                                 <code class="language-python">
     patient_bp = Blueprint('patient', __name__)
 
@@ -343,12 +357,13 @@
         ...      
                                 </code>
                             </pre>
+                            </div>
                         </div>
-                    </div>    
-                </div> 
-                <p>
-                    Please find more information about patient_module and dentist_module at here, and inference_module at here.
-                </p>
+                    </div>
+                    <!-- <p>
+                        Please find more information about patient_module and dentist_module at here, and
+                        inference_module at here.
+                    </p> -->
             </div>
         </div>
     </section>
@@ -390,13 +405,13 @@
                 <p>
                     We host a SQLite database stored on an Azure virtual machine. In the database,
                     we store the recorded patient data along with their 3D tooth scans and the login
-                    credentials of the clinician. All authorised clinicians have access to all the
+                    credentials of the clinicians. All authorised clinicians have access to all the
                     stored patient data.
                 </p>
                 <p>
                     Both the upstream and downstream system from the client to the server use the
-                    Python Requests library to send and recieve data. Below is an example of storing a new patient data in the database.  
-
+                    Python Requests library to send and recieve data. Below is an example of storing a new patient data
+                    in the database.
                 </p>
                 <div class="code-box">
                     <pre>
@@ -498,14 +513,8 @@
                 </p>
                 <img class="img-card" src="images/PointNet.jpg" width="70%"></img>
                 <p>
-                    The pre-trained model has been trained on 90 tooth models for 50 epochs
-                    (with a learning rate of 0.001), using the Adam optimizer. The achieved accuracy
-                    is only ~20%. Read more about this on the <a href="test.html#unit-integration-testing">testing page</a>.
-                    (Below for now)
-                </p>
-                <p>
                     The pre-trained model is mantained on the Azure virtual machine from where
-                    any specific model can be accessed. When a user wishes to perform analysis,
+                    any specific tooth model can be accessed. When a user wishes to perform analysis,
                     a request is made using Flask to access this file. Then the file is read
                     with the Plyfile library and passed through the pre-trained PointNet model
                     which produces a result. Then this result is retrieved and returned to

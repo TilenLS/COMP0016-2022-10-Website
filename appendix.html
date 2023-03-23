@@ -69,7 +69,14 @@
                             <h1>User Manual</h1>
                         </div>
                     </a>
-                    <a onclick="$(function () {$('#dynamic-content').load('deployment-manual.html #depman-content');});">
+                    <a onclick="
+                        $(function () {$('#dynamic-content').load('deployment-manual.html #depman-content', function () {
+                                var script = document.createElement('script');
+                                script.src = 'javascript/prism.js';
+                                script.charset = 'utf-8';
+                                document.getElementById('dynamic-content').appendChild(script); 
+                            });
+                        });">
                         <div class="appnav-button col">
                             <h1>Deployment Manual</h1>
                         </div>

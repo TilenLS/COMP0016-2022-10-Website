@@ -630,6 +630,7 @@ p a:hover {
     padding: 45px 0 20px;
     line-height: 24px;
     color: #112D4E;
+    margin-top: 100px;
 }
 
 .site-footer p {
@@ -874,12 +875,13 @@ p a:hover {
 }
 
 #image-processing .small-grid.features-grid,
+#tooth-wear-eval .small-grid.features-grid,
+#data-storage .small-grid.features-grid,
 #tooth-wear-eval .small-grid.features-grid {
     grid-template-columns: repeat(3, 1fr);
 }
 
-#data-storage .small-grid.features-grid,
-#tooth-wear-eval .small-grid.features-grid {
+#communication .small-grid.features-grid {
     grid-template-columns: repeat(4, 1fr);
     margin: 0 auto;
     margin-top: 30px;
