@@ -1183,10 +1183,14 @@ tbody tr:hover {
     column-gap: 30px;
     justify-content: left;
     margin-top: 50px;
+    position: relative;
 }
 
 .dynamic-container .side-bar {
     width: 15%;
+    height: fit-content;
+    position: sticky;
+    top: 70px;
 }
 
 .dynamic-container .side-button {
@@ -1199,7 +1203,6 @@ tbody tr:hover {
     font-size: 1.5rem;
     font-weight: 600;
     color: #112D4E;
-    margin: 10px 0;
 }
 
 .dynamic-container .side-button.active::after {
@@ -1220,19 +1223,26 @@ tbody tr:hover {
 .dynamic-container .side-button::after {
     display: block;
     position: absolute;
+    width: 0%;
     top: 35px;
     content: '';
     background: linear-gradient(90deg, #3F72AF, #6d9bd3);
-    width: 0%;
-    transition: width 250ms ease-in-out;
+    transition: all 0.5s;
 }
 
 .dynamic-container .side-button:hover::after {
     height: 5px;
     width: 100%;
-    transition: width 250ms ease-in-out;
 }
 
+@keyframes out {
+    0% {
+        width: 100%;
+    }
+    100% {
+        width: 0%;
+    }
+}
 
 .dynamic-container .text-box {
     margin: 0;
