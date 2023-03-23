@@ -246,7 +246,7 @@
                         <td class="td-text"><i class="fa fa-check"></i></td>
                         <td class="tr-end td-text">All</td>
                     </tr>
-                    <tr>
+                    <tr class="tr-bot">
                         <td class="tr-start">2</td>
                         <td class="td-text">Easily usable and provide simple & intuitive UX</td>
                         <td class="td-text prio">Should<i class="fa fa-plus"></i></td>
@@ -581,12 +581,19 @@
             $(".floating-button").fadeOut();
         });
         $(document).scroll(function () {
-            var y = window.scrollY;
-            console.log(y)
+            var y = window.scrollY + $(window).height(),
+                body = document.body,
+                html = document.documentElement;
+            const maxHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight ) - document.getElementById("dynamic-footer").offsetHeight;
             if (y > 500) {
                 $(".floating-button").fadeIn();
             } else {
                 $('.floating-button').fadeOut();
+            }
+            if (y > maxHeight) {
+                $(".floating-button").css("bottom",y-maxHeight+30);
+            } else {
+                $(".floating-button").css("bottom","50px");
             }
         });
         setTimeout(() => {

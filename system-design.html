@@ -109,12 +109,19 @@
             $(".floating-button").fadeOut();
         });
         $(document).scroll(function () {
-            var y = window.scrollY;
-            console.log(y)
+            var y = window.scrollY + $(window).height(),
+                body = document.body,
+                html = document.documentElement;
+            const maxHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight ) - document.getElementById("dynamic-footer").offsetHeight;
             if (y > 500) {
                 $(".floating-button").fadeIn();
             } else {
                 $('.floating-button').fadeOut();
+            }
+            if (y > maxHeight) {
+                $(".floating-button").css("bottom",y-maxHeight+30);
+            } else {
+                $(".floating-button").css("bottom","50px");
             }
         });
         setTimeout(() => {
