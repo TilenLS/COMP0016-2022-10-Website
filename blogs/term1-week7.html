@@ -26,7 +26,42 @@
 <body>
     <section class="blog-content">
         <div class="container-fluid text-box">
-            <h1>Week 7: Title (date)</h1>
+            <h1>Week 7: Literature Review Pt 2 (Nov 21 - Nov 27)</h1>
+            <div class="text-box">
+                <p>
+                    Continuing our literature review we had to consider some practical implications of the
+                    research we were doing. The main one being that the complex AI architectures that we
+                    found online have not been implemented in software and are not optimised. So although, they
+                    have promising results it is unlikely we would be able to replicate the results within an app
+                    (given the time frame for the project) and even if we could they would be too computationally
+                    taxing for an everyday app. Hence the model would require extensive optimisation.
+                </p>
+                <p>
+                    Therefore, we had to look into more practical and implementable solutions for algorithms we could
+                    use for tooth grading. After some looking around at more general models we could tailor to tooth
+                    wear grading we found PointNet. A robust neural-network architecture specifically made for
+                    classification and segmentation of 3D point-cloud models. The general structure can bee seen below.
+                </p>
+                <div>
+                    <img class="img-card" src="images/PointNet.jpg" width="70%">
+                </div>
+                <p>
+                    Due to its widespread popularity there was much previous open-source work we could look
+                    towards for implementing a tooth grading algorithm. All we had to do was tailor it for
+                    tooth wear analysis which was a far simpler task compared to recreating the highly
+                    complex multi-model algorithm from most academic papers.
+                </p>
+                <p>
+                    Another import issue to note is data gathering. It has been something we have struggled with
+                    much as there are virtually no 3D PLY models of teeth online. Since this is a very new 
+                    technology that hasn't been fully accepted yet. Most tooth scans are 2D and those which are
+                    three dimensional are usally STL files which do not encode color. All we could do is liaise
+                    with our client and hope he could provide us with some. Our client would now have to
+                    produce these scans from prosthetic 'fake' teeth which would be costly and much time 
+                    to would be needed for them to arrive. Alternatively get scans from real people, but
+                    this requires long legal processes to even begin doing.
+                </p>
+            </div>
         </div>
     </section>
 </body>

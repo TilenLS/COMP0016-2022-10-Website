@@ -26,7 +26,42 @@
 <body>
     <section class="blog-content">
         <div class="container-fluid text-box">
-            <h1>Week 8: Title (date)</h1>
+            <h1>Week 8: Literature Review Pt 3 (Nov 28 - Dec 4)</h1>
+            <div class="text-box">
+                <p>
+                    Now that we had covered the base part of the algortihm, grading tooth wear,
+                    this had to be incorporated to a parent algorithm that would use those results
+                    to provide clinical decision support.
+                </p>
+                <p>
+                    After reviewing several papers on Clinical Decision Support Systems (CDSS), some
+                    specific to dentsitry and others more general we had a good overview of how they
+                    can be structured.
+                </p>
+                <div>
+                    <img class="img-card" src="images/CDSS.png" width="70%">
+                </div>
+                <p>
+                    One obvious solution would be to use another neural network that takes the tooth wear
+                    grades and patient data as input and suggests treatment plans. Given enough training
+                    data this would potentially provide very accurate results. However, this again
+                    would require our client to produce data of tooth scans of real patients with their
+                    personal and medical backgrounds, along with the corresponding dentist recommended
+                    treatment plans.
+                </p>
+                <p>
+                    Even though this has been included in our research it will not be included within
+                    the development of the project due to time constraints. This will likely be done
+                    by later generations who get handed down this project.
+                </p>
+                <p>
+                    An interesting side note. Another similar proposal for a CDSS is to use a neuro-fuzzy
+                    system. This combines the human reasoning of fuzzy logic with the human learning aspect
+                    of neural networks. There are few examples of this approach having been used to implement
+                    CDSS with very promising results. However, this is primarily academic work and very hard
+                    to realistically implement.
+                </p>
+            </div>
         </div>
     </section>
 </body>
