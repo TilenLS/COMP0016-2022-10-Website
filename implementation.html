@@ -73,7 +73,7 @@
                 <h3 class="section-subheading">Explanation</h3>
                 <p>
                     The main class that loads the UI is the MainWindow class seen below.
-                    It sets up all the seperate pages. The actual code for these is in
+                    It sets up all the separate pages. The actual code for these is in
                     their own individual files. The MainWindow class is instanced which loads
                     in the app starting with the sign in page.
                 </p>
@@ -130,6 +130,55 @@
                                     "    background:#AEE2FF;\n"
                                     "    color: #111111;\n"
                                     "}")
+                        </code>
+                    </pre>
+                </div>
+                <p>
+                    Besides, we use custom widgets provided by the library called QT-PyQt-PySide-Custom-Widgets to simplify
+                    the UI development process. To be specific, we used the QStackedWidget and QCustomSlideMenu instance.
+                    QStackedWidget allows us to integrate home page, view page and analysis page in the same window. Whereas
+                    QCustomSlideMenu lets us implement the add patient details function as a side bar in the window.
+                    This is how QStackedWidget is used in our app.
+                </p>
+                <div class="code-box">
+                    <pre>
+                        <code class="language-python">
+    "QStackedWidget":[
+    {
+        "name":"pages",
+        "transitionAnimation":[
+            {
+                "fade":[
+                    {
+                        "active": false,
+                        "duration":1000,
+                        "easingCurve": "Linear"
+                    }
+                ],
+                "slide":[
+                    {
+                        "active":true,
+                        "duration": 100,
+                        "direction": "horizontal",
+                        "easingCurve": "Linear"
+                    }
+                ]
+            }
+        ],
+        "navigation":[
+            {
+                "navigationButtons":[
+                    {
+                        "homeButton": "homePage",
+                        "viewButton": "viewPage",
+                        "analysisButton": "analysisPage"
+                    }
+                ]
+            }
+        ]
+
+    }
+]
                         </code>
                     </pre>
                 </div>
@@ -262,7 +311,7 @@
                         <img class="tool-logo" src="images/tools-and-dependencies/PythonRequestsLogo.png" width="70"
                             height="70">
                         <p>
-                            Python Requests library used to make client-side requests to server for data trasnfermation.
+                            Python Requests library used to make client-side requests to server for data transformation.
                         </p>
                     </div>
                 </div>
@@ -278,7 +327,7 @@
                 </p>
                 <p>
                     In order to provide maintainability and scalability, we deployed our database and inference module
-                    (which includs the deep learning model) onto an Azure cloud platform. We used the Flask framework to
+                    (which includes the deep learning model) onto an Azure cloud platform. We used the Flask framework to
                     build the back-end server. The Flask framework is a lightweight WSGI web application framework. It
                     provides a flexible routing system and helps create RESTful APIs.
                 </p>
@@ -318,7 +367,7 @@ back-end/app
                 <p>
                     The back-end is organised into three modules: dentist_module, inference_module and patient_module.
                     The dentist_module and patient_module are responsible for manipulating user and patient
-                    infromation in the database. The inference_module contains a deep learning model and handles the
+                    information in the database. The inference_module contains a deep learning model and handles the
                     prediction requests from dentists when they want to see patient tooth wear degree. The app.py
                     file is the entry point of the back-end server. It is used to create the Flask app object and
                     register the blueprints.
@@ -448,8 +497,7 @@ back-end/app
                     the data before sending it. We first convert the model into a binary file
                     before sending it to the server. Similarly, when making a request for a
                     tooth scan we have to convert from binary back to a point cloud model that
-                    can be displayed. This is done with both NumPy to convert to binary and
-                    Open3D to convert back into a point cloud model.
+                    can be displayed. 
                 </p>
             </div>
         </div>
@@ -490,13 +538,9 @@ back-end/app
             <div class="text-box section-intro">
                 <h3 class="section-subheading">Explanation</h3>
                 <p>
-                    The pre-trained model is mantained on the Azure virtual machine from where any specific tooth model can be accessed. When a user wishes to perform analysis,
-                    a request is made using Flask to access this file. Then the file is read
-                    with the Plyfile library and fed into the pre-trained model
-                    which produces a result. Then the result is retrieved and returned to
-                    the front-end to be displayed. Below is the code for such
-                    a request. <br> <br>
-                    Please see here for more detailed algorithms explanation and how to implement the algorithm step by step.
+                    Please visit the <a href="algorithms.html">Algorithms tab</a> for more detailed algorithms explanation and how to 
+                    implement the algorithm step by step. The image below is the general structure of PointNet that we used to implementation
+                    our deep learning model.
                 </p>
                 <img class="img-card" src="images/PointNet.jpg" width="70%"></img>
                 <p>
