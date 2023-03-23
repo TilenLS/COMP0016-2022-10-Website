@@ -808,7 +808,7 @@ p a:hover {
     min-height: 350px;
     background: linear-gradient(-45deg, #DBE2EF,#3F72AF,#112D4E);
     background-size: 150% 150%;
-    animation: gradient 10s ease infinite;
+    animation: gradient 7s ease infinite;
 }
 
 #title-banner h1 {
@@ -825,7 +825,7 @@ p a:hover {
 	0% {
 		background-position: 0% 0%;
 	}
-	25% {
+	50% {
 		background-position: 100% 50%;
 	}
 	100% {
