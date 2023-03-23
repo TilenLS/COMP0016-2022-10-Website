@@ -95,53 +95,6 @@ p a:hover {
     color: #3F72AF;
 }
 
-@media (min-width: 1100px) {
-    .navbar-expand-custom {
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-    }
-
-    .navbar-expand-custom .navbar-nav {
-        flex-direction: row;
-    }
-
-    .navbar-expand-custom .dropdown-menu {
-        position: absolute;
-    }
-
-    .navbar-expand-custom .nav-link {
-        padding-right: .5rem;
-        padding-left: .5rem;
-    }
-
-    .navbar-expand-custom>.container {
-        flex-wrap: nowrap;
-    }
-
-    .navbar-expand-custom .navbar-collapse {
-        display: flex !important;
-        flex-basis: auto;
-    }
-
-    .navbar-expand-custom .navbar-toggler {
-        display: none;
-    }
-
-    .dropdown:hover .dropdown-menu {
-        display: block;
-    }
-
-    .nav-link {
-        color: #112D4E;
-        padding: 1em 0;
-    }
-
-    .nav-item {
-        margin: 0 1.2em;
-    }
-}
-
 .navbar {
     padding: 0;
     margin: 0;
@@ -149,7 +102,6 @@ p a:hover {
 
 .nav-item {
     position: relative;
-    margin: 0 5px;
 }
 
 .nav-item::after {
@@ -254,6 +206,53 @@ p a:hover {
 
 .navbar-toggler span:nth-child(3) {
     transform: translate(0%, 0%) rotate(0deg);
+}
+
+@media (min-width: 1200px) {
+    .navbar-expand-custom {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+    }
+
+    .navbar-expand-custom .navbar-nav {
+        flex-direction: row;
+    }
+
+    .navbar-expand-custom .dropdown-menu {
+        position: absolute;
+    }
+
+    .navbar-expand-custom .nav-link {
+        padding-right: .5rem;
+        padding-left: .5rem;
+    }
+
+    .navbar-expand-custom>.container {
+        flex-wrap: nowrap;
+    }
+
+    .navbar-expand-custom .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto;
+    }
+
+    .navbar-expand-custom .navbar-toggler {
+        display: none;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+
+    .nav-link {
+        color: #112D4E;
+        padding: 1em 0;
+    }
+
+    .nav-item {
+        /* padding-left: .5rem; */
+    }
 }
 
 /* INDEX PAGE */
@@ -809,7 +808,7 @@ p a:hover {
     min-height: 350px;
     background: linear-gradient(-45deg, #DBE2EF,#3F72AF,#112D4E);
     background-size: 150% 150%;
-    animation: gradient 10s ease infinite;
+    animation: gradient 7s ease infinite;
 }
 
 #title-banner h1 {
@@ -826,7 +825,7 @@ p a:hover {
 	0% {
 		background-position: 0% 0%;
 	}
-	25% {
+	50% {
 		background-position: 100% 50%;
 	}
 	100% {
