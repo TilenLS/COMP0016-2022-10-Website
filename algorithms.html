@@ -37,61 +37,68 @@
         </div>
     </div>
     <div id="navigation"></div>
-    
+
     <section id="title-banner">
         <div class="container-fluid">
-            <h1>System Design</h1>
+            <h1>Algorithms</h1>
         </div>
     </section>
 
-    <section id="system-architecture">
+    <section id="Overview">
         <div class="container-fluid section-intro">
-            <h1 class="section-heading">System Architecture</h1>
+            <h1 class="section-heading">Overview</h1>
             <div class="text-box">
                 <p>
-                    Pyside and Open3d is used for the frontend, to build the user interface and to view tooth models in PLY file 
-                    format. For the backend, SQLite is used to store user's credentials and patient's information. Deep learning models 
-                    on classification for tooth wear grading and segmentation for meta tagging is implemented with Pytorch. Besides, we 
-                    are using PointNet, which is a robust algorithm on 3D cloud point classification and segmentation for 
-                    the neural network.
+
                 </p>
-                <div>
-                    <img class="img-card" src="images/SystemDesign/ToothWearSystemDesign.png" width="70%" height="60%"></img>
-                </div>
-                <p>
-                    This is the latest system architecture diagram which is more concise and appropriate. We have moved our database
-                    to Microsoft Azure, where Python Requests library and Flask is used to send and receive data.
-                </p>
-                <div>
-                    <img class="img-card" src="images/SystemDesign/LatestSystemArchitecture.png" width="70%" height="60%"></img>
-                </div>
             </div>
         </div>
     </section>
 
-    <section id="database-structure">
+    <section id="Dataset">
         <div class="container-fluid section-intro">
-            <h1 class="section-heading">Database Structure</h1>
+            <h1 class="section-heading">Dataset</h1>
             <div class="text-box">
                 <p>
-                    The database consists of two tables. The first table is called "Dentists", it stores user's credentials such as id, 
-                    username and password. Authorised users to login and view patient tooth models are dentists, hence the table is named
-                    "Dentists". ID is automatically created and incremented every time a new user registers.
+
                 </p>
-                <p>
-                    The second table is called "Patients", it stores patient's information that are relevant to decide tooth wear 
-                    degree and generate treatment plans. Patient's tooth model is stored using file path.
-                </p>
-                <div>
-                    <img class="img-card" src="images/SystemDesign/dentistsTable.png" width="40%"></img>
-                </div>
-                <div>
-                    <img class="img-card" src="images/SystemDesign/patientsTable.png" width="40%"></img>
-                </div>
             </div>
         </div>
     </section>
-    
+
+    <section id="Algorithm">
+        <div class="container-fluid section-intro">
+            <h1 class="section-heading">Algorithm</h1>
+            <div class="text-box">
+                <p>
+
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="Experiments">
+        <div class="container-fluid section-intro">
+            <h1 class="section-heading">Experiments</h1>
+            <div class="text-box">
+                <p>
+
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="Conclusion">
+        <div class="container-fluid section-intro">
+            <h1 class="section-heading">Conclusion</h1>
+            <div class="text-box">
+                <p>
+
+                </p>
+            </div>
+        </div>
+    </section>
+
     <div id="dynamic-footer"></div>
 
     <a class="floating-button" href="#navigation">
@@ -99,11 +106,12 @@
     </a>
 
     <!-- Loading animation, import navigation bar, and set current page to active -->
+    <script src="javascript/prism.js" charset="utf-8"></script>
     <script type="text/javascript">
         $(function () {
             $("#dynamic-footer").load("footer.html #import-footer");
             $("#navigation").load("navbar.html #import-navbar", function () {
-                active = document.getElementById("system-design")
+                active = document.getElementById("implementation")
                 active.className = "nav-link dropdown-toggle active"
             });
             $(".floating-button").fadeOut();

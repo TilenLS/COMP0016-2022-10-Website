@@ -347,6 +347,10 @@ class TestPatient(unittest.TestCase):
 
     <div id="dynamic-footer"></div>
 
+    <a class="floating-button" href="#navigation">
+        <i class="fa fa-arrow-up"></i>
+    </a>
+
     <!-- Loading animation, import navigation bar, and set current page to active -->
     <script src="javascript/prism.js" charset="utf-8"></script>
     <script type="text/javascript">
@@ -356,6 +360,16 @@ class TestPatient(unittest.TestCase):
                 active = document.getElementById("testing")
                 active.className = "nav-link dropdown-toggle active"
             });
+            $(".floating-button").fadeOut();
+        });
+        $(document).scroll(function () {
+            var y = window.scrollY;
+            console.log(y)
+            if (y > 500) {
+                $(".floating-button").fadeIn();
+            } else {
+                $('.floating-button').fadeOut();
+            }
         });
         setTimeout(() => {
             $(".loader-wrapper").fadeOut();
