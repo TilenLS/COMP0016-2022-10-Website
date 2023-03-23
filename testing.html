@@ -100,6 +100,7 @@
                             <th>Pass/Fail</th>
                         </tr>
                     </thead>
+                    <tbody>
                         <tr>
                             <td class="tr-start">1</td>
                             <td class="td-text">dentist_signup</td>
@@ -168,14 +169,53 @@
                             <td class="tr-start">9</td>
                             <td class="td-text">predict_fail</td>
                             <td class="td-text">
-
+                                Check whether results are accurate.
                             </td>
                             <td class="tr-end"><i class="fa fa-check"></i></td>   
                         </tr>
-                    <tbody>
-
                     </tbody>
                 </table>
+                <p>
+                    We implement our automated tests using the python standard unittest
+                    library. An example of how we do this can be seen below.
+                </p>
+                <div class="code-box">
+                    <pre>
+                        <code class="language-python">
+class TestPatient(unittest.TestCase):
+
+    def test_patient_add(self):
+        with open('JawScan_1.ply', 'rb') as f:
+            scan = f.read()
+
+        payload = {
+            "name": "Test Patient",
+            "age": "30",
+            "occupation": "Programmer",
+            "medicalHistory": "Medical History",
+            "painComplaint": "Pain Complaint",
+            "financialResources": "Financial Resources",
+            "brushingMethod": "Brushing Method",
+            "brushingFrequency": "Brushing Frequency",
+            "brushingTiming": "Brushing Timing",
+            "alcoholIntake": "Alcohol Intake",
+            "stressLevel": "Stress Level",
+            "sleepApnoea": "Sleep Apnoea",
+            "snoringHabit": "Snoring Habit",
+            "exercise": "Exercise",
+            "drugUse": "Drug Use",
+            "upperScan": base64.b64encode(scan).decode('utf-8'),
+            "lowerScan": base64.b64encode(scan).decode('utf-8'),
+            "sextantScan": base64.b64encode(scan).decode('utf-8')
+        }
+        json_data = json.dumps(payload)
+
+        response = requests.post('http://20.127.200.67:8080/patient/add', data={'json': json_data})
+        data = response.json()['result']
+        self.assertEqual(data, '')
+                        </code>
+                    </pre>
+                </div>
                 <h3 class="section-subheading">Manual Testing</h3>
                 <p>
                     With manual testing we mainly focused on simply ensuring the UI and
@@ -308,6 +348,7 @@
     <div id="dynamic-footer"></div>
 
     <!-- Loading animation, import navigation bar, and set current page to active -->
+    <script src="javascript/prism.js" charset="utf-8"></script>
     <script type="text/javascript">
         $(function () {
             $("#dynamic-footer").load("footer.html #import-footer");
