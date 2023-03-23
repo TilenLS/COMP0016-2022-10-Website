@@ -175,7 +175,7 @@
                     Our app renders 3D STL and PLY files using the Open3D library.
                     We implement these capabilities in a single ImageViewer class.
                     This is mainly done through the Visualizer class which lets us
-                    render 3D point cloud models.
+                    render 3D point cloud models. In the viewing page, we provides the dentists with the ability to hide part of the teeth model (ie. hide upper jaw or lower jaw) for better observing teeth model in details. 
                 </p>
                 <div class="code-box">
                     <pre>
@@ -209,9 +209,6 @@
     
     def reset_view(self):
         ...
-    
-    def tr(self, text):
-        ...
                         </code>
                     </pre>
                 </div>
@@ -223,6 +220,137 @@
                     that runs the update_vis function that renders the models.
                 </p>
             </div>
+    </section>
+
+    <section id="data-storage">
+        <div class="container-fluid">
+            <h1 class="section-heading section-intro">Communication</h1>
+            <div class="text-box section-intro">
+                <h3 class="section-subheading">Tools</h3>
+            </div>
+            <div class="small-grid features-grid">
+                <div class="feature-card">
+                    <div class="feature-content">
+                        <img class="tool-logo" src="images/tools-and-dependencies/PythonLogo.svg" width="150">
+                        <p>
+                            Back-end logic for data requests processing and storage is in Python.
+                        </p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-content">
+                        <img class="tool-logo" src="images/tools-and-dependencies/AzureLogo.png" width="150">
+                        <p>
+                            Remote database is stored using an Azure Virtual Machine.
+                        </p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-content">
+                        <img class="tool-logo" src="images/tools-and-dependencies/FlaskLogo.png" width="150">
+                        <p>
+                            Handles HTTP requests from front-end. Provides flexible routing system. Helps create RESTful APIs
+                        </p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-content">
+                        <img class="tool-logo" src="images/tools-and-dependencies/PythonRequestsLogo.png" width="70"
+                            height="70">
+                        <p>
+                            Python Requests library used to make client-side requests to server for data trasnfermation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-box section-intro">
+                <h3 class="section-subheading">Overview</h3>
+                <p>
+                    Our front-end is implemented in PySide2 to provide a user interface in Windows system and Open3D to visualise the 3D teeth models in PLY format. Once the user opens our application and interact with the UI, the front-end will record the input information and send HTTP requests to the back-end server to store or retrieve the data from the database (eg. dentist adds a patient and views patient's teeth model). The back-end server will then process the data and send the result back to the front-end to display. 
+                </p>
+                <p>
+                    In order to provides maintainess and scalability, we deployed our database and inference module (which includs deep learning model) onto the Azure cloud platform. We used Flask framework to build the back-end server. The Flask framework is a lightweight WSGI web application framework. It provides flexible routing system and helps create RESTful APIs.
+                </p>
+                <h3 class="section-subheading">Back-end Structure</h3>
+                <div class="code-wrapper" data-controller="code">
+                    <div class="code-header">
+                        <span class="code-lang">default</span>
+                    </div>
+                    <div class="highlight">
+                        <pre>
+                            <code>back-end/app
+├── dentist_module/
+|  ├── __init__.py
+|  ├── dentist.py
+|
+├── inference_module/
+|  ├── model/
+|  |  ├── dataset.py
+|  |  ├── model.py
+|  |
+|  ├── trained_model/
+|  |  ├── reg_model_99.pth
+|  |  
+|  ├── training/
+|  |  ├── train_reg.py
+|  |
+|  ├── __init__.py
+|  ├── inference.py
+|  ├── main.py
+|
+├── patient_module
+|  ├── __init__.py
+|  ├── patient.py
+|
+├── __init__.py
+└── app.py
+</code>
+                        </pre>
+                    </div>
+                </div>
+                <p>
+                    The back-end is organised into three modules: dentist_module, inference_module and patient_module. The dentist_module and patient_module are responsible for manipulating users and patients infromation in the database. The inference_module contains a deep learning model and handles the prediction request from dentists when they want to analyse a patient tooth wear degree. The app.py file is the entry point of the back-end server. It is used to create the Flask app object and register the blueprints.
+                <h3 class="section-subheading">Explanation</h3>
+                <p>
+                    We used Flask Blueprints to organise our back-end code. It is a way to organise the app into modular and reusable components and allows us to define a set of related routes in separate modules.
+
+                </p>
+                <div class="code-grid">
+                    <div class="col">
+                        <div class="code-box">
+                            <pre>
+                                <code class="language-python">
+    # Create an app object using the Flask class
+    app = Flask(__name__)
+
+    app.register_blueprint(inference_bp, url_prefix='/inference')
+    app.register_blueprint(dentist_bp, url_prefix='/dentist')
+    app.register_blueprint(patient_bp, url_prefix='/patient')
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="code-box">
+                            <pre>
+                                <code class="language-python">
+    patient_bp = Blueprint('patient', __name__)
+
+    @patient_bp.route('/add', methods=['POST'])
+    def add_patient():
+        conn = create_connection(dbFolder)
+        data = json.loads(request.form['json'])
+        ...      
+                                </code>
+                            </pre>
+                        </div>
+                    </div>    
+                </div> 
+                <p>
+                    Please find more information about patient_module and dentist_module at here, and inference_module at here.
+                </p>
+            </div>
+        </div>
     </section>
 
     <section id="data-storage">
@@ -256,15 +384,6 @@
                         </p>
                     </div>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-content">
-                        <img class="tool-logo" src="images/tools-and-dependencies/PythonRequestsLogo.png" width="70"
-                            height="70">
-                        <p>
-                            Python Requests library used to make client-side requests to server for data trasnfer.
-                        </p>
-                    </div>
-                </div>
             </div>
             <div class="text-box section-intro">
                 <h3 class="section-subheading">Explanation</h3>
@@ -276,10 +395,7 @@
                 </p>
                 <p>
                     Both the upstream and downstream system from the client to the server use the
-                    Python Requests library to send and recieve data. When storing the login
-                    credentials, we encrypt the password using the Base64 module from the standard
-                    python library. Below is an example of storing the login credentials of a newly
-                    registered user and recieving a response to relay to the user on the front-end.
+                    Python Requests library to send and recieve data. Below is an example of storing a new patient data in the database.  
 
                 </p>
                 <div class="code-box">
@@ -368,15 +484,6 @@
                         <img class="tool-logo" src="images/tools-and-dependencies/NumPyLogo.png" width="150">
                         <p>
                             Data pre-processing and other numerical tuning handled with NumPy.
-                        </p>
-                    </div>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-content">
-                        <img class="tool-logo" src="images/tools-and-dependencies/FlaskLogo.png" width="150">
-                        <p>
-                            Performs most of the back-end logic. Sending models to be analysed. Recieving
-                            results.
                         </p>
                     </div>
                 </div>
