@@ -67,8 +67,15 @@
                         Indices
                         <hr>
                     </div>
-                    <div class="side-button"
-                        onclick="$(function () {$('#visible-content').load('hidden-content/3D-models.html #content-wrapper');});">
+                    <div class="side-button" onclick="
+                    $(function () {
+                        $('#visible-content').load('hidden-content/3D-models.html #content-wrapper', function () {
+                            var script = document.createElement('script');
+                            script.src = 'javascript/prism.js';
+                            script.charset = 'utf-8';
+                            document.getElementById('visible-content').appendChild(script); 
+                        });
+                    });">
                         3D Models
                         <hr>
                     </div>
@@ -111,7 +118,7 @@
     <section id="technology-review">
         <div class="container-fluid section-intro">
             <h1 class="section-heading">Technology Review</h1>
-            <div clas="text-box">
+            <div class="text-box">
                 <p>
                     After understanding the academic background of the project the next step
                     was to explore previous work that was done. From this we would be able
@@ -127,7 +134,7 @@
                     the increased detail.
                 </p>
                 <div>
-                    <img class="img-card" src="images/PearlAIdemo.jpg" width="70%">
+                    <img class="img-card" src="images/PearlAIdemo.jpg" width="50%">
                 </div>
                 <p>
                     The second application is <a href="https://leedsdigitaldentistry.com/wearcompare/">
@@ -138,7 +145,7 @@
                     using Artificial Intelligence to assist clinicians.
                 </p>
                 <div>
-                    <img class="img-card" src="images/WearCompare.png" width="70%">
+                    <img class="img-card" src="images/WearCompare.png" width="50%">
                 </div>
                 <p>
                     Lastly is <a href="https://github.com/amir-abdi/OrthoAid">OrthoAid</a>. It provides
@@ -148,7 +155,7 @@
                     very technical and difficult to use.
                 </p>
                 <div>
-                    <img class="img-card" src="images/OrthoAidUserInterface.jpeg" width="70%">
+                    <img class="img-card" src="images/OrthoAidUserInterface.jpeg" width="50%">
                 </div>
                 <h3 class="section-subheading">Languages & Libraries</h3>
                 <p>
@@ -171,7 +178,7 @@
                 </p>
                 <p>
                     For data storage we decided to use SQLite to deploy a local database initially.
-                    This is because a remote database was not a high priority in our MoSCoW agreement. 
+                    This is because a remote database was not a high priority in our MoSCoW agreement.
                 </p>
                 <h3 class="section-subheading">Algorithms</h3>
                 <p>
