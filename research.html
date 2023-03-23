@@ -325,7 +325,8 @@
             $(".floating-button").fadeOut();
         });
         $(document).scroll(function () {
-            var y = window.scrollY + $(window).height(),
+            var y = window.scrollY,
+                yOffset = y + $(window).height(),
                 body = document.body,
                 html = document.documentElement;
             const maxHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight ) - document.getElementById("dynamic-footer").offsetHeight;
@@ -334,8 +335,8 @@
             } else {
                 $('.floating-button').fadeOut();
             }
-            if (y > maxHeight) {
-                $(".floating-button").css("bottom",y-maxHeight+30);
+            if (yOffset > maxHeight) {
+                $(".floating-button").css("bottom",yOffset-maxHeight+30);
             } else {
                 $(".floating-button").css("bottom","50px");
             }
