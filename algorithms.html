@@ -50,12 +50,7 @@
             <h1 class="section-heading">Overview</h1>
             <div class="text-box">
                 <p>
-                    We went through a vast amount of literature on numerically evaluating tooth wear using machine
-                    learning (ML) and Deep learning (DL) on 3D point cloud. Due to the special nature of point cloud
-                    data, using traditional ML algorithms is not suitable in this project as we need do extract features
-                    from the point cloud dataset. However, because of the ethical issues present when dealing with
-                    patient data, it is difficult to obtain a large amount of real patient data with well labeled
-                    features.
+                    We went through a large number of literatures on evaluating tooth weear grade using machine learning (ML) and Deep learning (DL) on 3D point cloud. Due to the special nature of point cloud data, using traditional ML algorithms is not suitable in this project as we need do extract features from the point cloud dataset. But due to the ethical issues, we are not able to have a large amount of real patient teeth data with well labeled features. <br> <br>
                     The computer vision algorithm in the point cloud field that we use is the PointNet network. We will
                     explain the details of the algorithm in the following sections.
 
@@ -93,12 +88,21 @@
             <div>
                 <img class="img-card" src="images/Dataset_percent.png" width="50%">
             </div>
+            <h3>Data Cleaning</h3>
+            <p>
+                After examining the dataset, we found that there are many teeth models are not labeled correctly, for example some 0 is labeled as "o", some teeth model has more than 4 grades and some has less. Hence, our first task is to clean the data and uniform the criteria of the label. 
+                <br> <br>
+                After cleaning the data, we started to do data augmentation to increase the size of the dataset.
+            </p>
             <h3>Data augmentation</h3>
             <p>
-                As we only received 194 tooth models, we decided to use data augmentation to increase 
-                the size of the dataset as 194 is not a sufficient amount of data for training a deep 
-                learning model.
+                As we only received 194 teeth models, we decided to use data augmentation to increase the size of the dataset as 194 is not an sufficient amount of data for training a deep learning model. 
+                <br> <br>
+                After augmenting the dataset, we increase the size particularly for the grade 1, which is obviously smaller than other group. The new dataset distribution is much more balenced and it is shown below:
             </p>
+            <div>
+                <img class="img-card" src="images/new_data_distribution.png" width="50%">
+            </div>
             <h3>Training and Testing dataset</h3>
             <p>
                 Ratio of training and testing datasets: 80% training, 20% testing
@@ -117,20 +121,48 @@
             <h1 class="section-heading">Algorithm</h1>
             <div class="text-box">
                 <p>
-                    We used PointNet network to process the input data. This structure is able to overcome
-                    permutation invariance (unordered) and transformation invariance, which are two 
-                    important properties of point cloud data. It is easy to imagine that the result should no
+                    From the mathematical point of view, the point cloud data can be represented as a set of points in a space. The set can be denoted as a set: <br>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<b>P</b> = {<b>x</b><sub>1</sub>, <b>x</b><sub>2</sub>, ..., <b>x</b><sub>n</sub>} &sub; &#x211d<sup>N</sup>, where <b>x</b><sub>i</sub> is a point in the space. <br>
                 </p>
+                <p>
+                    Usually, we take N = 3, which means the x, y, and z coordinates of the point but it can be equal to 6 which also contains the color. <br> 
+                </p>
+                <p>
+                    The nature of the point cloud is that 1) unordered and 2)transformation invariant, which means the order of the points in the set and how you observe the model should not affecte the final result as they are essentially the same teeth model.
+                </p>
+                <p>
+                    To solves the first problem, we need to make the model independent from the order of input data. PointNet network uses a symmatric function to ensure the order is not changed. They used a max pooling function to ensure the order is not changed.              
+                </p>
+                <div>
+                    <img class="img-card" src="images/max_pooling.png" width="50%">
+                </div>
+                <p>
+                    To solve the second problem, PointNet network uses a transformation matrix to ensure the model is invariant to the transformation of the input data.
+                </p>
+                <div>
+                    <img class="img-card" src="images/T_net.png" width="50%">
+                </div>
+                <p>
+                    The original PointNet network is designed for classification task, but in order to make the network adapt our scenario, we modified its structure to a regression neural network. We kept the two transformation and multi-layer perceptron layers, but we changed the last two layer to fully-connected layers with a output of one neuron.
+                    The structure of the model is shown in the figure below.
+                </p>
+                <div>
+                    <img class="img-card" src="images/model_summary.png" width="50%">
+                </div>
             </div>
         </div>
     </section>
 
     <section id="Experiments">
         <div class="container-fluid section-intro">
-            <h1 class="section-heading">Experiments</h1>
+            <h1 class="section-heading">Experiments results & Evaluation</h1>
             <div class="text-box">
                 <p>
-
+                    We evaluate our model from two aspects: normal evaluation criteria for regression models and the accuracy of after mapping the regression result to distinct tooth wear grade. We conducted detailed conparison between different variants of the model.
+                </p>
+                <h3>Loss</h3>
+                <p>
+                    Under 100 epochs, the loss of the model is shown in the figure below. 
                 </p>
             </div>
         </div>
