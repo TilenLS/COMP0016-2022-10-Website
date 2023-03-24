@@ -1218,10 +1218,10 @@ tbody tr:hover {
 .dynamic-container .side-bar {
     width: 15%;
     height: fit-content;
-    background-color: rgba(17, 45, 78, 0.9);
+    background-color: rgba(17, 45, 78, 0.95);
     position: sticky;
-    top: 70px;
-    border-radius: 5px;
+    top: 100px;
+    border-radius: 7px 0 0 7px;
     border: solid 2px #3F72AF;
 }
 
