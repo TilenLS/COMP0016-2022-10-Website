@@ -1218,8 +1218,11 @@ tbody tr:hover {
 .dynamic-container .side-bar {
     width: 15%;
     height: fit-content;
+    background-color: rgba(17, 45, 78, 0.9);
     position: sticky;
     top: 70px;
+    border-radius: 5px;
+    border: solid 2px #3F72AF;
 }
 
 .dynamic-container .side-button {
@@ -1231,7 +1234,8 @@ tbody tr:hover {
     align-items: center;
     font-size: 1.5rem;
     font-weight: 600;
-    color: #112D4E;
+    color: #fff;
+    margin: 10px;
 }
 
 .dynamic-container .side-button.active::after {
