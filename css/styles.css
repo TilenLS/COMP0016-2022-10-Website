@@ -1350,3 +1350,7 @@ tbody tr:hover {
     align-items: center;
     margin: 100px 0;
 }
+
+.equation {
+    text-align: center;
+}
