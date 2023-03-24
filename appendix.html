@@ -56,16 +56,18 @@
             <div class="appnav-grid">
                 <div class="row">
                     <a id="blog-btn">
-                        <div class="appnav-button col left">
+                        <div class="appnav-button col left active">
                             <h1>Blog</h1>
                         </div>
                     </a>
-                    <a onclick="$(function () {$('#dynamic-content').load('monthly-videos.html #monvids-content', function () {updateFloat();});});">
+                    <a
+                        onclick="$(function () {$('#dynamic-content').load('monthly-videos.html #monvids-content', function () {updateFloat();});});">
                         <div class="appnav-button col">
                             <h1>Monthly Videos</h1>
                         </div>
                     </a>
-                    <a onclick="$(function () {$('#dynamic-content').load('user-manual.html #usrman-content', function () {updateFloat();});});">
+                    <a
+                        onclick="$(function () {$('#dynamic-content').load('user-manual.html #usrman-content', function () {updateFloat();});});">
                         <div class="appnav-button col">
                             <h1>User Manual</h1>
                         </div>
@@ -83,7 +85,8 @@
                             <h1>Deployment Manual</h1>
                         </div>
                     </a>
-                    <a onclick="$(function () {$('#dynamic-content').load('legal.html #legal-content', function () {updateFloat();});});">
+                    <a
+                        onclick="$(function () {$('#dynamic-content').load('legal.html #legal-content', function () {updateFloat();});});">
                         <div class="appnav-button col right">
                             <h1>Legal</h1>
                         </div>
@@ -95,7 +98,8 @@
     </section>
 
     <section id="appendix-content">
-        <div id="dynamic-content"></div>
+        <div id="dynamic-content">
+        </div>
     </section>
 
     <div id="dynamic-footer"></div>
@@ -111,6 +115,9 @@
             $("#navigation").load("navbar.html #import-navbar", function () {
                 active = document.getElementById("appendix")
                 active.className = "nav-link active"
+            });
+            $('#dynamic-content').load('blog.html #blog-nav', function () {
+                $('#dynamic-blog-content').load('blogs/term1-week3.html .blog-content');
             });
             $('.appnav-button').click(function (event) {
                 var element = event.target;
@@ -131,8 +138,10 @@
                     $('.blog-btn').click(function (event) {
                         var element = event.target;
 
-                        if (document.getElementsByClassName("blog-btn active").length > 0) {
-                            document.getElementsByClassName("blog-btn active")[0].classList.remove("active");
+                        if (document.getElementsByClassName("blog-btn active").length >
+                            0) {
+                            document.getElementsByClassName("blog-btn active")[0]
+                                .classList.remove("active");
                         }
 
                         if (element.nodeName == "DIV") {
@@ -141,9 +150,10 @@
                             element.parentElement.classList.add("active")
                         }
                     });
-                    $('#dynamic-blog-content').load('blogs/term1-week3.html .blog-content', function () {
-                        updateFloat();
-                    });
+                    $('#dynamic-blog-content').load('blogs/term1-week3.html .blog-content',
+                        function () {
+                            updateFloat();
+                        });
                 });
             });
             $(".floating-button").fadeOut();
