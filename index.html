@@ -36,17 +36,15 @@
             <div class='tetromino box4'></div>
         </div>
     </div>
-    
+
     <div id="navigation"></div>
 
-    
+
     <section id="title">
         <div class="container-fluid">
             <div id="carouselSupportedContent" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                <div class="row" id="big-heading">
-                    <div class="col-md-8 col-sm-10">
-                        <h1 class="big-text">Predicting treatment plans for patients with tooth wear.</h1>
-                    </div>
+                <div id="big-heading">
+                    <h1 class="big-text">Providing treatment plans for patients with tooth wear.</h1>
                 </div>
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselSupportedContent" data-bs-slide-to="0" class="active"
@@ -101,7 +99,7 @@
                     <a href="https://github.com/isl-org/Open3D">Open3D</a> for our frontend along with
                     <a href="https://pytorch.org/">Pytorch</a> and
                     <a href="https://www.sqlite.org/index.html">SQLite</a> for the backend.
-                    Overall, our app has the potential to improve the efficiency and accuracy of tooth wear assessment 
+                    Overall, our app has the potential to improve the efficiency and accuracy of tooth wear assessment
                     with larger data set, leading to better oral health outcomes for patients.
                 </p>
             </div>
@@ -242,8 +240,7 @@
             </div>
             <div class="profile-container">
                 <div class="profile-card">
-                    <img src="images/ProfileImages/HongruiTang.png"
-                        class="card-image">
+                    <img src="images/ProfileImages/HongruiTang.png" class="card-image">
                     <h3 class="card-name">Hongrui Tang</h3>
                     <p>
                         A second-year student at UCL. Research on algorithms and data for the project.
@@ -258,8 +255,7 @@
                     </ul>
                 </div>
                 <div class="profile-card">
-                    <img src="images/ProfileImages/YoongXinChong.jpg"
-                        class="card-image">
+                    <img src="images/ProfileImages/YoongXinChong.jpg" class="card-image">
                     <h3 class="card-name">Yoong Xin Chong</h3>
                     <p>
                         A second-year student at UCL. Research on algorithms and data for the project.
@@ -274,8 +270,7 @@
                     </ul>
                 </div>
                 <div class="profile-card">
-                    <img src="images/ProfileImages/TilenLimbackStokin.png"
-                        class="card-image">
+                    <img src="images/ProfileImages/TilenLimbackStokin.png" class="card-image">
                     <h3 class="card-name">Tilen Limbäck-Stokin</h3>
                     <p>
                         A second-year student at UCL. Research on algorithms and data for the project.
@@ -309,19 +304,29 @@
     </a>
     <!-- Loading animation, import navigation bar, and set current page to active -->
     <script type="text/javascript">
-        $(function(){
+        $(function () {
             $("#dynamic-footer").load("footer.html #import-footer");
-            $("#navigation").load("navbar.html #import-navbar", function(){
+            $("#navigation").load("navbar.html #import-navbar", function () {
                 active = document.getElementById("home")
                 active.className = "nav-link dropdown-toggle active"
             });
             $(".floating-button").fadeOut();
         });
         $(document).scroll(function () {
-            var y = window.scrollY;
-            console.log(y)
-            if (y > 500) {
+            var y = window.scrollY,
+                yOffset = y + $(window).height(),
+                body = document.body,
+                html = document.documentElement;
+            const maxHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html
+                .scrollHeight, html.offsetHeight) - document.getElementById("dynamic-footer").offsetHeight;
+            const topLimit = document.getElementById("title").offsetHeight;
+            if (y > topLimit) {
                 $(".floating-button").fadeIn();
+                if (yOffset > maxHeight) {
+                    $(".floating-button").css("bottom", yOffset - maxHeight + 30);
+                } else {
+                    $(".floating-button").css("bottom", "50px");
+                }
             } else {
                 $('.floating-button').fadeOut();
             }
