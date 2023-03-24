@@ -411,14 +411,15 @@ p a:hover {
 
 .features-grid {
     display: grid;
-    margin: 2% 10%;
+    margin: 1vh auto;
     justify-items: center;
-    align-items: center;
-    /* grid-auto-rows: auto; */
+    width: fit-content;
+    height: fit-content;
+
 }
 
 .feature-card {
-    margin: 3rem 0;
+    margin: 2rem 4rem; 
     width: 300px;
     height: 300px;
     background-color: #F9F7F7;
@@ -428,11 +429,15 @@ p a:hover {
     transition: transform 0.5s ease-in-out;
 }
 
+.feature-card p {
+    padding: 0;
+}
+
 #features .fa,
 #features .fa-brands {
     display: block;
     text-align: center;
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: #3F72AF;
     margin: 20px 0;
 }
@@ -496,7 +501,7 @@ p a:hover {
 /* Screen larger than 900px? 3 columns */
 @media (min-width: 1300px) {
     #features .features-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -535,11 +540,14 @@ p a:hover {
 #team .profile-container {
     display: grid;
     grid-template-columns: 300px 300px 300px;
-    grid-gap: 10%;
+    gap: 5rem;
     justify-content: center;
     align-items: center;
     padding-top: 80px;
     padding-bottom: 100px;
+    width: fit-content;
+    height: fit-content;
+    margin: 0 auto;
 }
 
 #team .profile-card {
@@ -631,6 +639,12 @@ p a:hover {
     transition: all 265ms ease-in;
 }
 
+@media (max-width: 1200px) {
+    #team .profile-container {
+        grid-template-columns: 300px;
+    }
+}
+
 /* TIMELINE */
 
 .text-box {
@@ -658,6 +672,7 @@ p a:hover {
 .site-footer p {
     color: #112D4E;
     font-size: 1rem;
+    padding: 0;
 }
 
 .site-footer hr {
