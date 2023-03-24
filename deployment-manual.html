@@ -31,46 +31,21 @@
         <div class="container-fluid section-intro">
             <h1 class="section-heading">Deployment Manual</h1>
             <p>
-                This deployment manual will explain how to deploy the application to a local computer. As this Windows desktop software, users will need to download the .exe file to start the application. This deployment mannual assumes that the user has had a GitHub account and has git in the environment.
-            </p>
+                This deployment manual will explain how to deploy the application to a local computer. As this is a Windows desktop software, users will need to download the .exe file to start the application.
             <h2 class="section-subheading">Prerequesites</h2>
             <p>
-                Note: As we are using the Win32GUI Library in our application, the application can only be opened in a 
-                Windows environment.
+                As we are using the Win32GUI Library in our application, the application can only be opened in a 
+                Windows environment. Hence you need to have a Windows laptop or set up a Windows environment on Mac/Linux
+                to run Wear3D.
             </p>
-            <p>
-                <strong>Git:</strong> Download and install Git on your local computer. You can download Git from the 
-                following link: <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">"https://git-scm.com/book/en/v2/Getting-Started-Installing-Git"</a>
-            </p>
-            <h3 class="section-subheading">Build and Run</h2>
-            <p>
-                <strong>Step 1:</strong> Open the "Command Prompt" app:
-            </p>
-            <p>
-                Click the Start button in the lower-left corner of your desktop to open your Start menu. Type and search 
-                "cmd" on the Start menu. Command Prompt should show up at the top of the search results. Click Command Prompt 
-                on the Start menu. This will open a new Command Prompt window.
-            </p>
-            <p>
-                <strong>Step 2:</strong> Clone the project to your local device:
-            </p>
-            <div class="code-box">
-                <pre><code class="language-python">git clone https://github.com/TilenLS/COMP0016-2022-10.git</code></pre>
-            </div>
-            <p>
-                <strong>Step 3:</strong> Run the app from the terminal:
-            </p>
-            <div class="code-box">
-                <pre><code class="language-python">start main.exe</code></pre>
-            </div>
-            <p>
-                Alternatively, you can also run the app from the file explorer: <br>
-                <strong>1:</strong> Open the file explorer and navigate to the directory where the app is located. <br>
-                <strong>2:</strong> Double click the main.exe file to run the app.
-            </p>
+            <h2 class="section-subheading">Run Application</h2>
             <h3 class="section-subheading">Cloud Azure</h3>
             <p>
-                <strong>Step 1:</strong> Open a terminal on your local computer      
+                Note: As we host our database on the Azure Virtual Machine, you need to connect to our server before being able
+                to use the application. This part can be done on Windows/Mac/Linux laptop.
+            </p>
+            <p>
+                <strong>Step 1:</strong> Open the terminal (on Mac/Linux) or Command Prompt (on Windows) on your local computer.      
             </p>
             <p>
                 <strong>Step 2:</strong> Use SSH to connect to the cloud server, and the password for the virtual machine is: Team10Toothwear!     
@@ -82,7 +57,7 @@
                 Enter the password when you are prompted after connected to the cloud.
             </p>
             <p>
-                <strong>Step 3:</strong> Once you are connected to the remote virtual machine, you will need to navigate to the directory where the app.py file is located. You can navigate the directory by using the following command:         
+                <strong>Step 3:</strong> Once you are connected to the remote virtual machine, you will need to navigate to the directory where the app.py file is located. You can navigate to the directory by using the following command:         
             </p>
             <div class="code-box">
                 <pre><code class="language-python">cd tooth-wear-dl/back-end/app/</code></pre>
@@ -94,8 +69,40 @@
                 <pre><code class="language-python">python app.py</code></pre>
             </div>
             <p>
-                Now, the back-end preparation is done. You can now open the software on your local computer and enjoy the app!
+                Now, the back-end preparation is done. You can now open Wear3D (after downloading it following the instructions below) on your local computer and enjoy the app!
             </p>
+            <h3 class="section-subheading">Download and Run Wear3D</h3>
+            <p>
+                Note: This part must be done on a Windows laptop.
+            </p>
+            <p>
+                <strong>Step 1:</strong> Navigate to our github website using <a href="https://github.com/TilenLS/COMP0016-2022-10" target="_blank">this link</a>.   
+            </p>
+            <p>
+                <strong>Step 2:</strong> Click on the Wear3D release on the right hand side.     
+            </p>
+            <div>
+                <img class="img-card" src="images/DeploymentManual/ReleaseGuide.png" width="70%"></img>
+            </div>
+            <p>
+                <strong>Step 3:</strong> Click on the "executable.zip" file under Assets to download.
+            </p>
+            <div>
+                <img class="img-card" src="images/DeploymentManual/ZipGuide.png" width="70%"></img>
+            </div>
+            <p>
+                <strong>Step 4:</strong> When the download is completed, extract the zip file by right-clicking on executable.zip
+                and select "Extract All..."
+            </p>
+            <div>
+                <img class="img-card" src="images/DeploymentManual/ExtractGuide.png" width="70%"></img>
+            </div>
+            <p>
+                <strong>Step 5:</strong> Navigate into the "app" folder in the extracted "executable" folder and double-click "main.exe" to run Wear3D.
+            </p>
+            <div>
+                <img class="img-card" src="images/DeploymentManual/MainExeGuide.png" width="70%"></img>
+            </div>
         </div>
     </section>
 </body>
