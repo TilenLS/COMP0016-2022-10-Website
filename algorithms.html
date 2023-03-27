@@ -47,18 +47,18 @@
         </div>
     </section>
 
-    <section id="Overview">
+    <section id="overview">
         <div class="container-fluid section-intro">
             <h1 class="section-heading">Overview</h1>
             <div class="text-box">
                 <p>
-                    We went through a large amount of literature on evaluating the tooth weear grade using machine
+                    We went through a large amount of literature on evaluating the tooth wear grade using machine
                     learning
-                    (ML) and Deep learning (DL) on 3D point cloud. Due to the special nature of point cloud data, using
+                    (ML) and deep learning (DL) on 3D point cloud. Due to the special nature of point cloud data, using
                     traditional ML algorithms is not suitable in this project as we need do extract features from the
-                    point cloud dataset. But due to ethical issues present, we are not able to have a large amount of
+                    point cloud dataset. However, due to ethical issues present, we are not able to have a large amount of
                     real
-                    patient data with well labeled features. <br> <br>
+                    patient data with well-labeled features. <br> <br>
                     The computer vision algorithm in the point cloud field that we use is the PointNet network. We will
                     explain the details of the algorithm in the following sections.
                 </p>
@@ -66,25 +66,25 @@
         </div>
     </section>
 
-    <section id="Dataset">
+    <section id="dataset">
         <div class="container-fluid section-intro">
             <h1 class="section-heading">Dataset</h1>
             <h3>Data Source</h3>
             <p>
                 The data we used is from our client, the UCL Eastman Dental Institute. They provided us with 127 3D
-                tooth models (sextants). They also provides us with 14 real patient teeth models to be displayed in
-                the windows software.
+                tooth models (sextants). They also provided us with 14 real patient teeth models to be displayed in
+                the software.
                 <br> <br>
                 Originally, we were supposed to train the deep learning model on real patient data. However, due to the
-                ethical issues, we did not recieve the dataset until March 2022. Therefore, we agreed to build a
+                ethical issues, we did not recieve the dataset until March 2023. Therefore, we agreed to build a
                 proof-of-concept model using the sextant tooth models, where a sextant is 1/6<sup>th</sup> of the whole
-                teeth (containing 5 or 6 teeth). We recieved a dataset of 127 3D teeth models on the 13th of March and
+                teeth (containing 4 to 6 teeth). We recieved a dataset of 127 3D teeth models on the 13th of March and
                 67
                 more on the 23rd of March. We began training and improving our model since then.
             </p>
             <h3>Data Description</h3>
             <p>
-                The data we received is in the PLY file format, which is an common format for storing 3D point cloud
+                The data we received is in the PLY file format, which is a common format for storing 3D point cloud
                 data. Each tooth model is labeled with a tooth wear grade from 1 to 4 on each tooth manually by
                 experienced dentists. Hence, the label for a tooth model consists of 4 grades. According to the
                 TWES2.0 standard, mentioned in the <a href="research.html">Research</a> section, the overall tooth
@@ -102,7 +102,7 @@
                 for example some 0's are labeled as "o", some tooth models have more than 4 grades but some have less.
                 Therefore, our first task was to clean the data and rectify the criteria of the label.
                 <br> <br>
-                After cleaning the data, we moved onto data augmentation to increase the volume of the dataset.
+                After cleaning the data, we moved on to data augmentation to increase the volume of the dataset.
             </p>
             <h3>Data augmentation</h3>
             <p>
@@ -158,7 +158,7 @@
             </p>
             <p>
                 After augmenting the dataset, we increased the amount of data that have a grade of 1, which is obviously
-                smaller than rest of the groups. The new dataset distribution is much more balenced and is displayed below:
+                smaller than rest of the groups. The new dataset distribution is much more balanced and is displayed below:
             </p>
             <div>
                 <img class="img-card" src="images/new_data_distribution.png" width="50%">
@@ -175,7 +175,7 @@
         </div>
     </section>
 
-    <section id="Algorithm">
+    <section id="algorithm">
         <div class="container-fluid section-intro">
             <h1 class="section-heading">Algorithm</h1>
             <div class="text-box">
@@ -203,7 +203,7 @@
                 </p>
                 <p>
                     To solve the first problem, we need to make the model independent from the order of input data.
-                    PointNet network uses a symmatric function to ensure the order is not changed. It uses a max
+                    PointNet network uses a symmetric function to ensure the order is not changed. It uses a max
                     pooling function to ensure the order is not changed.
                 </p>
                 <div>
@@ -211,7 +211,7 @@
                 </div>
                 <p>
                     To solve the second problem, the PointNet network uses a transformation matrix, a T-net, to ensure the model is
-                    invariant to the transformation of the input data. The T-net is a 3*3 affine transformation matrix, and we apply this matrix to the imput points. 
+                    invariant to the transformation of the input data. The T-net is a 3*3 affine transformation matrix, and we apply this matrix to the input points. 
                 </p>
                 <div>
                     <img class="img-card" src="images/T_net.png" width="50%">
@@ -254,13 +254,13 @@
         </div>
     </section>
 
-    <section id="Experiments">
+    <section id="experiments">
         <div class="container-fluid section-intro">
             <h1 class="section-heading">Experiments results & Evaluation</h1>
             <div class="text-box">
                 <p>
                     We evaluate our model in two ways: normal evaluation criteria for regression models and the
-                    accuracy of after mapping the regression result to distinct tooth wear grades. We conducted detailed
+                    accuracy after mapping the regression result to distinct tooth wear grades. We conducted detailed
                     comparisons between different variants of the model.
                 </p>
                 <h3>Loss</h3>
@@ -271,7 +271,7 @@
         </div>
     </section>
 
-    <section id="Conclusion">
+    <section id="conclusion">
         <div class="container-fluid section-intro">
             <h1 class="section-heading">Conclusion</h1>
             <div class="text-box">
