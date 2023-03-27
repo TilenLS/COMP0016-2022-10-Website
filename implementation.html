@@ -329,7 +329,7 @@
                 <p>
                     In order to provide maintainability and scalability, we deployed our database and inference module
                     (which includes the deep learning model) onto an Azure cloud platform. We used the Flask framework to
-                    build the back-end server. The Flask framework is a lightweight WSGI web application framework. It
+                    build the back-end server. It
                     provides a flexible routing system and helps create RESTful APIs.
                 </p>
                 <h3 class="section-subheading">Back-end Structure</h3>
@@ -368,7 +368,7 @@ back-end/app
                 <p>
                     The back-end is organised into three modules: dentist_module, inference_module and patient_module.
                     The dentist_module and patient_module are responsible for manipulating user and patient
-                    information in the database. The inference_module contains a deep learning model and handles the
+                    information in the <a href="#data_storage">database</a>. The inference_module contains a deep learning model and handles the
                     prediction requests from dentists when they want to see patient tooth wear degree. The app.py
                     file is the entry point of the back-end server. It is used to create the Flask app object and
                     register the blueprints.
@@ -420,7 +420,7 @@ back-end/app
 
     <section id="data-storage">
         <div class="container-fluid">
-            <h1 class="section-heading section-intro">Data Storage</h1>
+            <h1 id="data_storage" class="section-heading section-intro">Data Storage</h1>
             <div class="text-box section-intro">
                 <h3 class="section-subheading">Tools</h3>
             </div>
@@ -539,8 +539,8 @@ back-end/app
             <div class="text-box section-intro">
                 <h3 class="section-subheading">Explanation</h3>
                 <p>
-                    Please visit the <a href="algorithms.html">Algorithms tab</a> for more detailed algorithms explanation and how to 
-                    implement the algorithm step by step. The image below is the general structure of PointNet that we used to implementation
+                    Please visit the <a href="algorithms.html">Algorithms tab</a> for more detailed algorithms explanation, how to 
+                    implement the algorithm step by step, and result evaluation. The image below is the general structure of PointNet that we used to implementation
                     our deep learning model.
                 </p>
                 <img class="img-card" src="images/PointNet.jpg" width="70%"></img>

@@ -84,8 +84,8 @@
             </p>
             <h3>Data Description</h3>
             <p>
-                The data we received is in the PLY file format, which is an uncommon format for storing 3D point cloud
-                data. Each tooth model is labeled with a tooth wear grade from 0 to 4 on each tooth manually by
+                The data we received is in the PLY file format, which is an common format for storing 3D point cloud
+                data. Each tooth model is labeled with a tooth wear grade from 1 to 4 on each tooth manually by
                 experienced dentists. Hence, the label for a tooth model consists of 4 grades. According to the
                 TWES2.0 standard, mentioned in the <a href="research.html">Research</a> section, the overall tooth
                 wear grade depends on the highest grade among the 4 teeth.
@@ -99,7 +99,7 @@
             <h3>Data Cleaning</h3>
             <p>
                 After examining the dataset, we found that there are many tooth models that are not labeled correctly,
-                for example some 0's are labeled as "o", some tooth models have more than 4 grades and some have less.
+                for example some 0's are labeled as "o", some tooth models have more than 4 grades but some have less.
                 Therefore, our first task was to clean the data and rectify the criteria of the label.
                 <br> <br>
                 After cleaning the data, we moved onto data augmentation to increase the volume of the dataset.
@@ -107,8 +107,56 @@
             <h3>Data augmentation</h3>
             <p>
                 As we only received 194 teeth models, we decided to use data augmentation to increase the size of the
-                dataset as 194 is not a sufficient amount for training a deep learning model.
-                <br> <br>
+                dataset as 194 is not a sufficient amount for training a deep learning model. Additionally, from the pie chart above, we can see that the dataset is imbalanced, which is not suitable for training a deep learning model. Therefore, we also need to increase the amount of data that have a grade of 1, which is obviously smaller than rest of the groups.
+            </p>
+            <p>
+                <strong>Method 1: Rotation</strong>
+                <div class="code-box">
+                    <pre>
+                        <code class="language-python">
+    # random rotation
+    theta = np.random.uniform(0, np.pi * 2)
+    rotation_matrix = np.array([[np.cos(theta), -np.sin(theta)], [np.sin(theta), np.cos(theta)]])
+    point_set[:, [0, 2]] = point_set[:, [0, 2]].dot(rotation_matrix)
+                        </code>
+                    </pre>
+                </div>
+            </p>
+            <p>
+                <strong>Method 2: Jitter</strong>
+                <div class="code-box">
+                    <pre>
+                        <code class="language-python">
+    # random jitter
+    point_set += np.random.normal(0, 0.02, size=point_set.shape)
+                        </code>
+                    </pre>
+                </div>
+            </p>
+            <p>
+                <strong>Method 3: Randomly selected</strong><br>
+                For each point cloud model, researcher usually select 1024 or 2048 points from a large amount of points. The teeth model that we received usually contains 40k to 70k points, which is far more than we need. Hence, we firstly randomly selected 2048 points from each tooth model and we repeated this process to randomly select completely 2048 different points from the points set. As a result we can generate 20-30 different point cloud models from each teeth model.
+                <div class="code-box">
+                    <pre>
+                        <code class="language-python">
+    # read in the ply file 
+    with open(file, 'rb') as f:
+        plydata = PlyData.read(f)
+    pts = np.vstack([plydata['vertex']['x'], plydata['vertex']['y'], plydata['vertex']['z']]).T
+
+    # randomly choose 2048 points and delete these points from the set
+    num_points = np.array(len(pts))
+    choice = np.random.choice(num_points, self.npoints, replace=True)
+    num_points = np.delete(num_points, np.where(np.isin(num_points, choice)))
+    point_set = pts[choice, :]
+
+    # repeat the process according the how many points left
+    ...
+                        </code>
+                    </pre>
+                </div>
+            </p>
+            <p>
                 After augmenting the dataset, we increased the amount of data that have a grade of 1, which is obviously
                 smaller than rest of the groups. The new dataset distribution is much more balenced and is displayed below:
             </p>
@@ -119,9 +167,8 @@
             <p>
                 Ratio of training and testing datasets: 80% training, 20% testing
             </p>
-            <p>
-                We decided to split the dataset into 80% for training and 20% for testing. In order to have a
-                more accurate score, we used K-fold cross validation to train the model. We chose to use
+            <p> <strong>K-fold: </strong>
+                In order to have a more accurate score, we used K-fold cross validation to train the model. We chose to use
                 K = 5, which means we split the dataset into 5 parts randomly, and each time we use 4 parts
                 for training and 1 part for testing. We repeat this process 5 times and take the average score.
             </p>
@@ -163,17 +210,41 @@
                     <img class="img-card" src="images/max_pooling.png" width="50%">
                 </div>
                 <p>
-                    To solve the second problem, the PointNet network uses a transformation matrix to ensure the model is
-                    invariant to the transformation of the input data.
+                    To solve the second problem, the PointNet network uses a transformation matrix, a T-net, to ensure the model is
+                    invariant to the transformation of the input data. The T-net is a 3*3 affine transformation matrix, and we apply this matrix to the imput points. 
                 </p>
                 <div>
                     <img class="img-card" src="images/T_net.png" width="50%">
                 </div>
+                <div class="code-box">
+                    <pre>
+                        <code class="language-python">
+    class STN3d(nn.Module):
+        def __init__(self):
+            super(STN3d, self).__init__()
+            self.conv1 = torch.nn.Conv1d(3, 64, 1)
+            self.conv2 = torch.nn.Conv1d(64, 128, 1)
+            self.conv3 = torch.nn.Conv1d(128, 1024, 1)
+            self.fc1 = nn.Linear(1024, 512)
+            self.fc2 = nn.Linear(512, 256)
+            self.fc3 = nn.Linear(256, 9)
+
+            self.relu = nn.ReLU()
+
+            self.bn1 = nn.BatchNorm1d(64)
+            self.bn2 = nn.BatchNorm1d(128)
+            self.bn3 = nn.BatchNorm1d(1024)
+            self.bn4 = nn.BatchNorm1d(512)
+            self.bn5 = nn.BatchNorm1d(256)
+                        </code>
+                    </pre>
+                </div>
                 <p>
+                    <strong>Classification -> Regression</strong><br>
                     The original PointNet network is designed for classification tasks, but in order to make the network
                     adapt our scenario, we modified its structure to a regression neural network. We kept the two
-                    transformations and multi-layer perceptron layers, but we changed the last two layers into
-                    fully-connected layers with an output of one neuron.
+                    transformations and multi-layer perceptron layers to extract global features from the data, but we changed the last two layers into a
+                    fully-connected layer with an output of one neuron.
                     The structure of the model is shown in the figure below.
                 </p>
                 <div>
