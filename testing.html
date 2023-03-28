@@ -50,7 +50,7 @@
             <h1 class="section-heading">Testing Strategy</h1>
             <div class="text-box">
                 <p>
-                    The eventuallity of the project is to help dentists in real-life
+                    The eventuality of the project is to help dentists in real-life
                     scenarios to make desirable decisions. Therefore, testing is a 
                     crucial part of the overall project. To ensure that our app is 
                     functioning properly we have gone through extensive testing.
@@ -114,7 +114,7 @@
                             <td class="tr-start">2</td>
                             <td class="td-text">dentist_signup_invalid_password</td>
                             <td class="td-text">
-                                Checks if signup details were invalid and provides a response.
+                                Checks if register details were invalid and provides a response.
                             </td>
                             <td class="tr-end"><i class="fa fa-check"></i></td>   
                         </tr>
@@ -138,15 +138,16 @@
                             <td class="tr-start">5</td>
                             <td class="td-text">dentist_signin_invalid_password</td>
                             <td class="td-text">
-                                Checks if signin password is valid.
+                                Checks if the signin password is valid.
                             </td>
                             <td class="tr-end"><i class="fa fa-check"></i></td>   
                         </tr>
                         <tr>
                             <td class="tr-start">6</td>
-                            <td class="td-text">patient_add</td>
+                            <td class="td-text">add_patient</td>
                             <td class="td-text">
-                                Create a new patient with their medical background and tooth scans.
+                                Creates a new patient with their medical background and tooth scans.
+                                Then, add this new patient into the database.
                             </td>
                             <td class="tr-end"><i class="fa fa-check"></i></td>   
                         </tr>
@@ -154,15 +155,15 @@
                             <td class="tr-start">7</td>
                             <td class="td-text">delete_patient</td>
                             <td class="td-text">
-                                Remove a patient from the database.
+                                Removes a patient from the database.
                             </td>
                             <td class="tr-end"><i class="fa fa-check"></i></td>   
                         </tr>
                         <tr>
                             <td class="tr-start">8</td>
-                            <td class="td-text">prediction_success</td>
+                            <td class="td-text">predict_success</td>
                             <td class="td-text">
-                                Request a prediction and retrieve it.
+                                Requests a prediction and retrieve it.
                             </td>
                             <td class="tr-end"><i class="fa fa-check"></i></td>   
                         </tr>
@@ -170,7 +171,7 @@
                             <td class="tr-start">9</td>
                             <td class="td-text">predict_fail</td>
                             <td class="td-text">
-                                Check whether results are accurate.
+                                Checks if the patient id is inputted for prediction.
                             </td>
                             <td class="tr-end"><i class="fa fa-check"></i></td>   
                         </tr>
@@ -217,16 +218,50 @@ class TestPatient(unittest.TestCase):
                         </code>
                     </pre>
                 </div>
+                <p>
+                    After running the unit tests, we use coverage.py to measure code coverage in our python tests.
+                    The coverage result is as shown below.
+                </p>
+                <div>
+                    <img class="img-card" src="images/CoverageResult.png" width="70%"></img>
+                </div>
+                <p>
+                    A more detailed structure of our tests is shown below.
+                </p>
+                <div class="code-box">
+                    <pre>
+                            <code class="language-textfile">
+test/
+├── test_dentist.py
+|  ├── test_dentist_signup
+|  ├── test_dentist_signup_invalid_password
+|  ├── test_dentist_signin
+|  ├── test_dentist_signin_invalid_username
+|  ├── test_dentist_signin_invalid_password
+|
+├── test_patient.py
+|  ├── test_add_patient
+|  ├── test_delete_patient
+|
+├── test_inference.py
+|  ├── test_predict_success
+|  ├── test_predict_fail
+                            </code>
+                        </pre>
+                </div>
                 <h3 class="section-subheading">Manual Testing</h3>
                 <p>
                     With manual testing we mainly focused on simply ensuring the UI and
                     to some extents the front-end was functional. There was no reason
-                    to automate this as it would just be simply simulating a user progrimatically
-                    which would just be unnescarry work.
+                    to automate this as it would just be simply simulating a user programmatically
+                    which would just be unnecessary work.
                 </p>
                 <p>
-                    Through our own testing of the general UI and also recreating edge-cases we concluded
-                    that the front-end is primarily functional. The errors that we did find here have been
+                    Through our own testing of the general UI and also recreating edge-cases, we found several bugs related
+                    to error handling and we fixed them. For instance, a message box will pop up to remind the user
+                    whenever they input wrong credentials, didn't select all three files for adding new patients, 
+                    and input invalid patient id for prediction. After extensive testing, we concluded
+                    that the front-end is primarily functional. Other errors that we did find have been
                     listed on the <a href="evaluation.html#bug-list">Evaluation</a> page of the website in 
                     the bug list.
                 </p>
@@ -263,7 +298,7 @@ class TestPatient(unittest.TestCase):
             <h1 class="section-heading">User Acceptance Testing</h1>
             <div class="text-box">
                 <p>
-                    In user accpetance testing we asked various people to interact with 
+                    In user acceptance testing, we asked various people to interact with 
                     our app. They got to use the app in a mostly isolated environment, except
                     if they were stuck they could ask one of us for help. We asked our client,
                     project supervisor, and fellow students to test our app. Here are what they
@@ -283,7 +318,7 @@ class TestPatient(unittest.TestCase):
                         <td class="tr-start">Client</td>
                         <td class="td-text">
                             Good for an initial version of the app. UI will
-                            definetly need to be improved to be cleaner and
+                            definitely need to be improved to be cleaner and
                             more professional.
                         </td>
                         <td class="tr-end">4/5</td>
@@ -292,8 +327,7 @@ class TestPatient(unittest.TestCase):
                         <td class="tr-start">TA</td>
                         <td class="td-text">
                             The overall UI is ok, but is lacking in some parts.
-                            Some of the buttons are too small, bugs with adding patients
-                            when there are no tooth models, and some functionalities
+                            Some of the buttons are too small and some functionalities
                             aren't clear.
                         </td>
                         <td class="tr-end">3/5</td>
@@ -311,7 +345,7 @@ class TestPatient(unittest.TestCase):
                         <td class="td-text">
                             App isn't smooth, can seem quite glitchy when resizing.
                             Requires some time to understand how to use the app,
-                            a lot isn't immedietly obvious.
+                            a lot isn't immediately obvious.
                         </td>
                         <td class="tr-end">3/5</td>
                     </tr>
@@ -336,11 +370,11 @@ class TestPatient(unittest.TestCase):
             </table>
             <div class="text-box">
                 <p>
-                    Overall it is obvious that the app could definetly be improved in terms
+                    Overall it is obvious that the app could definitely be improved in terms
                     of the UI aspect. The theme should be slightly adjusted to be more neutral
                     and minimalist. Some functionalities need to be made more obvious by contrasting
                     more with the background and other elements. The loading speed when opening
-                    3D models should be improved aswell but might not be possible.
+                    3D models should be improved as well but might not be possible.
                 </p>
             </div>
         </div>
