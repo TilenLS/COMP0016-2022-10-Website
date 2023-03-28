@@ -31,89 +31,100 @@
         <div class="container-fluid section-intro">
             <h1 class="section-heading">Deployment Manual</h1>
             <p>
-                This deployment manual will explain how to deploy the application on a local computer. As this is a Windows desktop software, users will need to download the .exe file to start the application.
+                This deployment manual will explain how to deploy the application on your local computer. As this is a Windows desktop software, users will need to download the .exe file to start the application.
             <h2 class="section-subheading">Prerequesites</h2>
             <p>
                 As we are using the Win32GUI Library in our application, the application can only be opened in a 
                 Windows environment. Hence you need to have a Windows laptop or set up a Windows environment on Mac/Linux
                 to run Wear3D.
+                To run the application, you will need to have the following installed on your computer (or need to know how to install these):
             </p>
+            <ul>
+                <li>Git</li>
+                <li>Python environment: Anaconda / Miniconda / python</li>
+                <li>pip</li>
+            </ul>
             <h2 class="section-subheading">Run Application</h2>
             <h3 class="section-subheading">Cloud Azure</h3>
             <p>
                 Note: As we host our database on the Azure Virtual Machine, you need to connect to our server before being able
-                to use the application. This part can be done on Windows/Mac/Linux laptop.
+                to use the application. This part can be done on Windows/Mac/Linux laptop. <br>
+                You can also skip this step and run the software directly for testing, which will connect to our team's server by default.
             </p>
             <p>
-                <strong>Step 1:</strong> Open the terminal (on Mac/Linux) or Command Prompt (on Windows) on your local computer.      
+                <strong>Step 1:</strong> Go to <a href="https://azure.microsoft.com/en-gb">Azure website</a> and create a virtual machine. Detailed guideline can be found <a href="https://learn.microsoft.com/en-us/azure/virtual-machines/linux/quick-create-portal?tabs=ubuntu">here</a>. Make sure to take note of the username, password, and your vm ip address for the virtual machine.
             </p>
             <p>
-                <strong>Step 2:</strong> Use SSH to connect to the cloud server, and the password for the virtual machine is: Team10Toothwear!     
-            </p>
-            <div class="code-box">
-                <pre><code class="language-python">ssh team10@20.127.200.67</code></pre>
-            </div>
-            <p>
-                Enter the password when you are prompted after connected to the cloud.
+                <strong>Step 2:</strong> Open the terminal (on Mac/Linux) or Command Prompt (on Windows) on your local computer.      
             </p>
             <p>
-                <strong>Step 3:</strong> Once you are connected to the remote virtual machine, you will need to navigate to the directory where the app.py file is located. You can navigate to the directory by using the following command:         
+                <strong>Step 3:</strong> Use SSH to connect to the cloud server. The command is as follows:     
             </p>
             <div class="code-box">
-                <pre><code class="language-python">cd tooth-wear-dl/back-end/app/</code></pre>
+                <pre><code class="language-python">ssh username@your-vm-ip-address</code></pre>
             </div>
             <p>
-                <strong>Step 4:</strong> Run the back-end code by using the following command:         
+                <strong>Step 4:</strong> Once you are connected to the remote virtual machine, you will need to clone our repository. Note: this manual assumes that you have git and a python environment (eg. miniconda) installed on your VM.         
+            </p>
+            <div class="code-box">
+                <pre><code class="language-python">git clone https://github.com/HongruiTang/tooth-wear-dl.git</code></pre>
+            </div>
+            <p>
+                <strong>Step 5:</strong> Dowload related packages from the file requirements.txt:
+            </p>
+            <div class="code-box">
+                <pre><code class="language-python">cd tooth-wear-dl
+pip install -r requirements.txt</code></pre>
+            </div>
+            <p>
+                <strong>Step 6:</strong> Navigate to the directory where the app.py file is located.
+            </p>
+            <div class="code-box">
+                <pre><code class="language-python">cd back-end/app/</code></pre>
+            </div>
+            <p>
+                <strong>Step 7:</strong> Run the back-end code by using the following command:         
             </p>
             <div class="code-box">
                 <pre><code class="language-python">python app.py</code></pre>
+            </div>
+            <p>
+                &emsp;&emsp;&emsp;If you want to run the app back-end code continuously on the server, you can use the following command:
+            </p>
+            <div class="code-box">
+                <pre><code class="language-python">nohup python app.py &</code></pre>
             </div>
             <p>
                 Now, the back-end preparation is done. You can now open Wear3D (after downloading it following the instructions below) on your local computer and enjoy the app!
             </p>
             <h3 class="section-subheading">Download and Run Wear3D</h3>
             <p>
-                Note: This part must be done on a Windows laptop.
+                For software downloading, please refer to the guidance on this page.
+                However, you can also download the source code from our GitHub repository. 
             </p>
             <p>
-                <strong>Step 1:</strong> Navigate to our github website using <a href="https://github.com/TilenLS/COMP0016-2022-10" target="_blank">this link</a>.   
+                <strong>Step 1:</strong> Clone our repository:         
             </p>
-            <p>
-                <strong>Step 2:</strong> Click on the Wear3D release on the right hand side.     
-            </p>
-            <div>
-                <img class="img-card" src="images/DeploymentManual/ReleaseGuide.png" width="70%"></img>
+            <div class="code-box">
+                <pre><code class="language-python">git clone https://github.com/TilenLS/Wear3D.git</code></pre>
             </div>
             <p>
-                <strong>Step 3:</strong> Click on the "executable.zip" file under Assets to download.
+                <strong>Step 2:</strong> Dowload related packages from the file requirements.txt:
             </p>
-            <div>
-                <img class="img-card" src="images/DeploymentManual/ZipGuide.png" width="70%"></img>
+            <div class="code-box">
+                <pre><code class="language-python">pip install -r requirements.txt</code></pre>
             </div>
             <p>
-                <strong>Step 4:</strong> When the download is completed, extract the zip file by right-clicking on executable.zip
-                and select "Extract All..."
+                <strong>Step 3:</strong> Navigate to the directory where the main.py file is located.
             </p>
-            <div>
-                <img class="img-card" src="images/DeploymentManual/ExtractGuide.png" width="70%"></img>
+            <div class="code-box">
+                <pre><code class="language-python">cd src/cdss</code></pre>
             </div>
             <p>
-                <strong>Step 5:</strong> Navigate into the "app" folder in the extracted "executable" folder and double-click "main.exe" to run Wear3D.
+                <strong>Step 4:</strong> Run the software
             </p>
-            <div>
-                <img class="img-card" src="images/DeploymentManual/MainExeGuide.png" width="70%"></img>
-            </div>
-            <p>
-                <strong>(Optional) Step 6:</strong> If the "Windows protected your PC" warning pop up when running the app, click on "More Info" as shown below:
-            </p>
-            <div>
-                <img class="img-card" src="images/DeploymentManual/Protected1Guide.png" width="70%"></img>
-            </div>
-            <p>
-                <strong>(Optional) Step 7:</strong> Then click on "Run anyway" to run the application.
-            </p>
-            <div>
-                <img class="img-card" src="images/DeploymentManual/Protected2Guide.png" width="70%"></img>
+            <div class="code-box">
+                <pre><code class="language-python">python main.py</code></pre>
             </div>
         </div>
     </section>

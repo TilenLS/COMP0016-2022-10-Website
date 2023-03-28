@@ -170,7 +170,7 @@
             <p> <strong>K-fold: </strong>
                 In order to have a more accurate score, we used K-fold cross validation to train the model. We chose to use
                 K = 5, which means we split the dataset into 5 parts randomly, and each time we use 4 parts
-                for training and 1 part for testing. We repeat this process 5 times and take the average score.
+                for training and 1 part for validating. We repeat this process 5 times and take the average score.
             </p>
         </div>
     </section>
@@ -247,6 +247,31 @@
                     fully-connected layer with an output of one neuron.
                     The structure of the model is shown in the figure below.
                 </p>
+                <div class="code-box">
+                    <pre>
+                        <code class="language-python">
+    # Regression 
+    class PointNetReg(nn.Module):
+        def __init__(self, feature_transform=False):
+            super(PointNetReg, self).__init__()
+            self.feat = PointNetfeat(global_feat=True, feature_transform=feature_transform)
+            self.fc1 = nn.Linear(1024, 512)
+            self.fc2 = nn.Linear(512, 256)
+            self.fc3 = nn.Linear(256, 1)
+            self.dropout = nn.Dropout(p=0.3)
+            self.bn1 = nn.BatchNorm1d(512)
+            self.bn2 = nn.BatchNorm1d(256)
+            self.relu = nn.ReLU()
+    
+        def forward(self, x):
+            x, trans, trans_feat = self.feat.forward_1(x)
+            x = F.relu(self.bn1(self.fc1(x)))
+            x = F.relu(self.bn2(self.dropout(self.fc2(x))))
+            x = self.fc3(x)
+            return x, trans, trans_feat
+                        </code>
+                    </pre>
+                </div>
                 <div>
                     <img class="img-card" src="images/model_summary.png" width="50%">
                 </div>
