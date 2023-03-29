@@ -34,10 +34,13 @@
                 This deployment manual will explain how to deploy the application on your local computer. As this is a Windows desktop software, users will need to download the .exe file to start the application.
             <h2 class="section-subheading">Prerequesites</h2>
             <p>
-                As we are using the Win32GUI Library in our application, the application can only be opened in a 
+                As we are using the Win32GUI library in our application, Wear3D can only be opened in a 
                 Windows environment. Hence you need to have a Windows laptop or set up a Windows environment on Mac/Linux
-                to run Wear3D.
-                To run the application, you will need to have the following installed on your computer (or need to know how to install these):
+                to run Wear3D. 
+            </p>
+            <p>
+                If you want to run the application using our source code instead of the executable file, you 
+                will need to have the following installed on your computer (or need to know how to install these):
             </p>
             <ul>
                 <li>Git</li>
@@ -49,8 +52,9 @@
             <p>
                 Note: As we host our database on the Azure Virtual Machine, you need to connect to our server before being able
                 to use the application. This part can be done on Windows/Mac/Linux laptop. <br>
-                You can also skip this step and run the software directly for testing, which will connect to our team's server by default.
+                <b>You can also skip this step and run the software directly for testing, which will connect to our team's server by default.</b>
             </p>
+            <br>
             <p>
                 <strong>Step 1:</strong> Go to <a href="https://azure.microsoft.com/en-gb">Azure website</a> and create a virtual machine. Detailed guideline can be found <a href="https://learn.microsoft.com/en-us/azure/virtual-machines/linux/quick-create-portal?tabs=ubuntu">here</a>. Make sure to take note of the username, password, and your vm ip address for the virtual machine.
             </p>
@@ -70,7 +74,7 @@
                 <pre><code class="language-python">git clone https://github.com/HongruiTang/tooth-wear-dl.git</code></pre>
             </div>
             <p>
-                <strong>Step 5:</strong> Dowload related packages from the file requirements.txt:
+                <strong>Step 5:</strong> Download related packages from the file requirements.txt:
             </p>
             <div class="code-box">
                 <pre><code class="language-python">cd tooth-wear-dl
@@ -99,17 +103,74 @@ pip install -r requirements.txt</code></pre>
             </p>
             <h3 class="section-subheading">Download and Run Wear3D</h3>
             <p>
-                For software downloading, please refer to the guidance on this page.
-                However, you can also download the source code from our GitHub repository. 
+                Note: This following need to be done on a Windows environment.
+            </p>
+            <h4 class="section-subheading">Download Executable File</h4>
+            <p>
+                The easiest way to use Wear3D is to download the zip file on our GitHub Release.
+                Please follow the instructions below to do so.
+            </p>
+            <br>
+            <p>
+                <strong>Step 1:</strong> Navigate to our github website using <a href="https://github.com/TilenLS/Wear3D" target="_blank">this link</a>.   
             </p>
             <p>
-                <strong>Step 1:</strong> Clone our repository:         
+                <strong>Step 2:</strong> Click on the Wear3D release on the right hand side.     
+            </p>
+            <div>
+                <img class="img-card" src="images/DeploymentManual/ReleaseGuide.png" width="70%"></img>
+            </div>
+            <p>
+                <strong>Step 3:</strong> Click on the "executable.zip" file under Assets to download.
+            </p>
+            <div>
+                <img class="img-card" src="images/DeploymentManual/ZipGuide.png" width="70%"></img>
+            </div>
+            <p>
+                <strong>Step 4:</strong> When the download is completed, extract the zip file by right-clicking on executable.zip
+                and select "Extract All..."
+            </p>
+            <div>
+                <img class="img-card" src="images/DeploymentManual/ExtractGuide.png" width="70%"></img>
+            </div>
+            <p>
+                <strong>Step 5:</strong> Navigate into the "app" folder in the extracted "executable" folder and double-click "Wear3D.exe" to run Wear3D.
+            </p>
+            <div>
+                <img class="img-card" src="images/DeploymentManual/AppGuide.png" width="70%"></img>
+            </div>
+            <div>
+                <img class="img-card" src="images/DeploymentManual/MainExeGuide.png" width="70%"></img>
+            </div>
+            <p>
+                <strong>(Optional) Step 6:</strong> If the "Windows protected your PC" warning pop up when running the app, click on "More Info" as shown below:
+            </p>
+            <div>
+                <img class="img-card" src="images/DeploymentManual/Protected1Guide.png" width="70%"></img>
+            </div>
+            <p>
+                <strong>(Optional) Step 7:</strong> Then click on "Run anyway" to run the application.
+            </p>
+            <div>
+                <img class="img-card" src="images/DeploymentManual/Protected2Guide.png" width="70%"></img>
+            </div>
+            <p>There is an "Example Scans" folder together with Wear3D.exe in the "app" directory. The "Example Scans" folder
+                consists of upper jaw scans, lower jaw scans, and sextant scans available for testing purposes.
+            </p>
+            <h4 class="section-subheading">Download Source Code</h4>
+            <p>
+                Alternatively, you can choose to download the source code of our application from our Github repository.
+                Please follow the instructions below to do so.
+            </p>
+            <br>
+            <p>
+                <strong>Step 1:</strong> Open a terminal and clone our GitHub repository:         
             </p>
             <div class="code-box">
                 <pre><code class="language-python">git clone https://github.com/TilenLS/Wear3D.git</code></pre>
             </div>
             <p>
-                <strong>Step 2:</strong> Dowload related packages from the file requirements.txt:
+                <strong>Step 2:</strong> Download related packages from the file requirements.txt:
             </p>
             <div class="code-box">
                 <pre><code class="language-python">pip install -r requirements.txt</code></pre>
