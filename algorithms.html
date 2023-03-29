@@ -7,6 +7,8 @@
     <link rel="icon" href="images/tooth-solid.svg" type="image/x-icon">
 
     <!-- JS -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
     </script>
@@ -105,8 +107,8 @@
             </p>
             <h3>Data augmentation</h3>
             <p>
-                As we only received 194 teeth models, we decided to use data augmentation to increase the size of the
-                dataset as 194 is not a sufficient amount for training a deep learning model. Additionally, from the pie chart above, we can see that the dataset is imbalanced, which is not suitable for training a deep learning model. Therefore, we also need to increase the amount of data that have a grade of 1, which is obviously smaller than rest of the groups.
+                As we only received 194 teeth models which is too insufficient to train deep learning models, we decided to use data augmentation to increase the size of the
+                dataset. Additionally, from the pie chart above, we can see that the dataset is imbalanced, which is not suitable for training a deep learning model. Therefore, we also need to increase the amount of data that have a grade of 1, which is obviously smaller than rest of the groups.
             </p>
             <p>
                 <strong>Method 1: Rotation</strong>
@@ -255,39 +257,43 @@
                 </p>
                 <h3>Classification -> Regression</h3>
                 <p>
-                    The original PointNet network is designed for classification tasks, but in order to make the network
-                    adapt our scenario, we modified its structure to a regression neural network. We kept the two
-                    transformations and multi-layer perceptron layers to extract global features from the data, but we changed the last two layers into a
+                    Follow these ideas, we extanded and implemented our model in our specific scenario. The original PointNet network is designed for classification tasks, but in order to make the network
+                    adapt our requirements, we modified its structure to a regression neural network. We kept the two
+                    transformations and multi-layer perceptron layers to extract global features from the data, but we changed the last layer into a
                     fully-connected layer with an output of one neuron.
                     The structure of the model is shown in the figure below.
                 </p>
-                <div class="code-box">
-                    <pre>
-                        <code class="language-python">
-    # Regression 
-    class PointNetReg(nn.Module):
-        def __init__(self, feature_transform=False):
-            super(PointNetReg, self).__init__()
-            self.feat = PointNetfeat(global_feat=True, feature_transform=feature_transform)
-            self.fc1 = nn.Linear(1024, 512)
-            self.fc2 = nn.Linear(512, 256)
-            self.fc3 = nn.Linear(256, 1)
-            self.dropout = nn.Dropout(p=0.3)
-            self.bn1 = nn.BatchNorm1d(512)
-            self.bn2 = nn.BatchNorm1d(256)
-            self.relu = nn.ReLU()
-    
-        def forward(self, x):
-            x, trans, trans_feat = self.feat.forward_1(x)
-            x = F.relu(self.bn1(self.fc1(x)))
-            x = F.relu(self.bn2(self.dropout(self.fc2(x))))
-            x = self.fc3(x)
-            return x, trans, trans_feat
-                        </code>
-                    </pre>
-                </div>
-                <div>
-                    <img class="img-card" src="images/model_summary.png" width="50%">
+                <div class="image-grid">
+                    <div class="row">
+                        <div class="col">
+                            <pre>
+                                <code class="language-python" width="80%">
+# Regression 
+class PointNetReg(nn.Module):
+    def __init__(self, feature_transform=False):
+        super(PointNetReg, self).__init__()
+        self.feat = PointNetfeat(global_feat=True, feature_transform=feature_transform)
+        self.fc1 = nn.Linear(1024, 512)
+        self.fc2 = nn.Linear(512, 256)
+        self.fc3 = nn.Linear(256, 1)
+        self.dropout = nn.Dropout(p=0.3)
+        self.bn1 = nn.BatchNorm1d(512)
+        self.bn2 = nn.BatchNorm1d(256)
+        self.relu = nn.ReLU()
+
+    def forward(self, x):
+        x, trans, trans_feat = self.feat.forward_1(x)
+        x = F.relu(self.bn1(self.fc1(x)))
+        x = F.relu(self.bn2(self.dropout(self.fc2(x))))
+        x = self.fc3(x)
+        return x, trans, trans_feat
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="col">
+                            <img class="img-card" src="images/model_summary.png" width="80%">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -304,9 +310,118 @@
                 </p>
                 <h3>Training and Validation</h3>
                 <p>
-                    The loss of the model after 100 epochs is shown below.
+                    After data agumentation, we have 4626 point cloud models. As we used K-fold, where K = 5, we trained our model on 3700 point cloud models and validated it on the remaining models. In terms of the maximum number of epochs, we set it to 250 because the authors of the original PointNet paper used 250 which performes very very well without overfitting. We also conducted an experiment to check if 250 epochs will cause an overfitting on our training set.
                 </p>
+                <p>
+                    <strong>Accuracy mapping: </strong> Only showing the predicted result (ie. dicimal numbers) is not enough for dentits to evaluate patient tooth wear in the preactice. We, therefore, decided to map the predicted result to actual tooth wear grades. We use the following mapping:
+                </p>
+                <p class="equation">
+                    \(f: I \longmapsto N \)
+                </p>
+                <div class="mathjax">
+                    \[ (- \infty, 1.5] \longmapsto 1, \\ \]
+                    \[ (1.5, 2.5] \longmapsto 2, \\ \]
+                    \[ (2.5, 3.5] \longmapsto 3, \\ \]
+                    \[ (3.5, \infty) \longmapsto 4 \]
+                </div>
+                <p>
+                    While training, the first thing we want to ensure is the loss function keep decreasing in the process and the accuracy is increasing.
+                </p>
+                <div class="image-grid">
+                    <div class="row">
+                        <div class="col">
+                            <img src="images/Train_loss.png" width="80%">
+                        </div>
+                        <div class="col">
+                            <img src="images/Train_acc.png" width="80%">
+                        </div>
+                    </div>
+                </div>
+                <p>
+                    As we used K-fold, we trained our model 5 times on a random portion of the dataset (4/5) and the rest (1/5) would be used for validation. The following figure shows the loss and accuracy of the model on the validation set.<br><br>
+                    From the figure below, we can see that the mean squared error (MSE) on each validation set. The average MSE is 0.1371 and the average accuracy is 0.9496.
+                </p>
+                <div class="image-grid">
+                    <div class="row">
+                        <div class="col">
+                            <img src="images/Val_loss.png" width="80%">
+                            <figcaption>Fig.7 - MSE error on each validation across K-fold</figcaption>
+                        </div>
+                        <div class="col">
+                            <img src="images/Val_acc.png" width="80%">
+                            <figcaption>Fig.8 - Accuracy on each validation across K-fold</figcaption>
+                        </div>
+                    </div>
+                </div>
                 <h3>Testing</h3>
+                <p>
+                    After training the model, we evaluated their performance on the test set. The following figure shows how we use several evaluation metrics and accuracy to evaluate the models on the test set.<br><br>
+                    <strong>Mean squared error (MSE):</strong> is a commonly used metric to measure the difference between the predicted value and true values in a regression problem. For more details about MSE in PyTorch, please see <a href="https://pytorch.org/docs/stable/generated/torch.nn.MSELoss.html">here</a>. The formula for MSE is:
+                    <p class="equation">
+                        \(MSE = \frac{1}{N}\sum_{i=1}^{N}(y_{pred,i}-y_{true,i})^2\)
+                    </p>
+                </p>
+                <p>
+                    The lower the MSE, the better the model is. <br><br>
+                    Here is the MSE of each trained model on the test set against epochs (10<sup>th</sup>, 20<sup>th</sup>, ..., 250<sup>th</sup>). 
+                </p>
+                <div>
+                    <img class="img-card" src="images/MSE_test.png" width="50%">
+                </div>
+                <p>
+                    <strong>Mean absolute error (MAE):</strong> is another commonly used metric. It is calculated by taking the average of the absolute differences between the predicted and true values. For more details about MAE in PyTorch, please see <a href="https://pytorch.org/docs/stable/generated/torch.nn.L1Loss.html">here</a>. The formula for MAE is:
+                    <p class="equation">
+                        \(MAE = \frac{1}{N}\sum_{i=1}^{N}|y_{pred,i}-y_{true,i}|\)
+                    </p>
+                </p>
+                <p>
+                    Similar to MSE, we also want to minimize models' MAE error. <br><br>
+                    Here is the MAE of each trained model on the test set against epochs (10<sup>th</sup>, 20<sup>th</sup>, ..., 250<sup>th</sup>).
+                </p>
+                <div>
+                    <img class="img-card" src="images/MAE_test.jpeg" width="50%">
+                </div>
+                <p>
+                    <strong>R squared (coefficient of determination): </strong> shows how well the regression model explains observed data. The figure shows that the avarage R<sup>2</sup> is over 0.8 after 250 epochs of training.
+                </p>
+                <div>
+                    <img class="img-card" src="images/R2_test.jpeg" width="50%">
+                </div>
+                <p>
+                    <strong>Accuracy:</strong> we use accuracy to evaluate the overall performance on the test set. After mapping the predicted result to tooth wear grades, we found that the avarage accuracy is 0.9140 after 250 epochs of training.
+                </p>
+                <div class="image-grid">
+                    <div class="row">
+                        <div class="col">
+                            <img src="images/first_model.png" width="80%">
+                        </div>
+                        <div class="col">
+                            <img src="images/second_model.png" width="80%">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <img src="images/third_model.png" width="80%">
+                        </div>
+                        <div class="col">
+                            <img src="images/fourth_model.png" width="80%">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <img src="images/fifth_model.png" width="80%">
+                        </div>
+                        <div class="col">
+                            <img src="images/empty.png" width="80%">
+                        </div>
+                    </div>
+                </div>
+                <p>
+                    This is the average accuracy of models that after the 100<sup>th</sup> epoch. 
+                </p>
+                <div>
+                    <img class="img-card" src="images/after_100.png" width="50%">
+                </div>
             </div>
         </div>
     </section>
