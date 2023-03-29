@@ -78,9 +78,8 @@
                 Originally, we were supposed to train the deep learning model on real patient data. However, due to the
                 ethical issues, we did not recieve the dataset until March 2023. Therefore, we agreed to build a
                 proof-of-concept model using the sextant tooth models, where a sextant is 1/6<sup>th</sup> of the whole
-                teeth (containing 4 to 6 teeth). We recieved a dataset of 127 3D teeth models on the 13th of March and
-                67
-                more on the 23rd of March. We began training and improving our model since then.
+                teeth (containing 4 to 6 teeth). Since teeth sextant is only a part of the whole teeth, it is easier for dentists to scan and collect data. We recieved a dataset of 127 3D teeth models on the 13th of March and
+                67 more on the 23rd of March. We began training and improving our model since then.
             </p>
             <h3>Data Description</h3>
             <p>
@@ -167,9 +166,12 @@
             <p>
                 Ratio of training and testing datasets: 80% training, 20% testing
             </p>
+            <p>
+                Commonly used ratio of spliting training and testing dataset is training:testing = 8:2 or 7:3. However, our dataset is relatively small and we want to have more data for training to have a good result, we decided to use 80% of the dataset for training and 20% for testing.
+            </p>
             <p> <strong>K-fold: </strong>
                 In order to have a more accurate score, we used K-fold cross validation to train the model. We chose to use
-                K = 5, which means we split the dataset into 5 parts randomly, and each time we use 4 parts
+                K = 5, which means we split the training dataset into 5 parts randomly, and each time we use 4 parts
                 for training and 1 part for validating. We repeat this process 5 times and take the average score.
             </p>
         </div>
@@ -239,8 +241,20 @@
                         </code>
                     </pre>
                 </div>
+                <h3>Activation Function</h3>
                 <p>
-                    <strong>Classification -> Regression</strong><br>
+
+                </p>
+                <h3>Optimizer</h3>
+                <p>
+
+                </p>
+                <h3>Loss function</h3>
+                <p>
+
+                </p>
+                <h3>Classification -> Regression</h3>
+                <p>
                     The original PointNet network is designed for classification tasks, but in order to make the network
                     adapt our scenario, we modified its structure to a regression neural network. We kept the two
                     transformations and multi-layer perceptron layers to extract global features from the data, but we changed the last two layers into a
@@ -288,10 +302,11 @@
                     accuracy after mapping the regression result to distinct tooth wear grades. We conducted detailed
                     comparisons between different variants of the model.
                 </p>
-                <h3>Loss</h3>
+                <h3>Training and Validation</h3>
                 <p>
                     The loss of the model after 100 epochs is shown below.
                 </p>
+                <h3>Testing</h3>
             </div>
         </div>
     </section>
