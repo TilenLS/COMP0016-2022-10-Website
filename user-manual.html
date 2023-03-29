@@ -30,50 +30,6 @@
     <section id="usrman-content">
         <div class="container-fluid section-intro">
             <h1 class="section-heading">User Manual</h1>
-            <h3 class="section-subheading">Download and Run Wear3D</h3>
-            <p>
-                Note: This part must be done on a Windows laptop.
-            </p>
-            <p>
-                <strong>Step 1:</strong> Navigate to our github website using <a href="https://github.com/TilenLS/COMP0016-2022-10" target="_blank">this link</a>.   
-            </p>
-            <p>
-                <strong>Step 2:</strong> Click on the Wear3D release on the right hand side.     
-            </p>
-            <div>
-                <img class="img-card" src="images/DeploymentManual/ReleaseGuide.png" width="70%"></img>
-            </div>
-            <p>
-                <strong>Step 3:</strong> Click on the "executable.zip" file under Assets to download.
-            </p>
-            <div>
-                <img class="img-card" src="images/DeploymentManual/ZipGuide.png" width="70%"></img>
-            </div>
-            <p>
-                <strong>Step 4:</strong> When the download is completed, extract the zip file by right-clicking on executable.zip
-                and select "Extract All..."
-            </p>
-            <div>
-                <img class="img-card" src="images/DeploymentManual/ExtractGuide.png" width="70%"></img>
-            </div>
-            <p>
-                <strong>Step 5:</strong> Navigate into the "app" folder in the extracted "executable" folder and double-click "main.exe" to run Wear3D.
-            </p>
-            <div>
-                <img class="img-card" src="images/DeploymentManual/MainExeGuide.png" width="70%"></img>
-            </div>
-            <p>
-                <strong>(Optional) Step 6:</strong> If the "Windows protected your PC" warning pop up when running the app, click on "More Info" as shown below:
-            </p>
-            <div>
-                <img class="img-card" src="images/DeploymentManual/Protected1Guide.png" width="70%"></img>
-            </div>
-            <p>
-                <strong>(Optional) Step 7:</strong> Then click on "Run anyway" to run the application.
-            </p>
-            <div>
-                <img class="img-card" src="images/DeploymentManual/Protected2Guide.png" width="70%"></img>
-            </div>
             <h3 class="section-subheading">Log-in Page</h3>
             <img class="img-card" src="images/User Manual/Usrman-LoginPage.png" width="50%">
             <p>
@@ -82,14 +38,14 @@
                 make an account. (Register page explained below)
             </p>
             <ol class="num-list">
-                <li>Enter your email and password in the boxes indicated</li>
-                <li>Then press sign in to sign in to continue to the home page</li>
+                <li>Enter your email and password in the boxes indicated.</li>
+                <li>Then press "Sign In" to sign in and continue to the home page.</li>
             </ol>
             <h3 class="section-subheading">Register Page</h3>
             <img class="img-card" src="images/User Manual/Usrman-RegisterPage.png" width="50%">
             <ol class="num-list">
-                <li>Enter a valid email and correct password. Dont forget to confirm your password.</li>
-                <li>Then press register to create your account, then move onto sign in.</li>
+                <li>Enter a valid email and correct password. Don't forget to confirm your password.</li>
+                <li>Then press "Register" to create your account, then move on to sign in.</li>
             </ol>
             <h3 class="section-subheading">Home Page</h3>
             <img class="img-card" src="images/User Manual/Usrman-HomePage.png" width="70%">
@@ -100,7 +56,8 @@
                 </li>
                 <li>
                     The main table on the home page is the database of all the patients. (You can
-                    click on a patients name to directly view their tooth scans).
+                    click on a patient's ID to directly view their tooth scans. Clicking on the header
+                    of each column will sort the table correspondingly).
                 </li>
                 <li>
                     Click the add patient button to add a new patient. This will cause
@@ -108,7 +65,11 @@
                 </li>
                 <li>
                     Here you can input all the patient details along with the patient tooth
-                    scans. Once you are done press `add patient`.
+                    scans. Once you are done press `add patient`. (You can select upper jaw, lower jaw, and
+                    sextant scans from the "Example Scans" folder that is located in the 
+                    same directory as Wear3D.exe. The need to select a sextant scan is because our tooth
+                    wear grading deep learning model is built with sextant scans. By uploading sextant scans while you add
+                    a new patient, the most accurate prediction about tooth wear grade will be provided when run analysis.)
                 </li>
                 <li>
                     Scroll with your mouse or using the scroll bar on the bottom to see
@@ -118,7 +79,7 @@
             <img class="img-card" src="images/User Manual/Usrman-DeletePage.png" width="70%">
             <ol class="num-list">
                 <li>
-                    At the end of the patient table there is a delete button to remove a patient
+                    At the end of the patient table there is a delete button to remove a patient.
                 </li>
                 <li>
                     Make sure you want to delete the selected patient and confirm.
@@ -128,22 +89,21 @@
             <img class="img-card" src="images/User Manual/Usrman-ViewingPage.png" width="60%">
             <ol class="num-list">
                 <li>
-                    In the viewing page a patient's tooth scans can be seen and interacted with
+                    In the viewing page, a patient's tooth scans can be seen and interacted with
                     via using the cursor.
                 </li>
                 <li>
-                    The sider-bar on the right can be dragged left or right to minimise or maximise.
+                    The right sider-bar contains functionalities such as temporarily hiding a specific scan.
                 </li>
                 <li>
-                    The right side-bar contains basic functionailites such as temporarily hiding a 
-                    specific scan, adding different scans manually, or resetting the viewpoint.
+                    The right side-bar also contains functionailites to add different scans manually or reset the viewpoint.
                 </li>
             </ol>
             <h3 class="section-subheading">Results Page</h3>
             <img class="img-card" src="images/User Manual/Usrman-ResultsPage.png" width="50%">
             <ol class="num-list">
                 <li>
-                    In the results page you simply enter a selected patient and press run analysis.
+                    In the results page you simply enter a selected patient id and press run analysis.
                     You will see the prediction load in on top after some time.
                 </li>
                 <li>
