@@ -55,7 +55,7 @@
             </div>
             <div class="appnav-grid">
                 <div class="row">
-                    <a id="blog-btn">
+                    <a id="blognav-btn">
                         <div class="appnav-button col left active">
                             <h1>Blog</h1>
                         </div>
@@ -118,6 +118,21 @@
             });
             $('#dynamic-content').load('blog.html #blog-nav', function () {
                 $('#dynamic-blog-content').load('blogs/term1-week3.html .blog-content');
+                $('.blog-btn').click(function (event) {
+                    var element = event.target;
+
+                    if (document.getElementsByClassName("blog-btn active").length >
+                        0) {
+                        document.getElementsByClassName("blog-btn active")[0]
+                            .classList.remove("active");
+                    }
+
+                    if (element.nodeName == "DIV") {
+                        element.classList.add("active");
+                    } else {
+                        element.parentElement.classList.add("active")
+                    }
+                });
             });
             $('.appnav-button').click(function (event) {
                 var element = event.target;
@@ -133,7 +148,7 @@
                     element.parentElement.classList.add("active")
                 }
             });
-            $('#blog-btn').click(function (event) {
+            $('#blognav-btn').click(function (event) {
                 $('#dynamic-content').load('blog.html #blog-nav', function () {
                     $('.blog-btn').click(function (event) {
                         var element = event.target;
