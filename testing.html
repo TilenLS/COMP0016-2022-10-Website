@@ -270,15 +270,99 @@ test/
                     For the actual performance of our app we had two main functionalities to test.
                     First the accuracy of our AI model, how long it takes to upload or retrieve a
                     tooth model to or from the server, and the time it takes to request a prediction
-                    and recieve it.
+                    and recieve it. 
                 </p>
+                <p>
+                    We used a timer to record how long it takes for a user to add a new patient, click on
+                    the patient's id button to view the tooth model of that specific patient and request for prediction
+                    of tooth wear grade and treatment plan. Judgements are made based on observations.
+                    The test results are shown below.
+                </p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Trial #</th>
+                            <th scope="col">Adding a new patient (in s)</th>
+                            <th scope="col">Viewing specific tooth model (in s)</th>
+                            <th scope="col">Requesting prediction (in s)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="tr-start">1</td>
+                            <td class="td-text">2.58</td>
+                            <td class="td-text">7.59</td>
+                            <td class="td-text">1.21</td>
+                        </tr>
+                        <tr class="tr-bot">
+                            <td class="tr-start">2</td>
+                            <td class="td-text">2.47</td>
+                            <td class="td-text">8.21</td>
+                            <td class="td-text">0.97</td>
+                        </tr>
+                        <tr class="tr-bot">
+                            <td class="tr-start">3</td>
+                            <td class="td-text">3.62</td>
+                            <td class="td-text">7.12</td>
+                            <td class="td-text">0.94</td>
+                        </tr>
+                        <tr class="tr-bot">
+                            <td class="tr-start">4</td>
+                            <td class="td-text">4.82</td>
+                            <td class="td-text">8.57</td>
+                            <td class="td-text">1.78</td>
+                        </tr>
+                        <tr class="tr-bot">
+                            <td class="tr-start">5</td>
+                            <td class="td-text">3.55</td>
+                            <td class="td-text">8.03</td>
+                            <td class="td-text">1.32</td>
+                        </tr>
+                        <tr class="tr-bot">
+                            <td class="tr-start">6</td>
+                            <td class="td-text">3.91</td>
+                            <td class="td-text">8.45</td>
+                            <td class="td-text">1.00</td>
+                        </tr>
+                        <tr class="tr-bot">
+                            <td class="tr-start">7</td>
+                            <td class="td-text">5.11</td>
+                            <td class="td-text">6.43</td>
+                            <td class="td-text">0.91</td>
+                        </tr>
+                        <tr class="tr-bot">
+                            <td class="tr-start">8</td>
+                            <td class="td-text">2.33</td>
+                            <td class="td-text">9.02</td>
+                            <td class="td-text">2.03</td>
+                        </tr>
+                        <tr class="tr-bot">
+                            <td class="tr-start">9</td>
+                            <td class="td-text">3.88</td>
+                            <td class="td-text">7.38</td>
+                            <td class="td-text">1.64</td>
+                        </tr>
+                        <tr class="tr-bot">
+                            <td class="tr-start">10</td>
+                            <td class="td-text">3.29</td>
+                            <td class="td-text">8.17</td>
+                            <td class="td-text">1.29</td>
+                        </tr>
+                        <tr class="tr-bot">
+                            <td class="tr-start">Average</td>
+                            <td class="td-text">3.56</td>
+                            <td class="td-text">7.90</td>
+                            <td class="td-text">1.31</td>
+                        </tr>
+                    </tbody>
+                </table>
                 <p>
                     We trained our model on around 200 sextants of 3D tooth models. The model was
                     trained for 50 epochs with a learning rate of 0.01 and using the Adam optimiser.
                     The loss function used is Mean Squared Error. Below we have graphed the results.
                 </p>
                 <div>
-                    <img class="img-card" src="images/model-results.png" width="70%">
+                    <img class="img-card" src="images/after_100.png" width="70%">
                 </div>
                 <p>
                     Unfortunately, gaining access to more tooth models is difficult due to the emphasis
