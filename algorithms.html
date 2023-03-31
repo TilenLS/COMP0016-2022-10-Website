@@ -55,9 +55,10 @@
             <div class="text-box">
                 <p>
                     We went through a large amount of literature on evaluating the tooth wear grade using machine
-                    learning (ML) and deep learning (DL) on 3D point cloud. Due to the special nature of point cloud 
-                    data, using traditional ML algorithms is not suitable in this project as we need to extract features 
-                    from the point cloud dataset. However, due to ethical issues present, we are not able to have a large 
+                    learning (ML) and deep learning (DL) on 3D point cloud. Due to the special nature of point cloud
+                    data, using traditional ML algorithms is not suitable in this project as we need to extract features
+                    from the point cloud dataset. However, due to ethical issues present, we are not able to have a
+                    large
                     amount of real patient data with well-labeled features. <br> <br>
                     The computer vision algorithm in the point cloud field that we use is the PointNet network. We will
                     explain the details of the algorithm in the following sections.
@@ -78,8 +79,8 @@
                 Originally, we were supposed to train the deep learning model on real patient data. However, due to the
                 ethical issues, we did not recieve the dataset until March 2023. Therefore, we agreed to build a
                 proof-of-concept model using the sextant teeth models, where a sextant is 1/6<sup>th</sup> of all the
-                teeth (containing 4 to 6 teeth). Since teeth sextants are only a part of the whole teeth, it is easier 
-                for dentists to scan and collect data. We recieved a dataset of 127 3D teeth models on the 13th of March 
+                teeth (containing 4 to 6 teeth). Since teeth sextants are only a part of the whole teeth, it is easier
+                for dentists to scan and collect data. We recieved a dataset of 127 3D teeth models on the 13th of March
                 and 67 more on the 23rd of March. We began training and improving our model since then.
             </p>
             <h3>Data Description</h3>
@@ -109,10 +110,10 @@
             </p>
             <h3>Data augmentation</h3>
             <p>
-                As we only received 194 teeth models, which is insufficient to train a deep learning model, we decided 
+                As we only received 194 teeth models, which is insufficient to train a deep learning model, we decided
                 to use data augmentation to increase the size of the dataset. Additionally, from the pie chart above, we
-                can see that the dataset is imbalanced, which is not suitable for training a deep learning model. 
-                Therefore, we also need to increase the volume of data that has a grade of 1, which is obviously smaller 
+                can see that the dataset is imbalanced, which is not suitable for training a deep learning model.
+                Therefore, we also need to increase the volume of data that has a grade of 1, which is obviously smaller
                 than rest of the groups.
             </p>
             <p>
@@ -141,10 +142,11 @@
             </p>
             <p>
                 <strong>Method 3: Randomly selected</strong><br>
-                For each point cloud model, researchers usually select 1024 or 2048 points from a large number of points. 
-                The teeth models that we received usually contain 40k to 70k points, which is far more than we need. 
-                Hence, we firstly randomly selected 2048 points from each tooth model and we repeated this process to 
-                randomly select 2048 completely different points from the point set. As a result we can generate 20-30 
+                For each point cloud model, researchers usually select 1024 or 2048 points from a large number of
+                points.
+                The teeth models that we received usually contain 40k to 70k points, which is far more than we need.
+                Hence, we firstly randomly selected 2048 points from each tooth model and we repeated this process to
+                randomly select 2048 completely different points from the point set. As a result we can generate 20-30
                 different point cloud models from each teeth model.
                 <div class="code-box">
                     <pre>
@@ -167,7 +169,7 @@
                 </div>
             </p>
             <p>
-                After augmenting the dataset, we increased the number of data that has a grade of 1. The new dataset 
+                After augmenting the dataset, we increased the number of data that has a grade of 1. The new dataset
                 distribution is much more balanced and is displayed below:
             </p>
             <div class="figure-img">
@@ -181,12 +183,12 @@
                 Ratio of training and testing datasets: 80% training, 20% testing
             </p>
             <p>
-                A commonly used ratio of splitting training and testing dataset is training:testing = 8:2 or 7:3. 
-                However, our dataset is relatively small and we want to have more data for training to achieve a good 
+                A commonly used ratio of splitting training and testing dataset is training:testing = 8:2 or 7:3.
+                However, our dataset is relatively small and we want to have more data for training to achieve a good
                 result. We decided to use 80% of the dataset for training and 20% for testing.
             </p>
             <p> <strong>K-fold: </strong>
-                In order to have a more accurate score, we used K-fold cross validation to train the model. We chose to 
+                In order to have a more accurate score, we used K-fold cross validation to train the model. We chose to
                 use K = 5, which means we split the training dataset into 5 parts randomly, and each time we use 4 parts
                 for training and 1 part for validating. We repeat this process 5 times and take the average score.
             </p>
@@ -198,25 +200,26 @@
             <h1 class="section-heading">Algorithm</h1>
             <div class="text-box">
                 <p>
-                    From a mathematical point of view, the point cloud data can be represented as a set of points 
+                    From a mathematical point of view, the point cloud data can be represented as a set of points
                     in a vector space. The points can be denoted as a set: <br>
                 </p>
                 <p class="equation">
                     \(P = \{ x_1,x_2,x_3,\dots ,x_n\} \in \mathbb{R}^N\), where \(x_i\) is a point in the vector space
                 </p>
                 <p>
-                    Usually, we take N = 3, which represent the x, y, and z coordinates of the point but it can increase up
+                    Usually, we take N = 3, which represent the x, y, and z coordinates of the point but it can increase
+                    up
                     to 6 which also contains the color. <br>
                 </p>
                 <p>
                     The nature of a point cloud is that they are:
                 </p>
-                    <ul class="num-list">
-                        <li>Unordered</li>
-                        <li>Transformation invariant</li>
-                    </ul>
+                <ul class="num-list">
+                    <li>Unordered</li>
+                    <li>Transformation invariant</li>
+                </ul>
                 <p>
-                    this means the order of the points in the set and how the model is observed should not affect 
+                    this means the order of the points in the set and how the model is observed should not affect
                     the final result as they are essentially the same teeth model.
                 </p>
                 <p>
@@ -228,9 +231,9 @@
                     <img class="img-card" src="images/max_pooling.png" width="50%">
                 </div>
                 <p>
-                    To solve the second problem, the PointNet network uses a transformation matrix, a T-net, to ensure 
-                    the model is invariant to the transformation of the input data. The T-net is a 3*3 affine 
-                    transformation matrix, and we apply this matrix to the input points. 
+                    To solve the second problem, the PointNet network uses a transformation matrix, a T-net, to ensure
+                    the model is invariant to the transformation of the input data. The T-net is a 3*3 affine
+                    transformation matrix, and we apply this matrix to the input points.
                 </p>
                 <div>
                     <img class="img-card" src="images/T_net.png" width="50%">
@@ -260,20 +263,20 @@
                 </div>
                 <h3>Optimizer</h3>
                 <p>
-                    We used Adam optimizer with a learning rate of 0.001. Adam is an optimization algorithm that can be 
+                    We used Adam optimizer with a learning rate of 0.001. Adam is an optimization algorithm that can be
                     used to update network weights with adaptive learning rates.
                 </p>
                 <h3>Loss function</h3>
                 <p>
-                    We used the mean squared error as the loss function. It is a common loss function for regression 
+                    We used the mean squared error as the loss function. It is a common loss function for regression
                     tasks.
                 </p>
                 <h3>Classification -> Regression</h3>
                 <p>
-                    We extended and implemented our model to fit our specific scenario. The original 
+                    We extended and implemented our model to fit our specific scenario. The original
                     PointNet network is designed for classification tasks, but in order to make the network
                     adapt to our requirements, we modified its structure to a regression neural network. We kept the two
-                    transformations and multi-layer perceptron layers to extract global features from the data, but we 
+                    transformations and multi-layer perceptron layers to extract global features from the data, but we
                     changed the last layer into a fully-connected layer with an output of one neuron.
                     The structure of the model is shown in the figure below.
                 </p>
@@ -325,15 +328,16 @@ class PointNetReg(nn.Module):
                 </p>
                 <h3>Training and Validation</h3>
                 <p>
-                    After data agumentation, we have 4626 point cloud models. As we used K-fold, where K = 5, we trained 
-                    our model on 3700 point cloud models and validated it on the remaining models. In terms of the maximum 
-                    number of epochs, we set it to 250 because the authors of the original PointNet paper used 250 which 
-                    performes very well without overfitting. We also conducted an experiment to check if 250 epochs 
+                    After data agumentation, we have 4626 point cloud models. As we used K-fold, where K = 5, we trained
+                    our model on 3700 point cloud models and validated it on the remaining models. In terms of the
+                    maximum
+                    number of epochs, we set it to 250 because the authors of the original PointNet paper used 250 which
+                    performes very well without overfitting. We also conducted an experiment to check if 250 epochs
                     will cause overfitting on our training set.
                 </p>
                 <p>
-                    <strong>Accuracy mapping: </strong> Only showing the predicted result (ie. decimal numbers) is not 
-                    enough for dentists to evaluate patient tooth wear in practice. We therefore, decided to map 
+                    <strong>Accuracy mapping: </strong> Only showing the predicted result (ie. decimal numbers) is not
+                    enough for dentists to evaluate patient tooth wear in practice. We therefore, decided to map
                     the predicted result to actual tooth wear grades. We use the following mapping:
                 </p>
                 <p class="equation">
@@ -346,7 +350,8 @@ class PointNetReg(nn.Module):
                     \[ (3.5, \infty) \longmapsto 4 \]
                 </div>
                 <p>
-                    While training, the first thing we want to ensure is the loss function keeps decreasing in the process 
+                    While training, the first thing we want to ensure is the loss function keeps decreasing in the
+                    process
                     and the accuracy is increasing.
                 </p>
                 <div class="image-grid">
@@ -362,10 +367,11 @@ class PointNetReg(nn.Module):
                     </div>
                 </div>
                 <p>
-                    As we used K-fold, we trained our model 5 times on a random portion of the dataset (4/5) and the 
-                    rest (1/5) would be used for validation. The following figure shows the loss and accuracy of the model
+                    As we used K-fold, we trained our model 5 times on a random portion of the dataset (4/5) and the
+                    rest (1/5) would be used for validation. The following figure shows the loss and accuracy of the
+                    model
                     on the validation set.<br><br>
-                    From the figure below, we can see that the mean squared error (MSE) on each validation set. 
+                    From the figure below, we can see that the mean squared error (MSE) on each validation set.
                     The average MSE is 0.1371 and the average accuracy is 0.9496.
                 </p>
                 <div class="image-grid">
@@ -382,11 +388,12 @@ class PointNetReg(nn.Module):
                 </div>
                 <h3>Testing</h3>
                 <p>
-                    After training the model, we evaluated their performance on the test set. The following figure shows 
+                    After training the model, we evaluated their performance on the test set. The following figure shows
                     how we use several evaluation metrics and accuracy to evaluate the models on the test set.<br><br>
-                    <strong>Mean squared error (MSE):</strong> is a commonly used metric to measure the difference between 
-                    the predicted value and true values in a regression problem. For more details about MSE in PyTorch, 
-                    please see <a href="https://pytorch.org/docs/stable/generated/torch.nn.MSELoss.html">here</a>. The 
+                    <strong>Mean squared error (MSE):</strong> is a commonly used metric to measure the difference
+                    between
+                    the predicted value and true values in a regression problem. For more details about MSE in PyTorch,
+                    please see <a href="https://pytorch.org/docs/stable/generated/torch.nn.MSELoss.html">here</a>. The
                     formula for MSE is:
                     <p class="equation">
                         \(MSE = \frac{1}{N}\sum_{i=1}^{N}(y_{pred,i}-y_{true,i})^2\)
@@ -394,18 +401,20 @@ class PointNetReg(nn.Module):
                 </p>
                 <p>
                     The lower the MSE, the better the model is. <br><br>
-                    Here is the MSE of each trained model on the test set against epochs 
-                    (10<sup>th</sup>, 20<sup>th</sup>, ..., 250<sup>th</sup>). 
+                    Here is the MSE of each trained model on the test set against epochs
+                    (10<sup>th</sup>, 20<sup>th</sup>, ..., 250<sup>th</sup>).
                 </p>
-                <div>
-                    <img class="img-card" src="images/MSE_test.png" width="50%">
-                    <figcaption>Fig.8 - This line graph shows the MSE loss trend for different folds</figcaption>
+                <div class="figure-img">
+                    <div>
+                        <img src="images/MSE_test.png" width="600px">
+                        <figcaption>Fig.8 - This line graph shows the MSE loss trend for different folds</figcaption>
+                    </div>
                 </div>
                 <p>
-                    <strong>Mean absolute error (MAE):</strong> is another commonly used metric. 
-                    It is calculated by taking the average of the absolute differences between the predicted 
-                    and true values. For more details about MAE in PyTorch, please see 
-                    <a href="https://pytorch.org/docs/stable/generated/torch.nn.L1Loss.html">here</a>. 
+                    <strong>Mean absolute error (MAE):</strong> is another commonly used metric.
+                    It is calculated by taking the average of the absolute differences between the predicted
+                    and true values. For more details about MAE in PyTorch, please see
+                    <a href="https://pytorch.org/docs/stable/generated/torch.nn.L1Loss.html">here</a>.
                     The formula for MAE is:
                     <p class="equation">
                         \(MAE = \frac{1}{N}\sum_{i=1}^{N}|y_{pred,i}-y_{true,i}|\)
@@ -413,21 +422,31 @@ class PointNetReg(nn.Module):
                 </p>
                 <p>
                     Similar to MSE, we also want to minimize models' MAE error. <br><br>
-                    Here is the MAE of each trained model on the test set against epochs (10<sup>th</sup>, 20<sup>th</sup>, ..., 250<sup>th</sup>).
+                    Here is the MAE of each trained model on the test set against epochs (10<sup>th</sup>,
+                    20<sup>th</sup>, ..., 250<sup>th</sup>).
                 </p>
-                <div>
-                    <img class="img-card" src="images/MAE_test.jpeg" width="50%">
-                    <figcaption>Fig.9 - This line graph shows the MAE loss trend for different folds</figcaption>
+                <div class="figure-img">
+                    <div>
+                        <img src="images/MAE_test.jpeg" width="600px">
+                        <figcaption>Fig.9 - This line graph shows the MAE loss trend for different folds</figcaption>
+                    </div>
                 </div>
                 <p>
-                    <strong>R squared (coefficient of determination): </strong> shows how well the regression model explains observed data. The figure shows that the avarage R<sup>2</sup> is over 0.8 after 250 epochs of training.
+                    <strong>R squared (coefficient of determination): </strong> shows how well the regression model
+                    explains observed data. The figure shows that the avarage R<sup>2</sup> is over 0.8 after 250 epochs
+                    of training.
                 </p>
-                <div>
-                    <img class="img-card" src="images/R2_test.jpeg" width="50%">
-                    <figcaption>Fig.10 - This line graph shows the R-squared loss trend for different folds</figcaption>
+                <div class="figure-img">
+                    <div>
+                        <img src="images/R2_test.jpeg" width="600px">
+                        <figcaption>Fig.10 - This line graph shows the R-squared loss trend for different folds
+                        </figcaption>
+                    </div>
                 </div>
                 <p>
-                    <strong>Accuracy:</strong> we use accuracy to evaluate the overall performance on the test set. After mapping the predicted result to tooth wear grades, we found that the average accuracy is 0.9140 after 250 epochs of training.
+                    <strong>Accuracy:</strong> we use accuracy to evaluate the overall performance on the test set.
+                    After mapping the predicted result to tooth wear grades, we found that the average accuracy is
+                    0.9140 after 250 epochs of training.
                 </p>
                 <div class="image-grid">
                     <div class="row">
@@ -459,11 +478,13 @@ class PointNetReg(nn.Module):
                     </div>
                 </div>
                 <p>
-                    This is the average accuracy of model after the 100<sup>th</sup> epoch. 
+                    This is the average accuracy of model after the 100<sup>th</sup> epoch.
                 </p>
-                <div>
-                    <img class="img-card" src="images/after_100.png" width="50%">
-                    <figcaption>Fig.11 - Average accuracy after training 100 epochs on each fold number</figcaption>
+                <div class="figure-img">
+                    <div>
+                        <img src="images/after_100.png" width="600px">
+                        <figcaption>Fig.11 - Average accuracy after training 100 epochs on each fold number</figcaption>
+                    </div>
                 </div>
             </div>
         </div>
@@ -476,11 +497,11 @@ class PointNetReg(nn.Module):
                 <p>
                     In conclusion, we use the PointNet architecture to implement a deep
                     neural network for numerical tooth wear evaluation as it solves two key issues
-                    of point cloud data: unorderdness and transformation invariance. This required us to tailor the 
+                    of point cloud data: unorderdness and transformation invariance. This required us to tailor the
                     model to suit our specific scenario by modifying it from a classification model
                     to a regression model. The lack of data present also required us to augment the data.
                     We used methods such as rotation and jitter while separating our 3D tooth scans into
-                    20-30 point cloud models via random selection to ensure we had sufficient well 
+                    20-30 point cloud models via random selection to ensure we had sufficient well
                     balanced data for training. Lastly, we thoroughly tested our model
                     using metrics such as MSE, MAE, R-squared, and accuracy to determine how well it performs.
                 </p>
