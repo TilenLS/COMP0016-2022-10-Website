@@ -95,6 +95,7 @@
             </p>
             <div>
                 <img class="img-card" src="images/Dataset_percent.png" width="50%">
+                <figcaption>Fig.1 - Distribution of original dataset</figcaption>
             </div>
             <h3>Data Cleaning</h3>
             <p>
@@ -169,6 +170,7 @@
             </p>
             <div>
                 <img class="img-card" src="images/new_data_distribution.png" width="50%">
+                <figcaption>Fig.2 - Distribution of current dataset</figcaption>
             </div>
             <h3>Training and Testing dataset</h3>
             <p>
@@ -300,6 +302,7 @@ class PointNetReg(nn.Module):
                         </div>
                         <div class="col">
                             <img src="images/model_summary.png" width="60%">
+                            <figcaption>Fig.3 - model summary</figcaption>
                         </div>
                     </div>
                 </div>
@@ -346,9 +349,11 @@ class PointNetReg(nn.Module):
                     <div class="row">
                         <div class="col">
                             <img src="images/Train_loss.png" width="80%">
+                            <figcaption>Fig.4 - Training loss agianst epochs</figcaption>
                         </div>
                         <div class="col">
                             <img src="images/Train_acc.png" width="80%">
+                            <figcaption>Fig.5 - Accuracy against epochs</figcaption>
                         </div>
                     </div>
                 </div>
@@ -363,11 +368,11 @@ class PointNetReg(nn.Module):
                     <div class="row">
                         <div class="col">
                             <img src="images/Val_loss.png" width="80%">
-                            <figcaption>Fig.7 - MSE error on each validation across K-fold</figcaption>
+                            <figcaption>Fig.6 - MSE error on each validation across K-fold</figcaption>
                         </div>
                         <div class="col">
                             <img src="images/Val_acc.png" width="80%">
-                            <figcaption>Fig.8 - Accuracy on each validation across K-fold</figcaption>
+                            <figcaption>Fig.7 - Accuracy on each validation across K-fold</figcaption>
                         </div>
                     </div>
                 </div>
@@ -390,6 +395,7 @@ class PointNetReg(nn.Module):
                 </p>
                 <div>
                     <img class="img-card" src="images/MSE_test.png" width="50%">
+                    <figcaption>Fig.8 - This line graph shows the MSE loss trend for different folds</figcaption>
                 </div>
                 <p>
                     <strong>Mean absolute error (MAE):</strong> is another commonly used metric. 
@@ -407,12 +413,14 @@ class PointNetReg(nn.Module):
                 </p>
                 <div>
                     <img class="img-card" src="images/MAE_test.jpeg" width="50%">
+                    <figcaption>Fig.9 - This line graph shows the MAE loss trend for different folds</figcaption>
                 </div>
                 <p>
                     <strong>R squared (coefficient of determination): </strong> shows how well the regression model explains observed data. The figure shows that the avarage R<sup>2</sup> is over 0.8 after 250 epochs of training.
                 </p>
                 <div>
                     <img class="img-card" src="images/R2_test.jpeg" width="50%">
+                    <figcaption>Fig.9 - This line graph shows the R-squared loss trend for different folds</figcaption>
                 </div>
                 <p>
                     <strong>Accuracy:</strong> we use accuracy to evaluate the overall performance on the test set. After mapping the predicted result to tooth wear grades, we found that the avarage accuracy is 0.9140 after 250 epochs of training.
@@ -447,10 +455,11 @@ class PointNetReg(nn.Module):
                     </div>
                 </div>
                 <p>
-                    This is the average accuracy of model after the 100<sup>th</sup> epoch. 
+                    This is the average accuracy of model after the 100<sup>th</sup> epoch and the average accuracy is 0.9086. 
                 </p>
                 <div>
                     <img class="img-card" src="images/after_100.png" width="50%">
+                    <figcaption>Fig.10 - Average accuracy after training 100 epochs on each fold number</figcaption>
                 </div>
             </div>
         </div>
