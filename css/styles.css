@@ -1356,3 +1356,33 @@ tbody tr:hover {
 .equation {
     text-align: center;
 }
+
+
+.figure-img {
+    margin: 75px auto;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.5);
+    width: fit-content;
+    transform: scale(1);
+    transition: transform 1s ease-in-out;
+}
+
+.figure-img:hover {
+    transform: scale(1.05);
+    transition: transform 1s ease-in-out;
+}
+
+.figure-img div {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+}
+
+.figure-img figcaption {
+    text-align: left;
+    width: fit-content;
+}
