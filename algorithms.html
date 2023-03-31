@@ -56,7 +56,7 @@
                 <p>
                     We went through a large amount of literature on evaluating the tooth wear grade using machine
                     learning (ML) and deep learning (DL) on 3D point cloud. Due to the special nature of point cloud 
-                    data, using traditional ML algorithms is not suitable in this project as we need do extract features 
+                    data, using traditional ML algorithms is not suitable in this project as we need to extract features 
                     from the point cloud dataset. However, due to ethical issues present, we are not able to have a large 
                     amount of real patient data with well-labeled features. <br> <br>
                     The computer vision algorithm in the point cloud field that we use is the PointNet network. We will
@@ -71,7 +71,7 @@
             <h1 class="section-heading">Dataset</h1>
             <h3>Data Source</h3>
             <p>
-                The data we used is from our client, the UCL Eastman Dental Institute. They provided us with 127 3D
+                The data we used is from our client, the UCL Eastman Dental Institute. They provided us with 194 3D
                 teeth models (sextants). They also provided us with 14 real patient teeth models to be displayed in
                 the software.
                 <br> <br>
@@ -141,7 +141,7 @@
                 For each point cloud model, researchers usually select 1024 or 2048 points from a large number of points. 
                 The teeth models that we received usually contain 40k to 70k points, which is far more than we need. 
                 Hence, we firstly randomly selected 2048 points from each tooth model and we repeated this process to 
-                randomly select 2048 completley different points from the point set. As a result we can generate 20-30 
+                randomly select 2048 completely different points from the point set. As a result we can generate 20-30 
                 different point cloud models from each teeth model.
                 <div class="code-box">
                     <pre>
@@ -175,7 +175,7 @@
                 Ratio of training and testing datasets: 80% training, 20% testing
             </p>
             <p>
-                A commonly used ratio of spliting training and testing dataset is training:testing = 8:2 or 7:3. 
+                A commonly used ratio of splitting training and testing dataset is training:testing = 8:2 or 7:3. 
                 However, our dataset is relatively small and we want to have more data for training to achieve a good 
                 result. We decided to use 80% of the dataset for training and 20% for testing.
             </p>
@@ -264,7 +264,7 @@
                 </p>
                 <h3>Classification -> Regression</h3>
                 <p>
-                    We extanded and implemented our model to fit our specific scenario. The original 
+                    We extended and implemented our model to fit our specific scenario. The original 
                     PointNet network is designed for classification tasks, but in order to make the network
                     adapt to our requirements, we modified its structure to a regression neural network. We kept the two
                     transformations and multi-layer perceptron layers to extract global features from the data, but we 
@@ -325,8 +325,8 @@ class PointNetReg(nn.Module):
                     will cause overfitting on our training set.
                 </p>
                 <p>
-                    <strong>Accuracy mapping: </strong> Only showing the predicted result (ie. dicimal numbers) is not 
-                    enough for dentits to evaluate patient tooth wear in preactice. We, therefore, decided to map 
+                    <strong>Accuracy mapping: </strong> Only showing the predicted result (ie. decimal numbers) is not 
+                    enough for dentists to evaluate patient tooth wear in practice. We therefore, decided to map 
                     the predicted result to actual tooth wear grades. We use the following mapping:
                 </p>
                 <p class="equation">
@@ -415,7 +415,7 @@ class PointNetReg(nn.Module):
                     <img class="img-card" src="images/R2_test.jpeg" width="50%">
                 </div>
                 <p>
-                    <strong>Accuracy:</strong> we use accuracy to evaluate the overall performance on the test set. After mapping the predicted result to tooth wear grades, we found that the avarage accuracy is 0.9140 after 250 epochs of training.
+                    <strong>Accuracy:</strong> we use accuracy to evaluate the overall performance on the test set. After mapping the predicted result to tooth wear grades, we found that the average accuracy is 0.9140 after 250 epochs of training.
                 </p>
                 <div class="image-grid">
                     <div class="row">
@@ -463,10 +463,10 @@ class PointNetReg(nn.Module):
                 <p>
                     In conclusion, we use the PointNet architecture to implement a deep
                     neural network for numerical tooth wear evaluation as it solves two key issues
-                    of point cloud data: unorderdness and tranformation invariance. This required us to tailor the 
+                    of point cloud data: unorderdness and transformation invariance. This required us to tailor the 
                     model to suit our specific scenario by modifying it from a classification model
                     to a regression model. The lack of data present also required us to augment the data.
-                    We used methods such as rotation and jitter while seperating our 3D tooth scans into
+                    We used methods such as rotation and jitter while separating our 3D tooth scans into
                     20-30 point cloud models via random selection to ensure we had sufficient well 
                     balanced data for training. Lastly, we thoroughly tested our model
                     using metrics such as MSE, MAE, R-squared, and accuracy to determine how well it performs.
