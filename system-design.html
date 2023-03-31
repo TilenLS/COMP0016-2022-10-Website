@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>COMP0016 2022 Team 10 Website</title>
+    <link rel="icon" href="images/tooth-solid.svg" type="image/x-icon">
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js" type="text/javascript"></script>
+    <script src="javascript/float.js" type="text/javascript"></script>
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/c09be5d4e7.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- loading-animation -->
+    <div class="loader-wrapper">
+        <div class='tetrominos'>
+            <div class='tetromino box1'></div>
+            <div class='tetromino box2'></div>
+            <div class='tetromino box3'></div>
+            <div class='tetromino box4'></div>
+        </div>
+    </div>
+    <div id="navigation"></div>
+    
+    <section id="title-banner">
+        <div class="container-fluid">
+            <h1>System Design</h1>
+        </div>
+    </section>
+
+    <section id="system-architecture">
+        <div class="container-fluid section-intro">
+            <h1 class="section-heading">System Architecture</h1>
+            <div class="text-box">
+                <p>
+                    This is our general system architecture diagram. 
+                </p>
+                <div>
+                    <img class="img-card" src="images/SystemDesign/ToothWearSystemDesign.png" width="70%" height="60%"></img>
+                </div>
+                <p>
+                    This is a detailed system architecture diagram.
+                </p>
+                <div>
+                    <img class="img-card" src="images/SystemDesign/LatestSystemArchitecture.png" width="70%" height="60%"></img>
+                </div>
+                <p>
+                    PySide and Open3d is used for the front-end, to build the user interface and to display tooth models in 
+                    STL/PLY file format. Our front-end UI accepts a patient’s medical background and their 3D tooth scans as input. 
+                    It provides the interface to interact with the database, view 3D models, and receive prediction results. 
+                </p>
+                <p>
+                    Our back-end consists of a controller module which contains the primary back-end logic for mediating 
+                    requests from the client and generating responses from the rest of the back-end. We use Flask and Python 
+                    Requests library to handle HTTP response and request, sending and receiving data between the client and server.
+                    SQLite is used to store user's credentials and patient's information. Deep learning model for tooth wear grading 
+                    is implemented with PyTorch.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section id="design-pattern">
+        <div class="container-fluid section-intro">
+            <h1 class="section-heading">Design Pattern</h1>
+            <div class="text-box">
+                <p>
+                    We used the Model-View-Controller (MVC) architecture in our project. It is a software design pattern 
+                    that separates our application into three interconnected components: the model, the view, and the controller.
+                    We used the MVC architecture because it promotes separation of concern, which makes the code easier to 
+                    understand, modify, and maintain. Besides, MVC is modular, it allows developers to work on different 
+                    components of the application at the same time without interfering with each other's work,
+                    which can improve development efficiency.
+                </p>
+                <p>
+                    The diagram below shows how MVC architecture is implemented in our project.
+                </p>
+                <div>
+                    <img class="img-card" src="images/SystemDesign/MVCDesignPattern.png" width="70%" height="60%"></img>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="database-structure">
+        <div class="container-fluid section-intro">
+            <h1 class="section-heading">Database Structure</h1>
+            <div class="text-box">
+                <p>
+                    The database consists of two tables. The first table is called "Dentists", it stores user's credentials such as id, 
+                    username and password. ID is automatically created and incremented every time a new user registers.
+                </p>
+                <p>
+                    The second table is called "Patients", it stores patient's information that are relevant to decide tooth wear 
+                    degree and generate treatment plans. Patient's tooth model is stored as binary encoded files. Besides upper scans
+                    and lower scans, we also require users to upload sextant scans (1/6<sup>th</sup> of the whole
+                    teeth, containing 4 to 6 teeth) because our deep learning model is trained using sextant scans due to lack of 
+                    data. Wear3D will provide prediction of tooth wear grade based on the file uploaded in sextant scans.
+                </p>
+                <div>
+                    <img class="img-card" src="images/SystemDesign/dentistsTable.png" width="40%"></img>
+                </div>
+                <div>
+                    <img class="img-card" src="images/SystemDesign/patientsTable.png" width="40%"></img>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div id="dynamic-footer"></div>
+
+    <a class="floating-button" href="#navigation">
+        <i class="fa fa-arrow-up"></i>
+    </a>
+
+    <!-- Loading animation, import navigation bar, and set current page to active -->
+    <script type="text/javascript">
+        $(function () {
+            $("#dynamic-footer").load("footer.html #import-footer");
+            $("#navigation").load("navbar.html #import-navbar", function () {
+                active = document.getElementById("system-design")
+                active.className = "nav-link dropdown-toggle active"
+            });
+            $(".floating-button").fadeOut();
+        });
+        $(document).scroll(function () {
+            updateFloat();
+        });
+        setTimeout(() => {
+            $(".loader-wrapper").fadeOut();
+        }, 500);
+    </script>
+</body>
+
+</html>

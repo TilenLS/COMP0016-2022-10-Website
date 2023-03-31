@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>COMP0016 2022 Team 10 Website</title>
+    <link rel="icon" href="images/tooth-solid.svg" type="image/x-icon">
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js" type="text/javascript"></script>
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/c09be5d4e7.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <section id="usrman-content">
+        <div class="container-fluid section-intro">
+            <h1 class="section-heading">User Manual</h1>
+            <h3 class="section-subheading">Log-in Page</h3>
+            <img class="img-card" src="images/User Manual/Usrman-LoginPage.png" width="50%">
+            <p>
+                This is your standard and simple login page to access the rest of the app,
+                for those who are already registered. If not press the register button to
+                make an account. (Register page explained below)
+            </p>
+            <ol class="num-list">
+                <li>Enter your email and password in the boxes indicated.</li>
+                <li>Then press "Sign In" to sign in and continue to the home page.</li>
+            </ol>
+            <h3 class="section-subheading">Register Page</h3>
+            <img class="img-card" src="images/User Manual/Usrman-RegisterPage.png" width="50%">
+            <ol class="num-list">
+                <li>Enter a valid email and correct password. Don't forget to confirm your password.</li>
+                <li>Then press "Register" to create your account, then move on to sign in.</li>
+            </ol>
+            <h3 class="section-subheading">Home Page</h3>
+            <img class="img-card" src="images/User Manual/Usrman-HomePage.png" width="70%">
+            <ol class="num-list">
+                <li>
+                    When you login you will first see the home page. On the left sidebar there
+                    will be a navigation panel to access all app pages.
+                </li>
+                <li>
+                    The main table on the home page is the database of all the patients. (You can
+                    click on a patient's ID to directly view their tooth scans. Clicking on the header
+                    of each column will sort the table correspondingly).
+                </li>
+                <li>
+                    Click the add patient button to add a new patient. This will cause
+                    a sidebar on the right to appear.
+                </li>
+                <li>
+                    Here you can input all the patient details along with the patient tooth
+                    scans. Once you are done press `add patient`. (You can select upper jaw, lower jaw, and
+                    sextant scans from the "Example Scans" folder that is located in the 
+                    same directory as Wear3D.exe. The need to select a sextant scan is because our tooth
+                    wear grading deep learning model is built with sextant scans. By uploading sextant scans while you add
+                    a new patient, the most accurate prediction about tooth wear grade will be provided when run analysis.)
+                </li>
+                <li>
+                    Scroll with your mouse or using the scroll bar on the bottom to see
+                    the rest of the patient data.
+                </li>
+            </ol>
+            <img class="img-card" src="images/User Manual/Usrman-DeletePage.png" width="70%">
+            <ol class="num-list">
+                <li>
+                    At the end of the patient table there is a delete button to remove a patient.
+                </li>
+                <li>
+                    Make sure you want to delete the selected patient and confirm.
+                </li>
+            </ol>
+            <h3 class="section-subheading">Viewing Page</h3>
+            <img class="img-card" src="images/User Manual/Usrman-ViewingPage.png" width="60%">
+            <ol class="num-list">
+                <li>
+                    In the viewing page, a patient's tooth scans can be seen and interacted with
+                    via using the cursor.
+                </li>
+                <li>
+                    The right sider-bar contains functionalities such as temporarily hiding a specific scan.
+                </li>
+                <li>
+                    The right side-bar also contains functionailites to add different scans manually or reset the viewpoint.
+                </li>
+            </ol>
+            <h3 class="section-subheading">Results Page</h3>
+            <img class="img-card" src="images/User Manual/Usrman-ResultsPage.png" width="50%">
+            <ol class="num-list">
+                <li>
+                    In the results page you simply enter a selected patient id and press run analysis.
+                    You will see the prediction load in on top after some time.
+                </li>
+                <li>
+                    The bottom will display the treatment plan suggestion.
+                </li>
+            </ol>
+        </div>
+    </section>
+</body>
+
+</html>

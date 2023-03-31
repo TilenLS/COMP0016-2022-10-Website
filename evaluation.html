@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>COMP0016 2022 Team 10 Website</title>
+    <link rel="icon" href="images/tooth-solid.svg" type="image/x-icon">
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js" type="text/javascript"></script>
+    <script src="javascript/float.js" type="text/javascript"></script>
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/c09be5d4e7.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- loading-animation -->
+    <div class="loader-wrapper">
+        <div class='tetrominos'>
+            <div class='tetromino box1'></div>
+            <div class='tetromino box2'></div>
+            <div class='tetromino box3'></div>
+            <div class='tetromino box4'></div>
+        </div>
+    </div>
+    <div id="navigation"></div>
+
+    <section id="title-banner">
+        <div class="container-fluid">
+            <h1>Evaluation</h1>
+        </div>
+    </section>
+
+    <section id="moscow-evaluation">
+        <div class="container-fluid section-intro">
+            <h1 class="section-heading">MoSCoW Evaluation</h1>
+            <h2 class="section-subheading">Functional Requirements</h2>
+            <div class="text-box">
+                <p>
+
+                </p>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Requirements</th>
+                        <th scope="col">Priority</th>
+                        <th scope="col">State</th>
+                        <th scope="col">Contributors</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="tr-start">1</td>
+                        <td class="td-text">Windows based app</td>
+                        <td class="td-text prio">Must<i class="fa fa-exclamation"></i></td>
+                        <td class="td-text"><i class="fa fa-check"></i></td>
+                        <td class="tr-end td-text">All</td>
+                    </tr>
+                    <tr>
+                        <td class="tr-start">2</td>
+                        <td class="td-text">Display STL/PLY files</td>
+                        <td class="td-text prio">Must<i class="fa fa-exclamation"></i></td>
+                        <td class="td-text"><i class="fa fa-check"></i></td>
+                        <td class="tr-end td-text">Tilen, Yoong Xin</td>
+                    </tr>
+                    <tr>
+                        <td class="tr-start">3</td>
+                        <td class="td-text">Manually input patient labels</td>
+                        <td class="td-text prio">Must<i class="fa fa-exclamation"></i></td>
+                        <td class="td-text"><i class="fa fa-check"></i></td>
+                        <td class="tr-end td-text">Yoong Xin</td>
+                    </tr>
+                    <tr>
+                        <td class="tr-start">4</td>
+                        <td class="td-text">Store patient data in database</td>
+                        <td class="td-text prio">Must<i class="fa fa-exclamation"></i></td>
+                        <td class="td-text"><i class="fa fa-check"></i></td>
+                        <td class="tr-end td-text">Yoong Xin</td>
+                    </tr>
+                    <tr>
+                        <td class="tr-start">5</td>
+                        <td class="td-text">Ability to add patient data</td>
+                        <td class="td-text prio">Must<i class="fa fa-exclamation"></i></td>
+                        <td class="td-text"><i class="fa fa-check"></i></td>
+                        <td class="tr-end td-text">Yoong Xin</td>
+                    </tr>
+                    <tr>
+                        <td class="tr-start">6</td>
+                        <td class="td-text">Ability to delete patient data</td>
+                        <td class="td-text prio">Should<i class="fa fa-plus"></i></td>
+                        <td class="td-text"><i class="fa fa-check"></i></td>
+                        <td class="tr-end td-text">Yoong Xin</td>
+                    </tr>
+                    <tr>
+                        <td class="tr-start">7</td>
+                        <td class="td-text">Develop AI model that can grade tooth wear</td>
+                        <td class="td-text prio">Should<i class="fa fa-plus"></i></td>
+                        <td class="td-text"><i class="fa fa-check"></i></td>
+                        <td class="tr-end td-text">Hongrui</td>
+                    </tr>
+                    <tr>
+                        <td class="tr-start">8</td>
+                        <td class="td-text">Acquire data for AI model</td>
+                        <td class="td-text prio">Should<i class="fa fa-plus"></i></td>
+                        <td class="td-text"><i class="fa fa-check"></i></td>
+                        <td class="tr-end td-text">Hongrui</td>
+                    </tr>
+                    <tr>
+                        <td class="tr-start">9</td>
+                        <td class="td-text">Train AI model on collected data</td>
+                        <td class="td-text prio">Should<i class="fa fa-plus"></i></td>
+                        <td class="td-text"><i class="fa fa-check"></i></td>
+                        <td class="tr-end td-text">Hongrui</td>
+                    </tr>
+                    <tr>
+                        <td class="tr-start">10</td>
+                        <td class="td-text">Implement AI model into app</td>
+                        <td class="td-text prio">Should<i class="fa fa-plus"></i></td>
+                        <td class="td-text"><i class="fa fa-check"></i></td>
+                        <td class="tr-end td-text">Hongrui, Yoong Xin</td>
+                    </tr>
+                    <tr>
+                        <td class="tr-start">11</td>
+                        <td class="td-text">Results page to display tooth analysis</td>
+                        <td class="td-text prio">Could<i class="fa fa-question"></i></td>
+                        <td class="td-text"><i class="fa fa-check"></i></td>
+                        <td class="tr-end td-text">Hongrui, Yoong Xin</td>
+                    </tr>
+                    <tr>
+                        <td class="tr-start">12</td>
+                        <td class="td-text">Remote database for tooth models and patient data storage</td>
+                        <td class="td-text prio">Could<i class="fa fa-question"></i></td>
+                        <td class="td-text"><i class="fa fa-check"></i></td>
+                        <td class="tr-end td-text">Hongrui, Yoong Xin</td>
+                    </tr>
+                    <tr>
+                        <td class="tr-start">13</td>
+                        <td class="td-text">Store STL/PLY files as encoded binary files</td>
+                        <td class="td-text prio">Could<i class="fa fa-question"></i></td>
+                        <td class="td-text"><i class="fa fa-check"></i></td>
+                        <td class="tr-end td-text">Hongrui</td>
+                    </tr>
+                    <tr>
+                        <td class="tr-start">14</td>
+                        <td class="td-text">Move prediction capabilities to back-end</td>
+                        <td class="td-text prio">Could<i class="fa fa-question"></i></td>
+                        <td class="td-text"><i class="fa fa-check"></i></td>
+                        <td class="tr-end td-text">Hongrui</td>
+                    </tr>
+                    <tr>
+                        <td class="tr-start">15</td>
+                        <td class="td-text">Login and register page</td>
+                        <td class="td-text prio">Could<i class="fa fa-question"></i></td>
+                        <td class="td-text"><i class="fa fa-check"></i></td>
+                        <td class="tr-end td-text">Yoong Xin, Tilen</td>
+                    </tr>
+                    <tr>
+                        <td class="tr-start">16</td>
+                        <td class="td-text">Store login credentials</td>
+                        <td class="td-text prio">Could<i class="fa fa-question"></i></td>
+                        <td class="td-text"><i class="fa fa-check"></i></td>
+                        <td class="tr-end td-text">Yoong Xin</td>
+                    </tr>
+                    <tr>
+                        <td class="tr-start">17</td>
+                        <td class="td-text">Encrypt login credentials</td>
+                        <td class="td-text prio">Could<i class="fa fa-question"></i></td>
+                        <td class="td-text"><i class="fa fa-check"></i></td>
+                        <td class="tr-end td-text">Yoong Xin</td>
+                    </tr>
+                    <tr>
+                        <td class="tr-start">18</td>
+                        <td class="td-text">Viewing functionalities for 3D models</td>
+                        <td class="td-text prio">Could<i class="fa fa-question"></i></td>
+                        <td class="td-text"><i class="fa fa-check"></i></td>
+                        <td class="tr-end td-text">Tilen</td>
+                    </tr>
+                    <tr>
+                        <td class="tr-start">19</td>
+                        <td class="td-text">View specific patient tooth model from home page</td>
+                        <td class="td-text prio">Could<i class="fa fa-question"></i></td>
+                        <td class="td-text"><i class="fa fa-check"></i></td>
+                        <td class="tr-end td-text">Yoong Xin</td>
+                    </tr>
+                    <tr>
+                        <td class="tr-start">20</td>
+                        <td class="td-text">Sort patient details</td>
+                        <td class="td-text prio">Could<i class="fa fa-question"></i></td>
+                        <td class="td-text"><i class="fa fa-check"></i></td>
+                        <td class="tr-end td-text">Yoong Xin</td>
+                    </tr>
+                    <tr>
+                        <td class="tr-start">21</td>
+                        <td class="td-text">Tooth model segmentation into sextants</td>
+                        <td class="td-text prio">Could<i class="fa fa-question"></i></td>
+                        <td class="td-text"><i class="fa fa-xmark"></i></td>
+                        <td class="tr-end td-text">N/A</td>
+                    </tr>
+                    <tr>
+                        <td class="tr-start">22</td>
+                        <td class="td-text">Treatment plan suggestion based on tooth evaluation and patient data</td>
+                        <td class="td-text prio">Wont<i class="fa fa-xmark"></i></td>
+                        <td class="td-text"><i class="fa fa-xmark"></i></td>
+                        <td class="tr-end td-text">N/A</td>
+                    </tr>
+                    <tr class="tr-bot">
+                        <td class="tr-start">23</td>
+                        <td class="td-text">Automatically re-train AI model with addition of new data</td>
+                        <td class="td-text prio">Wont<i class="fa fa-xmark"></i></td>
+                        <td class="td-text"><i class="fa fa-xmark"></i></td>
+                        <td class="tr-end td-text">N/A</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2 class="section-subheading">Non-functional Requirements</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Requirements</th>
+                        <th scope="col">Priority</th>
+                        <th scope="col">State</th>
+                        <th scope="col">Contributors</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="tr-start">1</td>
+                        <td class="td-text">Easily extensible and maintainable</td>
+                        <td class="td-text prio">Should<i class="fa fa-plus"></i></td>
+                        <td class="td-text"><i class="fa fa-check"></i></td>
+                        <td class="tr-end td-text">All</td>
+                    </tr>
+                    <tr class="tr-bot">
+                        <td class="tr-start">2</td>
+                        <td class="td-text">Easily usable and provide simple & intuitive UX</td>
+                        <td class="td-text prio">Should<i class="fa fa-plus"></i></td>
+                        <td class="td-text"><i class="fa fa-check"></i></td>
+                        <td class="tr-end td-text">All</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="text-box">
+                <p>
+                    Percentage of key functionalities (MUST & SHOULD have) completed: 100%
+                </p>
+            </div>
+            <div class="text-box">
+                <p>
+                    Percentage of optional functionalities (COULD have) completed: 91%.
+                </p>
+                <p>
+                    The requirements we failed to achieve were mainly because of the lack
+                    of data throughout the project. Even when we began receiving data to work
+                    with it was already quite far into the project timeline so we did not have
+                    much time to develop with it.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="individual-contribution">
+        <div class="container-fluid section-intro">
+            <h1 class="section-heading">Individual Contribution</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Work Packages</th>
+                        <th scope="col">Hongrui</th>
+                        <th scope="col">Yoong Xin</th>
+                        <th scope="col">Tilen</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="tr-start">Client Liaison</td>
+                        <td class="td-text">33%</td>
+                        <td class="td-text">33%</td>
+                        <td class="tr-end td-text">34%</td>
+                    </tr>
+                    <tr>
+                        <td class="tr-start">Requirement Analysis</td>
+                        <td class="td-text">33%</td>
+                        <td class="td-text">33%</td>
+                        <td class="tr-end td-text">33%</td>
+                    </tr>
+                    <tr>
+                        <td class="tr-start">Research</td>
+                        <td class="td-text">40%</td>
+                        <td class="td-text">30%</td>
+                        <td class="tr-end td-text">30%</td>
+                    </tr>
+                    <tr>
+                        <td class="tr-start">UI Design</td>
+                        <td class="td-text">40%</td>
+                        <td class="td-text">40%</td>
+                        <td class="tr-end td-text">20%</td>
+                    </tr>
+                    <tr>
+                        <td class="tr-start">Programming</td>
+                        <td class="td-text">37%</td>
+                        <td class="td-text">33%</td>
+                        <td class="tr-end td-text">30%</td>
+                    </tr>
+                    <tr>
+                        <td class="tr-start">Testing</td>
+                        <td class="td-text">33%</td>
+                        <td class="td-text">34%</td>
+                        <td class="tr-end td-text">33%</td>
+                    </tr>
+                    <tr>
+                        <td class="tr-start">Development Blog</td>
+                        <td class="td-text">20%</td>
+                        <td class="td-text">40%</td>
+                        <td class="tr-end td-text">40%</td>
+                    </tr>
+                    <tr>
+                        <td class="tr-start">Report Website</td>
+                        <td class="td-text">30%</td>
+                        <td class="td-text">30%</td>
+                        <td class="tr-end td-text">40%</td>
+                    </tr>
+                    <tr>
+                        <td class="tr-start">Video Editing</td>
+                        <td class="td-text">25%</td>
+                        <td class="td-text">25%</td>
+                        <td class="tr-end td-text">50%</td>
+                    </tr>
+                    <tr class="tr-bot">
+                        <td class="tr-start">Overall Contribution</td>
+                        <td>33.3%</td>
+                        <td>33.3%</td>
+                        <td class="tr-end">33.3%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="critical-evaluation">
+        <div class="container-fluid section-intro">
+            <h1 class="section-heading">Critical Evaluation</h1>
+            <h3 class="section-subheading">User Interface & Experience</h3>
+            <div class="text-box">
+                <p>
+                    Through the course of developing the app, we have consistently considered feedback
+                    from our client and project supervisors, while also considering the user's 
+                    perspective.
+                </p>
+                <p>
+                    We keep the user informed when incorrect data such as login credentials
+                    or patient data is inputted with appropriate pop-ups. There is also clear
+                    contrast for key functionailities for users to easily notice them. We also
+                    have easy to understand symbols on key functionailities so that users can
+                    be confident they know how to achieve what they want within the app.
+                </p>
+                <p>
+                    The UI is kept simple and straightforward. We ensured that the pages aren't
+                    cluttered and crowded, only having key components present. The overall theme
+                    is light so that clinicians using the app for long wont strain their eyes.
+                </p>
+            </div>
+            <h3 class="section-subheading">Functionality</h3>
+            <div class="text-box">
+                <p>
+                    Functionality has been accomplished well in the project as we have fully
+                    completed all key functionailities expected of our client. We have also
+                    made good progress with the optional requirements too. The implemented 
+                    functionailities work as intended and perform within expectation.
+                </p>
+            </div>
+            <h3 class="section-subheading">Stability</h3>
+            <div class="text-box">
+                <p>
+                    Our app is primarily stable with few unexpected issues. However, there
+                    are some potential outliers within the expected behaviour of the app.
+                    The main one being that the add patient sidebar doesn't automatically close
+                    when moving to a page other than the home page.
+                </p>
+            </div>
+            <h3 class="section-subheading">Efficiency</h3>
+            <div class="text-box">
+                <p>
+                    The app generally performs fast enough to avoid any bad user experience.
+                    Running a prediction for a given tooth is actually achieved quite quickly
+                    and is not long enough to be noticeable by the user. However, when the tooth
+                    models are being uploaded to the database and then retrieved there are
+                    issues with effiency. Due to the 3D nature of the data, which for PLY files
+                    also contains color, the data is quite complicated and takes time to process.
+                    Therefore, it usually takes 5-7 seconds for this process.
+                </p>
+                <p>
+                    All other basic aspects of the app such as opening the app, logging in,
+                    adding a patient, loading a STL/PLY file and so on are satisfiably
+                    efficient.
+                </p>
+            </div>
+            <h3 class="section-subheading">Compatibility</h3>
+            <div class="text-box">
+                <p>
+                    Our app is packaged as an EXE file for native desktop Windows applications.
+                    This means that it runs on all windows devices. This is due to our client
+                    requirements which specifically included that the app must be a Windows
+                    native app.
+                </p>
+                <p>
+                    The code itself mostly runs on any device. The only part of the code that will
+                    not work anywhere but Windows is for displaying the 3D models on the viewing page.
+                    This will only work on Windows due to the use of the Win32GUI Python library
+                    which is specific to Windows.
+                </p>
+            </div>
+            <h3 class="section-subheading">Maintainability</h3>
+            <div class="text-box">
+                <p>
+                    Our app has been strategically seperated into different modules for specific
+                    functionalities. This allows other developers to easily understand and work
+                    on the code themself. These individual components have been brought together
+                    into a main controller module that acts as the API. 
+                </p>
+                <p>
+                    Our code is also adequately accompanied with docstrings to ensure that
+                    any sections that might be confusing are clarified. This ensures that 
+                    anyone who might want to use or edit the code can clearly understand what
+                    code performs specific functionality.
+                </p>
+            </div>
+            <h3 class="section-subheading">Project Management</h3>
+            <div class="text-box">
+                <p>
+                    The project has been well managed, finding a good balanced between rigid
+                    organisation and flexibility within our timeline. We allocated specific
+                    parts of the project to each member while still leaving room to help each 
+                    other and cooperate.
+                </p>
+                <p>
+                    We used the Gantt chart to ensure we were meeting our deadlines and to
+                    plan any meetings with the team, client, or project supervisors we might
+                    need.
+                </p>
+                <p>
+                    We also ensured that we had regular progress meetings and online communication
+                    to keep each other updated and help if needed. We used this meetings to 
+                    reasses our strategies and accordingly modify our plans to compensate for
+                    any unexpcted changes.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="bug-list">
+        <div class="container-fluid section-intro">
+            <h1 class="section-heading">Bug List</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Bug Description</th>
+                        <th scope="col">Priority</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="tr-start">1</td>
+                        <td class="td-text">
+                            Black line at the bottom of app
+                        </td>
+                        <td class="tr-end">Low</td>
+                    </tr>
+                    <tr>
+                        <td class="tr-start">2</td>
+                        <td class="td-text">
+                            Add patient side-bar does not automatically close when
+                            leaving home page
+                        </td>
+                        <td class="tr-end">Medium</td>
+                    </tr>
+                    <tr class="tr-bot">
+                        <td class="tr-start">3</td>
+                        <td class="td-text">
+                            Upon opening the app the image_viewer class produces
+                            null pointer errors when initialised. No affect on
+                            performance of the app.
+                        </td>
+                        <td class="tr-end">Low</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="future-work">
+        <div class="container-fluid section-intro">
+            <h1 class="section-heading">Future Work</h1>
+            <h3 class="section-subheading">Optimization</h3>
+            <div class="text-box">
+                <p>
+                    Currently the AI model we are using has been trained on the very little
+                    data we do have access too. Unfortunately, this is mainly due to how sparse
+                    PLY tooth models are. In the future, more data will become avaliable through
+                    the partnership of the client who has proactively been gathering more
+                    tooth scans. With this the AI models will be able to be properly trained
+                    to achieve a suitable accuracy for the app to have the intended impact.
+                </p>
+            </div>
+            <h3 class="section-subheading">Improve AI Model</h3>
+            <div>
+                <p>
+                    The model currently used for grading tooth wear probably needs modification
+                    to properly suit the data it is being trained on. This is also something
+                    thats very hard to develop with the lack of substantial data.
+                </p>
+                <p>
+                    Furthermore, we use TWES 2.0 as our metric for tooth wear evaluation. This
+                    consists of grading each sextant of all the teeth seprately and giving an
+                    overall score based on those. Due to the lack of data we have only been
+                    able to work with and grade such sextants as opposed to the next step which
+                    includes the whole teeth. Therefore, in the future a complimentary
+                    segemntation model will need to be developed to seperate the teeth in sextants
+                    for individual grading.
+                </p>
+            </div>
+            <h3 class="section-subheading">Improve Decision Support</h3>
+            <div class="text-box">
+                <p>
+                    Currently, our project focused on grading the tooth wear of a patients
+                    teeth with which to support dentists. This is core part of the overall
+                    algorithm, but the goal is to generate treatment plan suggestions.
+                    This will be done in the future by combining these tooth wear grades
+                    and the initially inputted patient data as input for the main model
+                    which will generate tratment plans based on this input
+                </p>
+                <p>
+                    This will require even more data of dentists' diagnosis and prognosis
+                    for each pair of patient tooth models and personal data.
+                </p>
+            </div>
+            <h3 class="section-subheading">Further Automation</h3>
+            <div class="text-box">
+                <p>
+                    Another curcial development in the future of this project will be to
+                    enable automatic self-training of the model(s). With the input of new
+                    data the model should automatically re-train to update its weights
+                    and reupload them to be used as the current pre-trained model.
+                </p>
+                <p>
+                    With this the software's treatment plan suggestion system will
+                    continually grow more accurate as dentists use it.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div id="dynamic-footer"></div>
+
+    <a class="floating-button" href="#navigation">
+        <i class="fa fa-arrow-up"></i>
+    </a>
+
+    <!-- Loading animation, import navigation bar, and set current page to active -->
+    <script type="text/javascript">
+        $(function () {
+            $("#dynamic-footer").load("footer.html #import-footer");
+            $("#navigation").load("navbar.html #import-navbar", function () {
+                active = document.getElementById("evaluation")
+                active.className = "nav-link dropdown-toggle active"
+            });
+            $(".floating-button").fadeOut();
+        });
+        $(document).scroll(function () {
+            updateFloat();
+        });
+        setTimeout(() => {
+            $(".loader-wrapper").fadeOut();
+        }, 500);
+    </script>
+</body>
+
+</html>

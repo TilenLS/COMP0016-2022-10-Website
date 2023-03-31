@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>COMP0016 2022 Team 10 Website</title>
+    <link rel="icon" href="images/tooth-solid.svg" type="image/x-icon">
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js" type="text/javascript"></script>
+    <script src="javascript/float.js" type="text/javascript"></script>
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/c09be5d4e7.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- loading-animation -->
+    <div class="loader-wrapper">
+        <div class='tetrominos'>
+            <div class='tetromino box1'></div>
+            <div class='tetromino box2'></div>
+            <div class='tetromino box3'></div>
+            <div class='tetromino box4'></div>
+        </div>
+    </div>
+    <div id="navigation"></div>
+
+    <section id="title-banner">
+        <div class="container-fluid">
+            <h1>Testing</h1>
+        </div>
+    </section>
+
+    <section id="testing-strategy">
+        <div class="container-fluid section-intro">
+            <h1 class="section-heading">Testing Strategy</h1>
+            <div class="text-box">
+                <p>
+                    The eventuality of the project is to help dentists in real-life
+                    scenarios to make desirable decisions. Therefore, testing is a 
+                    crucial part of the overall project. To ensure that our app is 
+                    functioning properly we have gone through extensive testing.
+                </p>
+                <p>
+                    Unit and integration testing consists of testing actual functionalities
+                    of the app in our code. From basic functions (unit testing) to whole 
+                    systems (integration testing). We have further split this type of testing
+                    into two parts:
+                </p>
+                <ul class="num-list">
+                    <li>
+                        Automated Testing - tests we have programmed to automatically check
+                        whether specific functions are working. This mainly pertains to back-end
+                        functionalities.
+                    </li>
+                    <li>
+                        Manual Testing - tests we have conducted through manual interaction with
+                        the actual app. This mainly consists of testing the front-end performance.
+                    </li>
+                </ul>
+                <p>
+                    Finally, we have also decided to test our app with the feedback of others, such
+                    as our client and project supervisor. This is done by asking them to interact
+                    with the app and then provide an evaluation and critcisms.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="unit-integration-testing">
+        <div class="container-fluid section-intro">
+            <h1 class="section-heading">Unit & Integration Testing</h1>
+            <div class="text-box">
+                <h3 class="section-subheading">Automated Testing</h3>
+                <p>
+                    In this section of our testing we wrote our own code to test the validity
+                    of our project code. We focused on testing the main functional modules in
+                    our code. This includes specific functions (unit test) and larger classes
+                    (integration test). Below is a list of the main modules we tested.
+                </p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Module</th>
+                            <th>Description</th>
+                            <th>Pass/Fail</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="tr-start">1</td>
+                            <td class="td-text">dentist_signup</td>
+                            <td class="td-text">
+                                Accepts user input of username, password, and confirm_password.
+                            </td>
+                            <td class="tr-end"><i class="fa fa-check"></i></td>   
+                        </tr>
+                        <tr>
+                            <td class="tr-start">2</td>
+                            <td class="td-text">dentist_signup_invalid_password</td>
+                            <td class="td-text">
+                                Checks if register details were invalid and provides a response.
+                            </td>
+                            <td class="tr-end"><i class="fa fa-check"></i></td>   
+                        </tr>
+                        <tr>
+                            <td class="tr-start">3</td>
+                            <td class="td-text">dentist_signin</td>
+                            <td class="td-text">
+                                Accepts user input of username and password.
+                            </td>
+                            <td class="tr-end"><i class="fa fa-check"></i></td>   
+                        </tr>
+                        <tr>
+                            <td class="tr-start">4</td>
+                            <td class="td-text">dentist_signin_invalid_username</td>
+                            <td class="td-text">
+                                Checks if the signin username exists within the database.
+                            </td>
+                            <td class="tr-end"><i class="fa fa-check"></i></td>   
+                        </tr>
+                        <tr>
+                            <td class="tr-start">5</td>
+                            <td class="td-text">dentist_signin_invalid_password</td>
+                            <td class="td-text">
+                                Checks if the signin password is valid.
+                            </td>
+                            <td class="tr-end"><i class="fa fa-check"></i></td>   
+                        </tr>
+                        <tr>
+                            <td class="tr-start">6</td>
+                            <td class="td-text">add_patient</td>
+                            <td class="td-text">
+                                Creates a new patient with their medical background and tooth scans.
+                                Then, add this new patient into the database.
+                            </td>
+                            <td class="tr-end"><i class="fa fa-check"></i></td>   
+                        </tr>
+                        <tr>
+                            <td class="tr-start">7</td>
+                            <td class="td-text">delete_patient</td>
+                            <td class="td-text">
+                                Removes a patient from the database.
+                            </td>
+                            <td class="tr-end"><i class="fa fa-check"></i></td>   
+                        </tr>
+                        <tr>
+                            <td class="tr-start">8</td>
+                            <td class="td-text">predict_success</td>
+                            <td class="td-text">
+                                Requests a prediction and retrieve it.
+                            </td>
+                            <td class="tr-end"><i class="fa fa-check"></i></td>   
+                        </tr>
+                        <tr class="tr-bot">
+                            <td class="tr-start">9</td>
+                            <td class="td-text">predict_fail</td>
+                            <td class="td-text">
+                                Checks if the patient id is inputted for prediction.
+                            </td>
+                            <td class="tr-end"><i class="fa fa-check"></i></td>   
+                        </tr>
+                    </tbody>
+                </table>
+                <p>
+                    We implement our automated tests using the python standard unittest
+                    library. An example of how we do this can be seen below.
+                </p>
+                <div class="code-box">
+                    <pre>
+                        <code class="language-python">
+class TestPatient(unittest.TestCase):
+
+    def test_patient_add(self):
+        with open('JawScan_1.ply', 'rb') as f:
+            scan = f.read()
+
+        payload = {
+            "name": "Test Patient",
+            "age": "30",
+            "occupation": "Programmer",
+            "medicalHistory": "Medical History",
+            "painComplaint": "Pain Complaint",
+            "financialResources": "Financial Resources",
+            "brushingMethod": "Brushing Method",
+            "brushingFrequency": "Brushing Frequency",
+            "brushingTiming": "Brushing Timing",
+            "alcoholIntake": "Alcohol Intake",
+            "stressLevel": "Stress Level",
+            "sleepApnoea": "Sleep Apnoea",
+            "snoringHabit": "Snoring Habit",
+            "exercise": "Exercise",
+            "drugUse": "Drug Use",
+            "upperScan": base64.b64encode(scan).decode('utf-8'),
+            "lowerScan": base64.b64encode(scan).decode('utf-8'),
+            "sextantScan": base64.b64encode(scan).decode('utf-8')
+        }
+        json_data = json.dumps(payload)
+
+        response = requests.post('http://20.127.200.67:8080/patient/add', data={'json': json_data})
+        data = response.json()['result']
+        self.assertEqual(data, '')
+                        </code>
+                    </pre>
+                </div>
+                <p>
+                    After running the unit tests, we use coverage.py to measure code coverage in our python tests.
+                    The coverage result is as shown below.
+                </p>
+                <div>
+                    <img class="img-card" src="images/CoverageResult.png" width="70%"></img>
+                </div>
+                <p>
+                    A more detailed structure of our tests is shown below.
+                </p>
+                <div class="code-box">
+                    <pre>
+                            <code class="language-textfile">
+test/
+├── test_dentist.py
+|  ├── test_dentist_signup
+|  ├── test_dentist_signup_invalid_password
+|  ├── test_dentist_signin
+|  ├── test_dentist_signin_invalid_username
+|  ├── test_dentist_signin_invalid_password
+|
+├── test_patient.py
+|  ├── test_add_patient
+|  ├── test_delete_patient
+|
+├── test_inference.py
+|  ├── test_predict_success
+|  ├── test_predict_fail
+                            </code>
+                        </pre>
+                </div>
+                <h3 class="section-subheading">Manual Testing</h3>
+                <p>
+                    With manual testing we mainly focused on simply ensuring the UI and
+                    to some extents the front-end was functional. There was no reason
+                    to automate this as it would just be simply simulating a user programmatically
+                    which would just be unnecessary work.
+                </p>
+                <p>
+                    Through our own testing of the general UI and also recreating edge-cases, we found several bugs related
+                    to error handling and we fixed them. For instance, a message box will pop up to remind the user
+                    whenever they input wrong credentials, didn't select all three files for adding new patients, 
+                    and input invalid patient id for prediction. After extensive testing, we concluded
+                    that the front-end is primarily functional. Other errors that we did find have been
+                    listed on the <a href="evaluation.html#bug-list">Evaluation</a> page of the website in 
+                    the bug list.
+                </p>
+                <h3 class="section-subheading">Performance Testing</h3>
+                <p>
+                    For the actual performance of our app we had two main functionalities to test.
+                    First the accuracy of our AI model, how long it takes to upload or retrieve a
+                    tooth model to or from the server, and the time it takes to request a prediction
+                    and recieve it. 
+                </p>
+                <p>
+                    We used a timer to record how long it takes for a user to add a new patient, click on
+                    the patient's id button to view the tooth model of that specific patient and request for prediction
+                    of tooth wear grade and treatment plan. Judgements are made based on observations.
+                    The test results are shown below.
+                </p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Trial #</th>
+                            <th scope="col">Adding a new patient (in s)</th>
+                            <th scope="col">Viewing specific tooth model (in s)</th>
+                            <th scope="col">Requesting prediction (in s)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="tr-start">1</td>
+                            <td class="td-text">2.58</td>
+                            <td class="td-text">7.59</td>
+                            <td class="td-text">1.21</td>
+                        </tr>
+                        <tr class="tr-bot">
+                            <td class="tr-start">2</td>
+                            <td class="td-text">2.47</td>
+                            <td class="td-text">8.21</td>
+                            <td class="td-text">0.97</td>
+                        </tr>
+                        <tr class="tr-bot">
+                            <td class="tr-start">3</td>
+                            <td class="td-text">3.62</td>
+                            <td class="td-text">7.12</td>
+                            <td class="td-text">0.94</td>
+                        </tr>
+                        <tr class="tr-bot">
+                            <td class="tr-start">4</td>
+                            <td class="td-text">4.82</td>
+                            <td class="td-text">8.57</td>
+                            <td class="td-text">1.78</td>
+                        </tr>
+                        <tr class="tr-bot">
+                            <td class="tr-start">5</td>
+                            <td class="td-text">3.55</td>
+                            <td class="td-text">8.03</td>
+                            <td class="td-text">1.32</td>
+                        </tr>
+                        <tr class="tr-bot">
+                            <td class="tr-start">6</td>
+                            <td class="td-text">3.91</td>
+                            <td class="td-text">8.45</td>
+                            <td class="td-text">1.00</td>
+                        </tr>
+                        <tr class="tr-bot">
+                            <td class="tr-start">7</td>
+                            <td class="td-text">5.11</td>
+                            <td class="td-text">6.43</td>
+                            <td class="td-text">0.91</td>
+                        </tr>
+                        <tr class="tr-bot">
+                            <td class="tr-start">8</td>
+                            <td class="td-text">2.33</td>
+                            <td class="td-text">9.02</td>
+                            <td class="td-text">2.03</td>
+                        </tr>
+                        <tr class="tr-bot">
+                            <td class="tr-start">9</td>
+                            <td class="td-text">3.88</td>
+                            <td class="td-text">7.38</td>
+                            <td class="td-text">1.64</td>
+                        </tr>
+                        <tr class="tr-bot">
+                            <td class="tr-start">10</td>
+                            <td class="td-text">3.29</td>
+                            <td class="td-text">8.17</td>
+                            <td class="td-text">1.29</td>
+                        </tr>
+                        <tr class="tr-bot">
+                            <td class="tr-start">Average</td>
+                            <td class="td-text">3.56</td>
+                            <td class="td-text">7.90</td>
+                            <td class="td-text">1.31</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>
+                    We trained our model on around 200 sextants of 3D tooth models. The model was
+                    trained for 50 epochs with a learning rate of 0.01 and using the Adam optimiser.
+                    The loss function used is Mean Squared Error. Below we have graphed the results.
+                </p>
+                <div>
+                    <img class="img-card" src="images/after_100.png" width="70%">
+                </div>
+                <p>
+                    Unfortunately, gaining access to more tooth models is difficult due to the emphasis
+                    on PLY files which are rare let alone available in public datasets of tooth models. 
+                    However, the goal of this work is a proof-of-concept pipeline to show that with the 
+                    given input we can return a result for tooth grading. In the future, optimisation 
+                    will be very possible as more data will be gathered and the pipeline can be extended 
+                    beyond simply tooth grading and broader treatment plan suggestions which is the 
+                    overarching long-term goal of this project.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="user-acceptance-testing">
+        <div class="container-fluid section-intro">
+            <h1 class="section-heading">User Acceptance Testing</h1>
+            <div class="text-box">
+                <p>
+                    In user acceptance testing, we asked various people to interact with 
+                    our app. They got to use the app in a mostly isolated environment, except
+                    if they were stuck they could ask one of us for help. We asked our client,
+                    project supervisor, and fellow students to test our app. Here are what they
+                    had to say. (Some of the testers have been anonymised for privacy)
+                </p>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="tester">Tester</th>
+                        <th>Comments</th>
+                        <th>Overall Rating</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="tr-start">Client</td>
+                        <td class="td-text">
+                            Good for an initial version of the app. UI will
+                            definitely need to be improved to be cleaner and
+                            more professional.
+                        </td>
+                        <td class="tr-end">4/5</td>
+                    </tr>
+                    <tr>
+                        <td class="tr-start">TA</td>
+                        <td class="td-text">
+                            The overall UI is ok, but is lacking in some parts.
+                            Some of the buttons are too small and some functionalities
+                            aren't clear.
+                        </td>
+                        <td class="tr-end">3/5</td>
+                    </tr>
+                    <tr>
+                        <td class="tr-start">Student 1</td>
+                        <td class="td-text">
+                            Add patient details button is not obvious. There could
+                            be more functionality on the table, like hiding columns.
+                        </td>
+                        <td class="tr-end">3.5/5</td>
+                    </tr>
+                    <tr>
+                        <td class="tr-start">Student 2</td>
+                        <td class="td-text">
+                            App isn't smooth, can seem quite glitchy when resizing.
+                            Requires some time to understand how to use the app,
+                            a lot isn't immediately obvious.
+                        </td>
+                        <td class="tr-end">3/5</td>
+                    </tr>
+                    <tr>
+                        <td class="tr-start">Student 3</td>
+                        <td class="td-text">
+                            UI could be nicer, especially in the home page. 
+                            Loading animation when waiting for files to load
+                            or predictions.
+                        </td>
+                        <td class="tr-end">3.5/5</td>
+                    </tr>
+                    <tr class="tr-end">
+                        <td class="tr-start">Student 4</td>
+                        <td class="td-text">
+                            The app works fine. Quite straightforward navigation and
+                            it isn't too cluttered. Colors could be more neutral.
+                        </td>
+                        <td class="tr-end">4/5</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="text-box">
+                <p>
+                    Overall it is obvious that the app could definitely be improved in terms
+                    of the UI aspect. The theme should be slightly adjusted to be more neutral
+                    and minimalist. Some functionalities need to be made more obvious by contrasting
+                    more with the background and other elements. The loading speed when opening
+                    3D models should be improved as well but might not be possible.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div id="dynamic-footer"></div>
+
+    <a class="floating-button" href="#navigation">
+        <i class="fa fa-arrow-up"></i>
+    </a>
+
+    <!-- Loading animation, import navigation bar, and set current page to active -->
+    <script src="javascript/prism.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#dynamic-footer").load("footer.html #import-footer");
+            $("#navigation").load("navbar.html #import-navbar", function () {
+                active = document.getElementById("testing")
+                active.className = "nav-link dropdown-toggle active"
+            });
+            $(".floating-button").fadeOut();
+        });
+        $(document).scroll(function () {
+            updateFloat();
+        });
+        setTimeout(() => {
+            $(".loader-wrapper").fadeOut();
+        }, 500);
+    </script>
+</body>
+
+</html>

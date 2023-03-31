@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>COMP0016 2022 Team 10 Website</title>
+    <link rel="icon" href="images/tooth-solid.svg" type="image/x-icon">
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js" type="text/javascript"></script>
+    <script src="javascript/float.js" type="text/javascript"></script>
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/c09be5d4e7.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- loading-animation -->
+    <div class="loader-wrapper">
+        <div class='tetrominos'>
+            <div class='tetromino box1'></div>
+            <div class='tetromino box2'></div>
+            <div class='tetromino box3'></div>
+            <div class='tetromino box4'></div>
+        </div>
+    </div>
+    <div id="navigation"></div>
+
+    <section id="title-banner">
+        <div class="container-fluid">
+            <h1>Research</h1>
+        </div>
+    </section>
+
+    <section id="project-research">
+        <div class="container-fluid section-intro">
+            <h1 class="section-heading">Project Research</h1>
+            <div class="text-box">
+                <p>
+                    Research for this project was extremely crucial as we were
+                    not building on top of previous work. This had to be done from scratch
+                    and related work is sparse. Especially when in the context of industry,
+                    most work that has been is purely academic.
+                </p>
+            </div>
+            <div class="dynamic-container">
+                <div class="side-bar">
+                    <div class="side-button active"
+                        onclick="$(function () {$('#visible-content').load('hidden-content/cdss.html #content-wrapper');});">
+                        CDSS
+                        <hr>
+                    </div>
+                    <div class="side-button"
+                        onclick="$(function () {$('#visible-content').load('hidden-content/tooth-wear-indices.html #content-wrapper');});">
+                        Indices
+                        <hr>
+                    </div>
+                    <div class="side-button" onclick="
+                    $(function () {
+                        $('#visible-content').load('hidden-content/3D-models.html #content-wrapper', function () {
+                            var script = document.createElement('script');
+                            script.src = 'javascript/prism.js';
+                            script.charset = 'utf-8';
+                            document.getElementById('visible-content').appendChild(script); 
+                        });
+                    });">
+                        3D Models
+                        <hr>
+                    </div>
+                    <div class="side-button"
+                        onclick="$(function () {$('#visible-content').load('hidden-content/tooth-grading.html #content-wrapper');});">
+                        Algorithm
+                        <hr>
+                    </div>
+                </div>
+                <div id="visible-content">
+                    <div class="container-fluid">
+                        <div class="text-box">
+                            <h3 class="section-subheading">Clinical Decision Support System</h3>
+                            <p>
+                                Clinical Decision Support Systems (CDSS) are systems intended to
+                                improve healthcare delivery by enhancing medical decision-making
+                                capabilities with targeted clinical knowledge, patient information,
+                                and other health information. Below is the general structure of such
+                                a system. It is key here to note that the ultimate goal is to assist
+                                clinicians in their work and not replace it.
+                                <sup>2</sup>
+                                <div>
+                                    <img class="img-card" src="images/CDSS-structure.png" width="70%"></img>
+                                </div>
+                                <p>
+                                    There are also different kinds of CDSS that use different methods to
+                                    provide support to clinicians. A few can be seen below.<sup>1</sup>
+                                </p>
+                                <div>
+                                    <img class="img-card" src="images/CDSS.png" width="70%"></img>
+                                </div>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="technology-review">
+        <div class="container-fluid section-intro">
+            <h1 class="section-heading">Technology Review</h1>
+            <div class="text-box">
+                <p>
+                    After understanding the academic background of the project the next step
+                    was to explore previous work that was done. From this we would be able
+                    to better understand what tools to use to realise the project.
+                </p>
+                <h3 class="section-subheading">Previous Work</h3>
+                <p>
+                    Throughout our search we found only three somewhat similar implementations.
+                    The first and most thorough is <a href="https://www.hellopearl.com/">Pearl AI</a>.
+                    It works with 2D x-ray scans and is capable of segmenting individual tooth for
+                    the detection of pathological features. Unfortunately, this wasn't of much use
+                    as the goal of our project is to remain in the 3D realm to take advantage of
+                    the increased detail.
+                </p>
+                <div>
+                    <img class="img-card" src="images/PearlAIdemo.jpg" width="50%">
+                </div>
+                <p>
+                    The second application is <a href="https://leedsdigitaldentistry.com/wearcompare/">
+                        WearCompare</a>. It intakes 3D scans of the same teeth over different time points
+                    and has the clinician manually select the surfaces to compare. Then it quantifies
+                    tooth wear progression. Although this uses 3D tooth models, it requires too much
+                    manual interaction and multiple scans. Our project has to be as automatic as possible
+                    using Artificial Intelligence to assist clinicians.
+                </p>
+                <div>
+                    <img class="img-card" src="images/WearCompare.png" width="50%">
+                </div>
+                <p>
+                    Lastly is <a href="https://github.com/amir-abdi/OrthoAid">OrthoAid</a>. It provides
+                    dentists with enhanced tools for analysing 3D tooth models before and after operative
+                    dental study models. Similarly to the previous example, it uses 3D models but does
+                    not include any or very little automation on an AI basis. Furthermore, this app was
+                    very technical and difficult to use.
+                </p>
+                <div>
+                    <img class="img-card" src="images/OrthoAidUserInterface.jpeg" width="50%">
+                </div>
+                <h3 class="section-subheading">Languages & Libraries</h3>
+                <p>
+                    At first we decided to attempt creating the app with C# or C++
+                    as our app had to be built for Windows and dealt with 3D models.
+                    We tried implementing some of the code for the OrthoAid app to render 3D images
+                    but failed to do so for some PLY files encoded in the binary format.
+                </p>
+                <p>
+                    Therefore, we decided to switch to Python and find a library that can render
+                    both STL and PLY file formats. This was convenient as the algorithmic part
+                    of the app would also be written in Python. We decided on using Open3D for
+                    rendering PLY files as we found some previous examples on its integration with
+                    GUIs.
+                </p>
+                <p>
+                    As for the GUI, at first we thought of PyQt6. However, there are licensing issues
+                    with this library as it is under a GPL commercial license. Hence we chose
+                    PySide2 which is identical to PyQt6 but is under a LGPL license so we could use
+                    it without facing issues in the future.
+                </p>
+                <p>
+                    For data storage we decided to use SQLite to deploy a local database initially.
+                    This is because a remote database was not a high priority in our MoSCoW agreement.
+                </p>
+                <h3 class="section-subheading">Algorithms</h3>
+                <p>
+                    As mentioned in the Project Research section on this page we decided on using the
+                    TWES 2.0 grading system for the general overal algorithm strucutre. This includes
+                    two sections. First the tooth wear screening phase where patient data such as age,
+                    alcohol consumption, etc is gathered along with their tooth scans. Then the tooth
+                    wear status phase. This is where the teeth are graded using the previously mentioned
+                    PointNet network implementedusing PyTorch to grade the teeth.
+                </p>
+                <div>
+                    <img class="img-card" src="images/ProjectOverview.jpg" width="70%">
+                </div>
+                <p>
+                    This is done by grading each sextant (1/6<sup>th</sup> of the teeth) first by grading
+                    their respective individual teeth. Then based on the sextant graded an overall score
+                    is given to the wear present within the teeth. After these results are calculated,
+                    they are used along with the patient data gathered during the first stage to suggest
+                    a treatment plan.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="technical-decision">
+        <div class="container-fluid section-intro">
+            <h1 class="section-heading">Technical Decision</h1>
+            <div class="text-box">
+                <p>
+                    After the expansive research and testing we had done on varying technologies and algorithms,
+                    we selected the methods we thought would be most suitable given the client and user
+                    requirements we had previously established.
+                </p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Aspect</th>
+                            <th scope="col">Decision</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="tr-start td-text">Language</td>
+                            <td class="tr-end td-text">Python</td>
+                        </tr>
+                        <tr>
+                            <td class="tr-start td-text">GUI</td>
+                            <td class="tr-end td-text">PySide2</td>
+                        </tr>
+                        <tr>
+                            <td class="tr-start td-text">Image Processing</td>
+                            <td class="tr-end td-text">Open3D</td>
+                        </tr>
+                        <tr>
+                            <td class="tr-start td-text">Communication (Backend)</td>
+                            <td class="tr-end td-text">Flask</td>
+                        </tr>
+                        <tr>
+                            <td class="tr-start td-text">Data Storage</td>
+                            <td class="tr-end td-text">SQLite & Azure</td>
+                        </tr>
+                        <tr class="tr-bot">
+                            <td class="tr-start td-text">Tooth Wear Grading DL</td>
+                            <td class="tr-end td-text">PyTorch</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="bibliography">
+        <div class="container-fluid section-intro">
+            <h1 class="section-heading">References</h1>
+            <ol class="num-list">
+                <li>
+                    Machoy ME, Szyszka-Sommerfeld L, Vegh A, Gedrange T, Woźniak K. The ways of using machine learning
+                    in dentistry. Adv Clin Exp Med. 2020;29(3):375–384. doi:10.17219/acem/115083
+                </li>
+                <li>
+                    Khanna S. Artificial intelligence: contemporary applications and future compass. Int Dent J.
+                    2010;60(4):269-272.
+                </li>
+                <li>
+                    Bartlett D, Ganss C, Lussi A. Basic Erosive Wear Examination (BEWE): a new scoring system for
+                    scientific and clinical needs. Clin Oral Investig. 2008 Mar;12 Suppl 1(Suppl 1):S65-8. doi:
+                    10.1007/s00784-007-0181-5. Epub 2008 Jan 29. PMID: 18228057; PMCID: PMC2238785.
+                </li>
+                <li>
+                    Roehl JC, Jakstat HA, Becker K, Wetselaar P, Ahlers MO. Tooth Wear Evaluation System (TWES)
+                    2.0-Reliability of diagnosis with and without computer-assisted evaluation. J Oral Rehabil.
+                    2022;49(1):81-91. doi:10.1111/joor.13277
+                </li>
+                <li>
+                    Smith BG, Knight JK. An index for measuring the wear of teeth. Br Dent J. 1984;156(12):435-438.
+                    doi:10.1038/sj.bdj.4805394
+                </li>
+                <li>
+                    Wetselaar P, Wetselaar-Glas MJM, Katzer LD, Ahlers MO. Diagnosing tooth wear, a new taxonomy based
+                    on the revised version of the Tooth Wear Evaluation System (TWES 2.0). J Oral Rehabil. 2020
+                    Jun;47(6):703-712. doi: 10.1111/joor.12972. Epub 2020 May 14. PMID: 32274827; PMCID: PMC7384115.
+                </li>
+                <li>
+                    S. Tian, N. Dai, B. Zhang, F. Yuan, Q. Yu and X. Cheng, "Automatic Classification and Segmentation
+                    of Teeth on 3D Dental Model Using Hierarchical Deep Learning Networks," in IEEE Access, vol. 7, pp.
+                    84817-84828, 2019, doi: 10.1109/ACCESS.2019.2924262.
+                </li>
+                <li>
+                    R. Q. Charles, H. Su, M. Kaichun, and L. J. Guibas, “PointNet: Deep Learning on Point Sets for 3D Classification and Segmentation,” in 2017 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2017.
+                </li>
+                <li>
+                    Y. Guo, H. Wang, Q. Hu, H. Liu, L. Liu, and M. Bennamoun, “Deep learning for 3D point clouds: A survey,” IEEE Trans. Pattern Anal. Mach. Intell., vol. 43, no. 12, pp. 
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <div id="dynamic-footer"></div>
+
+    <a class="floating-button" href="#navigation">
+        <i class="fa fa-arrow-up"></i>
+    </a>
+
+    <!-- Loading animation, import navigation bar, and set current page to active -->
+    <script src="javascript/prism.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#dynamic-footer").load("footer.html #import-footer");
+            $("#navigation").load("navbar.html #import-navbar", function () {
+                active = document.getElementById("research")
+                active.className = "nav-link dropdown-toggle active"
+            });
+            $('.side-button').click(function (event) {
+                var element = event.target;
+
+                if (document.getElementsByClassName("side-button active").length > 0) {
+                    document.getElementsByClassName("side-button active")[0].classList.remove(
+                        "active");
+                }
+
+                if (element.nodeName == "DIV") {
+                    element.classList.add("active");
+                } else {
+                    element.parentElement.classList.add("active")
+                }
+            });
+            $(".floating-button").fadeOut();
+        });
+        $(document).scroll(function () {
+            updateFloat();
+        });
+        setTimeout(() => {
+            $(".loader-wrapper").fadeOut();
+        }, 500);
+    </script>
+
+</html>

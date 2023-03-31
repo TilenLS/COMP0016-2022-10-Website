@@ -4,155 +4,70 @@
 <head>
     <meta charset="UTF-8">
     <title>COMP0016 2022 Team 10 Website</title>
+    <link rel="icon" href="images/tooth-solid.svg" type="image/x-icon">
 
     <!-- JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js" type="text/javascript"></script>
 
     <!-- CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="animations/styles.css">
 
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
 
     <!-- Icons -->
     <script src="https://kit.fontawesome.com/c09be5d4e7.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <div class='tetrominos'>
-        <div class='tetromino box1'></div>
-        <div class='tetromino box2'></div>
-        <div class='tetromino box3'></div>
-        <div class='tetromino box4'></div>
-    </div>
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand navbar-right" href="index.html">
-                <img src="images/logo.png" alt="Logo" width="120" height="60">
-            </a>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="index.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Home
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Introduction</a></li>
-                            <li><a class="dropdown-item" href="#">Features</a></li>
-                            <li><a class="dropdown-item" href="#">Video</a></li>
-                            <li><a class="dropdown-item" href="#">Team</a></li>
-                            <li><a class="dropdown-item" href="#">Timeline</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Requirements
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="requirements.html">Project Background</a></li>
-                            <li><a class="dropdown-item" href="#">Client Requirements</a></li>
-                            <li><a class="dropdown-item" href="#">Project Goals</a></li>
-                            <li><a class="dropdown-item" href="#">User Interviews</a></li>
-                            <li><a class="dropdown-item" href="#">Personas</a></li>
-                            <li><a class="dropdown-item" href="#">MoSCoW</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Research
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Project Review</a></li>
-                            <li><a class="dropdown-item" href="#">Technology Review</a></li>
-                            <li><a class="dropdown-item" href="#">Technical Decision</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            HCI
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Sketches</a></li>
-                            <li><a class="dropdown-item" href="#">Prototype</a></li>
-                            <li><a class="dropdown-item" href="#">Evaluation</a></li>
-                            <li><a class="dropdown-item" href="#">Iteration</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            System Design
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">System Architecture</a></li>
-                            <li><a class="dropdown-item" href="#">Database Structure</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Impl.
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Image Processing</a></li>
-                            <li><a class="dropdown-item" href="#">Data Storage</a></li>
-                            <li><a class="dropdown-item" href="#">User Interface</a></li>
-                            <li><a class="dropdown-item" href="#">Classification</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Testing
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Testing Strategy</a></li>
-                            <li><a class="dropdown-item" href="#">Unit & Integration Testing</a></li>
-                            <li><a class="dropdown-item" href="#">User Accpetance Testing</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Evaluation
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">MoSCoW Evaluation</a></li>
-                            <li><a class="dropdown-item" href="#">Individual Contribution</a></li>
-                            <li><a class="dropdown-item" href="#">Critical Contribution</a></li>
-                            <li><a class="dropdown-item" href="#">Bug List</a></li>
-                            <li><a class="dropdown-item" href="#">Futue Work</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Appendix</a>
-                    </li>
-                </ul>
-            </div>
+    <!-- loading-animation -->
+    <div class="loader-wrapper">
+        <div class='tetrominos'>
+            <div class='tetromino box1'></div>
+            <div class='tetromino box2'></div>
+            <div class='tetromino box3'></div>
+            <div class='tetromino box4'></div>
         </div>
-    </nav>
+    </div>
+
+    <div id="navigation"></div>
+
 
     <section id="title">
         <div class="container-fluid">
-            <div class="row" id="big-heading">
-                <div class="col-lg-6">
-                    <h1 class="big-text">Predicting treatment plans for patients with tooth wear.</h1>
-                </div>
-            </div>
             <div id="carouselSupportedContent" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <div id="big-title">
+                    <div class="heading">
+                        <h1 class="left">Wear</h1>
+                        <h1 class="right">3D</h1>
+                    </div>
+                    <div class="subtext">
+                        <div>Providing tooth wear treatment support with modern solutions.</div>
+                    </div>
+                </div>
                 <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselSupportedContent" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselSupportedContent" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselSupportedContent" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>            
+                    <button type="button" data-bs-target="#carouselSupportedContent" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselSupportedContent" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselSupportedContent" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
                 <div class="carousel-inner">
-                    <div class="carousel-item active" data-bs-interval="4000">
+                    <div class="carousel-item active" data-bs-interval="3000">
                         <img src="images/carousel1.jpg" class="d-block w-100" alt="...">
                     </div>
-                    <div class="carousel-item" data-bs-interval="4000">
+                    <div class="carousel-item" data-bs-interval="3000">
                         <img src="images/carousel2.jpg" class="d-block w-100" alt="...">
                     </div>
-                    <div class="carousel-item" data-bs-interval="4000">
+                    <div class="carousel-item" data-bs-interval="3000">
                         <img src="images/carousel3.jpg" class="d-block w-100" alt="...">
                     </div>
                 </div>
@@ -160,12 +75,242 @@
         </div>
     </section>
 
-    <section id="introduction" style="background-color: #112D4E;">
-        <div class="container-fluid text-box">
-            <h1>Introduction</h1>
-            <p> Our team is developing a machine learning (ML) based windows app that uses 3D models to suggest treatment plans. This includes the analysis and metatagging of PLY tooth models using deep learning, along with patient metadata to predict optimal treatment plans. This is done in our app using Python through a variety of libraries such as <a href="https://github.com/raccoonmonk/pyside2">PySide</a> and <a href="https://github.com/isl-org/Open3D">Open3D</a> for our frontend along with <a href="https://pytorch.org/">Pytorch</a> and <a href="https://www.sqlite.org/index.html">SQLite</a> for the backend.</p>
+    <section id="abstract">
+        <div class="container-fluid">
+            <h1 class="section-heading section-intro">Abstract</h1>
+            <div class="text-box section-intro">
+                <h3 class="section-subheading">Problem Statement</h3>
+                <p>
+                    Tooth wear is a widespread issue within the population where teeth degrade over time due to
+                    abrasion, attrition, and erosion. According to the NHS, 77% of adults experience some degree
+                    of tooth wear. Due to various treatment approaches, dentists often struggle with uncertainty
+                    in providing diagnosis and prognosis.
+                </p>
+                <h3 class="section-subheading">Solution</h3>
+                <p>
+                    The project proposes a solution to develop a clinical decision support system (CDSS) app for windows that can assist
+                    dentists in accurately providing optimal treatment plans. For this to be possible, the app must be
+                    compatible with the PLY/STL file format and mantain a database in which to store these models along
+                    with patient metadata which dentists input themself. The app will use deep learning algorithms
+                    to analyse the 3D tooth models along with patient data to provide suggestions which support dentists
+                    in the process of diagnosing and deciding prognosis.
+                </p>
+                <h3 class="section-subheading">Achievement & Impact</h3>
+                <p>
+                    Our team is developing a machine learning (ML) based windows app that uses 3D teeth models to suggest
+                    treatment plans. This includes the tooth wear analysis of PLY tooth models using deep learning,
+                    along with patient metadata to predict optimal treatment plans. This is done in our app using
+                    Python through a variety of libraries such as
+                    <a href="https://github.com/raccoonmonk/pyside2">PySide2</a> and
+                    <a href="https://github.com/isl-org/Open3D">Open3D</a> for our frontend along with
+                    <a href="https://pytorch.org/">Pytorch</a> and
+                    <a href="https://www.sqlite.org/index.html">SQLite</a> for the backend.
+                    Overall, our app achieves a 91% accuracy on predicting tooth wear and has the potential to improve the efficiency and accuracy of tooth wear assessment
+                    with larger data set, leading to better oral health outcomes for patients.
+                </p>
+            </div>
         </div>
     </section>
+
+    <section id="features" style="background-color: #DBE2EF;">
+        <div class="container-fluid">
+            <h1 class="section-heading section-intro">Features</h1>
+            <div class="text-box">
+                <p>Have a look at some of the features that our app includes.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fa fa-tooth"></i>
+                    <h3>Tooth Evaluation</h3>
+                    <p>
+                        Tooth wear prognosis suggestions based on
+                        3D tooth models and patient metadata.
+                    </p>
+                    <a href="implementation.html#algorithms">
+                        <button class="learn-more">
+                            <span class="circle" aria-hidden="true">
+                                <span class="icon arrow"></span>
+                            </span>
+                            <span class="button-text">Learn More</span>
+                        </button>
+                    </a>
+                </div>
+                <div class="feature-card">
+                    <i class="fa fa-cube"></i>
+                    <h3>Supports 3D model</h3>
+                    <p>
+                        Works with STL and PLY file formats to view and work with
+                        3D tooth models.
+                    </p>
+                    <a href="implementation.html#image-processing">
+                        <button class="learn-more">
+                            <span class="circle" aria-hidden="true">
+                                <span class="icon arrow"></span>
+                            </span>
+                            <span class="button-text">Learn More</span>
+                        </button>
+                    </a>
+                </div>
+                <div class="feature-card">
+                    <i class="fa fa-windows"></i>
+                    <h3>Desktop App</h3>
+                    <p>
+                        Built specifically to be functional on Windows based desktops (Conforms to hospital mainstream operating systems)
+                    </p>
+                    <a href="system-design.html#system-architecture">
+                        <button class="learn-more">
+                            <span class="circle" aria-hidden="true">
+                                <span class="icon arrow"></span>
+                            </span>
+                            <span class="button-text">Learn More</span>
+                        </button>
+                    </a>
+                </div>
+                <div class="feature-card">
+                    <i class="fa fa-database"></i>
+                    <h3>Remote Database</h3>
+                    <p>
+                        Azure based database for seemless and safe server-side patient data storage.
+                    </p>
+                    <a href="implementation.html#data-storage">
+                        <button class="learn-more">
+                            <span class="circle" aria-hidden="true">
+                                <span class="icon arrow"></span>
+                            </span>
+                            <span class="button-text">Learn More</span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="intro-video">
+        <div class="container-fluid">
+            <h1 class="section-heading section-intro">Intro Video</h1>
+            <div class="text-box">
+                <p>Watch a short 2 minute video to learn more about the project.</p>
+            </div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/j-iAxSqIBM0"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </div>
+        <div id="animbg-container">
+            <div id="container-inside">
+                <div id="circle-small"></div>
+                <div id="circle-medium"></div>
+                <div id="circle-large"></div>
+                <div id="circle-xlarge"></div>
+                <div id="circle-xxlarge"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="team" style="background-color: #DBE2EF;">
+        <div class="container-fluid">
+            <h1 class="section-heading section-intro">Development Team</h1>
+            <div class="text-box">
+                <p>Get to know the team members behind the porject. </p>
+            </div>
+            <div class="profile-container">
+                <div class="profile-card">
+                    <img src="images/ProfileImages/HongruiTang.png" class="card-image">
+                    <h3 class="card-name">Hongrui Tang</h3>
+                    <p>
+                        A second-year student at UCL. Research on algorithms and data for the project.
+                        Designing and implementation of UI, AI algorithms, and database. App testing
+                        and documentation.
+                    </p>
+                    <ul class="social-icons">
+                        <li><a href="https://github.com/HongruiTang"><i class="fa fa-github"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/hongrui-tang-235532229/"><i
+                                    class="fa fa-linkedin"></i></a></li>
+                        <li><a href="mailto: hongrui.tang.20@ucl.ac.uk"><i class="fa fa-envelope"></i></a></li>
+                    </ul>
+                </div>
+                <div class="profile-card">
+                    <img src="images/ProfileImages/YoongXinChong.jpg" class="card-image">
+                    <h3 class="card-name">Yoong Xin Chong</h3>
+                    <p>
+                        A second-year student at UCL. Research on algorithms and data for the project.
+                        Designing and implementation of UI, database, and 3D rendering. App testing,
+                        documentation, and editing website.
+                    </p>
+                    <ul class="social-icons">
+                        <li><a href="https://github.com/YoongXin"><i class="fa fa-github"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/yoong-xin-chong-9b1311228/"><i
+                                    class="fa fa-linkedin"></i></a></li>
+                        <li><a href="mailto: yoong.chong.21@ucl.ac.uk"><i class="fa fa-envelope"></i></a></li>
+                    </ul>
+                </div>
+                <div class="profile-card">
+                    <img src="images/ProfileImages/TilenLimbackStokin.png" class="card-image">
+                    <h3 class="card-name">Tilen Limbäck-Stokin</h3>
+                    <p>
+                        A second-year student at UCL. Research on algorithms and data for the project.
+                        Designing and implementation of UI, 3D rendering, and website. App testing and
+                        documentation.
+                    </p>
+                    <ul class="social-icons">
+                        <li><a href="https://github.com/TilenLS"><i class="fa fa-github"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/tilen-limb%C3%A4ck-stokin-a2a009175/"><i
+                                    class="fa fa-linkedin"></i></a></li>
+                        <li><a href="mailto: tilen.limback-stokin.21@ucl.ac.uk"><i class="fa fa-envelope"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="project-timeline">
+        <div class="container-fluid">
+            <h1 class="section-heading section-intro">Project Timeline</h1>
+            <div class="text-box">
+                <p>See how the project has been organised over time.</p>
+            </div>
+            <img src="images/Gannt Chart New.png">
+        </div>
+    </section>
+    <div id="dynamic-footer"></div>
+
+    <a class="floating-button" href="#navigation">
+        <i class="fa fa-arrow-up"></i>
+    </a>
+    <!-- Loading animation, import navigation bar, and set current page to active -->
+    <script type="text/javascript">
+        $(function () {
+            $("#dynamic-footer").load("footer.html #import-footer");
+            $("#navigation").load("navbar.html #import-navbar", function () {
+                active = document.getElementById("home")
+                active.className = "nav-link dropdown-toggle active"
+            });
+            $(".floating-button").fadeOut();
+        });
+        $(document).scroll(function () {
+            var y = window.scrollY,
+                yOffset = y + $(window).height(),
+                body = document.body,
+                html = document.documentElement;
+            const maxHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html
+                .scrollHeight, html.offsetHeight) - document.getElementById("dynamic-footer").offsetHeight;
+            const topLimit = document.getElementById("title").offsetHeight;
+            if (y > topLimit) {
+                $(".floating-button").fadeIn();
+                if (yOffset > maxHeight) {
+                    $(".floating-button").css("bottom", yOffset - maxHeight + 30);
+                } else {
+                    $(".floating-button").css("bottom", "50px");
+                }
+            } else {
+                $('.floating-button').fadeOut();
+            }
+        });
+        setTimeout(() => {
+            $(".loader-wrapper").fadeOut();
+        }, 500);
+    </script>
 </body>
 
 </html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>COMP0016 2022 Team 10 Blog</title>
+    <link rel="icon" href="images/EastmanIcon.png" type="image/x-icon">
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js" type="text/javascript"></script>
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet"> 
+
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/c09be5d4e7.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <section class="blog-content">
+        <div class="container-fluid text-box">
+            <h1>Week 9: Finishing up project website and continue training of model (Mar 13 - Mar 19)</h1>
+            <h2>Mostly done with the project website</h2>
+            <p>
+                Since there is not much time left for us, we work hard to finish up our project website this week. We mainly 
+                focus on the appendix tab this week, writing up the user manual, deployment manual and legal section. We also 
+                added a loading animation while refreshing the website. After speaking to the TA, we changed the way we present 
+                our blogs so that it is more user friendly and easy to navigate between the blogs of different weeks.
+            </p>
+            <h2>Added more database related functionalities to our software</h2>
+            <p>
+                We realised that our app is lack of the functionality to display patients, hence we implemented it to our software 
+                this week. The main challenged faced in implementing this functionality is that when a patient is deleted, the 
+                position of the patients after him will be affected, causing some problems with deleting patients afterwards. We 
+                managed to overcome this problem by using a list to store the patient id before and after the delete so that we 
+                can easily find the position of the delete button of a specific patient in the table. We also realised that it 
+                might be difficult for the clinician to find a specific patient in the table when there are a lot of patients 
+                hence we implemented a search functionality in our app. 
+            </p>
+            <h2>Continue training deep learning model</h2>
+            <p>
+                Although we are still waiting for more data from our client, we found a way to generate more data from the existing 
+                tooth models that we have received. Due to memory constraints, we are only able to pick around 2048 points from the 
+                30000+ points of our 3D tooth models each time. Hence by randomly picking 2048 points from the same model for 10 
+                times, we manage to get 10 times more data than what we initially had, and we are able to see improvements from 
+                the trained modes. The accuracy for the training set can reach around 70%-80% of accuracy while the accuracy for 
+                testing set can reach about 60%-70% of accuracy.
+            </p>
+            <h2>Code walkthrough with client</h2>
+            <p>
+                We scheduled a code walkthrough with our client, Dr Junaid Malik at his practice near UCL Bloomsbury campus. During 
+                the code walkthrough, we updated him with our progress of the software and deep learning model. We also 
+                demonstrated to him how to use our software. He gave us a few suggestions on how he think we could improve the 
+                user interface. He was satisfied with our progress and suggested that we could get our work published as a 
+                proof-of-concept project.
+            </p>
+            <h2>Next steps</h2>
+            <p>
+                The project is reaching an end very soon. Next week, we will mainly focus on testing our app, writing the 
+                deployment manual, making some last minute fixes to the ui and recording the video for the second elevator pitch.
+            </p>
+        </div>
+    </section>
+</body>

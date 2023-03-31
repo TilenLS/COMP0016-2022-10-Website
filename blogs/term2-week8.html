@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>COMP0016 2022 Team 10 Blog</title>
+    <link rel="icon" href="images/EastmanIcon.png" type="image/x-icon">
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js" type="text/javascript"></script>
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet"> 
+
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/c09be5d4e7.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <section class="blog-content">
+        <div class="container-fluid text-box">
+            <h1>Week 8: Making ui adjustments and moving database to cloud (Mar 6 - Mar 12)</h1>
+            <h2>Continue working on our project website</h2>
+            <p>
+                For this week, we continue to work on our project website, mainly on the implementation page, research page and 
+                evaluation page. For the research page, we chose the important contents from our literature review and include 
+                them into our website. The implementation page is more challenging as it requires more technical details. One of 
+                the team members summarised all the details and include them in the implementation page. 
+            </p>
+            <h2>Moving database to cloud</h2>
+            <p>
+                Since one of the team members found a way to maintain the pre-trained deep-learning model on the Azure virtual 
+                machine, we used a similar method to host our SQLite database on Azure. Python Requests library is used to send and 
+                receive data between the client and the server. Besides, we decided to store the tooth model ply files as binary 
+                file instead of storing file paths. It took us a few days to get the binary files displaying with Open3D. The main 
+                challenge we faced is that some data is lost in the process of sending to the server, causing the tooth models to 
+                be displayed in a wrong position. 
+            </p>
+            <h2>Change the theme of our software</h2>
+            <p>
+                After speaking to our TA, we are advised to change the theme of our software into light theme as it is more 
+                suitable for a medical-related software and clinicians using the app for long will not strain their eyes. After 
+                making the changes, our app looks like this:
+            </p>
+            <div>
+                <img class="blog-img" src="images/HomePageLightUI.jpeg" width="80%"></img>
+            </div>
+            <h2>Next steps</h2>
+            <p>
+                We are still waiting for more data from our client, the training of models will be continued by then. Besides, we 
+                will have a code walkthrough with our client next week.
+            </p>
+        </div>
+    </section>
+</body>
